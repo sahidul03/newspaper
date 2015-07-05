@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <title>alokito naranganj 24</title>
-  <meta charset="UTF-8">
+  <!--<meta charset="UTF-8">-->
   <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
   <!-- Favicons -->
@@ -45,16 +45,35 @@
       <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
   <% end %>
 </p>
-    <% if notice %>
-        <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-        <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
+
+
 
     <div class="wrapper row-offcanvas row-offcanvas-left">
       <%= render 'layouts/left_side_admin' %>
-      <%= yield %>
+      <aside class="right-side">
+        <section class="content-header">
+          <h1>
+            Dashboard
+            <small>Control panel</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+          </ol>
+        </section>
+        <% if notice %>
+            <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+            <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+        <!--<div id="flash_messages">-->
+          <!--<%# flash.each do |key, value| %>-->
+              <!--<%#= content_tag(:div, value, :class => "flash #{key}") %>-->
+          <!--<%# end %>-->
+        <!--</div>-->
+        <%= yield %>
+      </aside>
     </div>
 
 

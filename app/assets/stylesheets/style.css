@@ -3703,3 +3703,22 @@ span.format {
  font-weight:400;
  margin:0;	
 }
+
+/*category*/
+.category_create_button{
+    margin-top: 5px;
+}
+.hole_document_div{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.4;
+}
+
+/*post*/
+.post_image_show_img{
+    width: 300px;
+}

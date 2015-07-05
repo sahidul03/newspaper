@@ -1,0 +1,64 @@
+<section class="content">
+<!-- Main row -->
+<div class="row">
+<!-- Left col -->
+<section class="col-lg-6 connectedSortable">
+  <!-- Box (with bar chart) -->
+  <div class="box box-info">
+  <div class="box-header">
+    <i class="fa fa-check"></i>
+    <h3 class="box-title">Categories</h3>
+    <%= link_to new_category_path, :class=>'pull-right btn btn-default category_create_button' do %>
+        Create <i class="fa fa-check"></i>
+    <% end %>
+    <!-- tools box -->
+
+  </div>
+  </div>
+  <div class="table-responsive">
+    <!-- .table - Uses sparkline charts-->
+    <% if @categories.any? %>
+        <table class="table table-striped">
+          <tr>
+            <th>Category name</th>
+            <th>Date</th>
+            <th class="text-center">Edit/Delete</th>
+          </tr>
+          <% @categories.each do |category| %>
+              <tr>
+                <td><a href="#"><%= category.name %></a></td>
+
+                <td>12-05-2015</td>
+                <td class="text-right">
+
+                  <div class="btn-group">
+                    <%= link_to edit_category_path(category), :class=>'btn btn-info' do %>
+                        <i class='fa fa-align-left fa-edit'></i> edit
+                    <% end %>
+                    <%= link_to category_path(category), :class=>'btn btn-info', method: :delete,data: { confirm: 'Are you sure?' } do %>
+                        <i class='fa fa-align-right fa-crop'></i> delete
+                    <% end %>
+                  </div>
+
+                </td>
+              </tr>
+          <% end %>
+        </table><!-- /.table -->
+    <% end %>
+
+  </div>
+
+</section><!-- /.Left col -->
+<!-- right col (We are only adding the ID to make the widgets sortable)-->
+<section class="col-lg-6 connectedSortable">
+  <!-- Map box -->
+  <%= render 'admins/visitor_map' %>
+  <!-- /.box -->
+  <!--to to list box-->
+  <%= render 'admins/visitor_to_do_list' %>
+  <!-- /.box -->
+
+</section><!-- right col -->
+</div><!-- /.row (main row) -->
+
+</section><!-- /.content -->

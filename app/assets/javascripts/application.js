@@ -27,6 +27,7 @@
 //= require init
 
 // admin dashboard
+//= require jquery-ui-1.10.3.min
 //= require bootstrap
 //= require bootstrap.min
 //= require morris.min

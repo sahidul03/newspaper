@@ -1,0 +1,42 @@
+<%= form_for @post do |f| %>
+<div class="row">
+  <div class="col-md-10">
+    <div  class="btn-group pad">
+      <%= f.label 'Select Category' %>
+      <%= select_tag 'category_id', options_from_collection_for_select(Category.all,:id, :name, :selected=>@post.category_id), { :class => 'btn btn-default col-md-12' } %>
+      <!--<select  class="btn btn-default col-md-12">-->
+        <!--<option>select category</option>-->
+        <!--<option>jation</option>-->
+        <!--<option>jation</option>-->
+        <!--<option>jation</option>-->
+        <!--<option>jation</option>-->
+        <!--<option>jation</option>-->
+        <!--<option>jation</option>-->
+
+      <!--</select>-->
+    </div>
+    <div class="input-group margin col-md-12">
+      <%= f.text_field :title, :class=>'form-control', :placeholder=>"Title hare.." %>
+    </div><!-- /input-group -->
+    <div class="form-group pad">
+      <div class="btn btn-success btn-file">
+        <i class="fa fa-paperclip"></i> Attachment
+        <%= f.file_field :photo, :class=>'' %>
+      </div>
+      <p class="help-block">Max. 5MB</p>
+    </div>
+    <div class="input-group margin col-md-12">
+      <%= f.label 'Give a video link if you have' %>
+      <%= f.text_field :video, :class=>'form-control', :placeholder=>"Youtube Embed Code...." %>
+    </div>
+  </div>
+</div>
+<div class='box-body pad'>
+  <%= f.label 'News Body' %>
+  <%= f.text_area(:content, size: '50x10') %>
+
+</div>
+<div class="input-group margin pad">
+  <%= f.submit :class=>'btn btn-primary' %>
+</div><!-- /btn-group -->
+<% end %>

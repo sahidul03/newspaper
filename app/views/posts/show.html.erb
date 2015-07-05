@@ -1,0 +1,64 @@
+<div class="box box-info">
+  <div class="box-header">
+    <i class="fa fa-check"></i>
+    <h3 class="box-title"> News Details</h3>
+    <%= link_to posts_path, :class=>'pull-right btn btn-default category_create_button' do %>
+        All News
+    <% end %>
+    <%= link_to new_post_path, :class=>'pull-right btn btn-default category_create_button' do %>
+        Create new News <i class="fa fa-check"></i>
+    <% end %>
+    <%= link_to edit_post_path(@post), :class=>'pull-right btn btn-default category_create_button' do %>
+        <i class='fa fa-align-left fa-edit'></i> edit
+    <% end %>
+    <%= link_to post_path(@post), :class=>'pull-right btn btn-default category_create_button', method: :delete,data: { confirm: 'Are you sure?' } do %>
+        <i class='fa fa-align-right fa-crop'></i> delete
+    <% end %>
+    <!-- tools box -->
+
+  </div>
+</div>
+
+<!-- Main content -->
+<section class="content">
+
+  <div class='row'>
+    <div class='col-md-11'>
+      <div class='box box-info'>
+        <div class='box-header'>
+          <h3 class='box-title'>Category:  <small style="font-size:17px"><%= @post.category.name %></small></h3>
+          <!-- tools box -->
+        </div>
+        <div class='box-header'>
+          <h3 class='box-title'>Title:  <small style="font-size:17px"><%= @post.title %></small></h3>
+          <!-- tools box -->
+        </div>
+        <!--<%#= render 'posts/form' %>-->
+        <div class="post_image_show_div">
+          <% if  @post.photo %>
+              <h3 class='box-title'>Image: </h3>
+              <%= image_tag(@post.photo, :class => "post_image_show_img") if @post.photo %>
+          <% end %>
+        </div>
+        <div class="post_video_show_div">
+          <% if  @post.video %>
+              <h3 class='box-title'>Video: </h3>
+              <div><%= @post.video if @post.video %></div>
+          <% end %>
+        </div>
+        <div class="post_video_show_div">
+              <h3 class='box-title'>News Body: </h3>
+              <%= @post.content %>
+        </div>
+
+
+      </div><!-- /.box -->
+
+
+    </div><!-- /.col-->
+  </div><!-- ./row -->
+
+
+
+</section><!-- /.content -->
+

@@ -1,0 +1,34 @@
+<!-- Main content -->
+<section class="content">
+
+
+
+  <!-- Main row -->
+  <div class="row">
+    <!-- Left col -->
+    <section class="col-lg-6 connectedSortable">
+      <!-- Box (with bar chart) -->
+      <!-- quick email widget -->
+      <div class="box box-info">
+        <div class="box-header">
+          <i class="fa fa-check"></i>
+          <h3 class="box-title">Create category</h3>
+          <!-- tools box -->
+
+        </div>
+        <%= render 'categories/form' %>
+      </div>
+    </section><!-- /.Left col -->
+    <!-- right col (We are only adding the ID to make the widgets sortable)-->
+    <section class="col-lg-6 connectedSortable">
+      <!-- Map box -->
+      <%= render 'admins/visitor_map' %>
+      <!-- /.box -->
+      <!--to to list box-->
+      <%= render 'admins/visitor_to_do_list' %>
+      <!-- /.box -->
+
+    </section><!-- right col -->
+  </div><!-- /.row (main row) -->
+
+</section><!-- /.content -->
