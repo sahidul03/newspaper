@@ -1,0 +1,23 @@
+
+/*------------------------------------------------------------------------------
+    Body
+------------------------------------------------------------------------------*/
+body {
+    font: 22px/25px "BN BIDISHA Opentype",Verdana,Arial,Helvetica,sans-serif;
+}
+
+/*------------------------------------------------------------------------------
+    Headings
+    (headings, menu links, dropcap first letter, panel subtitle)
+------------------------------------------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav.site_navigation ul.menu > li > a,
+.dropcap:first-letter,
+.panel_title span {
+    font: 22px/25px "BN BIDISHA Opentype",Verdana,Arial,Helvetica,sans-serif;
+}

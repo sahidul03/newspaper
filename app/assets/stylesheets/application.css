@@ -10,6 +10,50 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ <link rel="icon" href="favicon.png">
+
+ *= require normalize
+ *= require font-awesome.min
+ *= require weather
+ *= require colors
+ *= require typography
+ *= require style
+
+
+<!-- bootstrap 3.0.2 -->
+   *= require bootstrap.min
+
+  <!-- font Awesome -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <!-- Ionicons -->
+  <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
+   *= require ionicons.min
+
+  <!-- Morris chart -->
+  <link href="css/morris/morris.css" rel="stylesheet" type="text/css" />
+     *= require morris
+
+  <!-- jvectormap -->
+  <link href="css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+       *= require jquery-jvectormap-1.2.2
+
+  <!-- fullCalendar -->
+  <link href="css/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />
+         *= require fullcalendar
+
+  <!-- Daterange picker -->
+  <link href="css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+  *= require daterangepicker-bs3
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link href="css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
+    *= require bootstrap3-wysihtml5.min
+
+  <!-- Theme style -->
+  <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
+      *= require AdminLTE
+
+
+
  *= require_tree .
  *= require_self
  */
