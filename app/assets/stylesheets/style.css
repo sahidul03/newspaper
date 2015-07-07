@@ -3722,3 +3722,10 @@ span.format {
 .post_image_show_img{
     width: 300px;
 }
+.post_video_show_div iframe{
+    width: 500px;
+    height: 400px;
+}
+#category_id_select_post_page{
+    width: 200px;
+}

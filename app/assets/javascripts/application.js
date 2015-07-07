@@ -15,6 +15,7 @@
 //= require jqueryuiscript.min
 //= require jquery_ujs
 //= require turbolinks
+//= require custom_newspaper
 
 //user dashboard
 //= require easing.min

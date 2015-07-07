@@ -7,6 +7,16 @@ class CategoriesController < ApplicationController
     render layout: 'admin_layout'
   end
 
+  def show
+    @category=Category.find(params[:id]) rescue nil
+    unless @category
+      redirect_to posts_path
+    else
+      @posts=@category.posts.where(["created_at > ?", 48.hours.ago])
+    end
+    render layout: 'admin_layout'
+  end
+
   def new
      @category=Category.new
      render layout: 'admin_layout'

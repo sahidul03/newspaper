@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   resources :users
   resources :admins
   resources :categories
-  resources :posts
+  resources :posts do
+    collection do
+      get 'post_search'
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

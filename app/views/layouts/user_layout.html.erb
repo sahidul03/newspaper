@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Newspaper</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <title>convergentsoft news</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.png">
+
+  <!--&lt;!&ndash; Styles &ndash;&gt;-->
+  <!--<link rel="stylesheet" href="css/normalize.css">-->
+  <!--<link rel="stylesheet" href="css/font-awesome.min.css">-->
+  <!--<link rel="stylesheet" href="css/weather.css">-->
+  <!--<link rel="stylesheet" href="css/colors.css">-->
+  <!--<link rel="stylesheet" href="css/typography.css">-->
+  <!--<link rel="stylesheet" href="css/style.css">-->
+
+
+  <!--Responsive-->
+  <link rel="stylesheet" type="text/css" media="(max-width:768px)" href="/css/responsive-0.css">
+  <link rel="stylesheet" type="text/css" media="(min-width:769px) and (max-width:992px)" href="/css/responsive-768.css">
+  <link rel="stylesheet" type="text/css" media="(min-width:993px) and (max-width:1200px)" href="/css/responsive-992.css">
+  <link rel="stylesheet" type="text/css" media="(min-width:1201px)" href="/css/responsive-1200.css">
+  <link href='http://fonts.googleapis.com/css?family=Titillium+Web:300,300italic,400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<p class="navbar-text pull-right">
+  <% if user_signed_in? %>
+      Logged in as <strong><%= current_user.email %></strong>.
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <% else %>
+      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+  <% end %>
+
+
+  <div id="wrapper" class="wide">
+    <%= render 'layouts/header_user' %>
+    <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+    <%= yield %>
+    <%= render 'layouts/footer_user' %>
+  </div>
+
+
+  </body>
+</html>

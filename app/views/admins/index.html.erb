@@ -33,43 +33,22 @@
   </div>
   <div class="table-responsive">
     <!-- .table - Uses sparkline charts-->
-    <table class="table table-striped">
-      <tr>
-        <th>Category name</th>
-        <th>Date</th>
+    <% if @categories.any? %>
+        <table class="table table-striped">
+          <tr>
+            <th>Category name</th>
+            <th>Date</th>
+          </tr>
+          <% @categories.each do |category| %>
+              <tr>
+                <td><%= link_to category.name, category_path(category) %></td>
 
-      </tr>
-      <tr>
-        <td><a href="#">Jatio</a></td>
+                <td><%= category.created_at.strftime('%d %B, %y') %></td>
+              </tr>
+        <% end %>
+        </table><!-- /.table -->
+    <% end %>
 
-        <td>12-05-2015</td>
-      </tr>
-      <tr>
-        <td><a href="#">Jatio</a></td>
-
-        <td>12-05-2015</td>
-      </tr>
-      <tr>
-        <td><a href="#">Jatio</a></td>
-
-        <td>12-05-2015</td>
-      </tr>
-      <tr>
-        <td><a href="#">Jatio</a></td>
-
-        <td>12-05-2015</td>
-      </tr>
-      <tr>
-        <td><a href="#">Jatio</a></td>
-
-        <td>12-05-2015</td>
-      </tr>
-      <tr>
-        <td><a href="#">Jatio</a></td>
-
-        <td>12-05-2015</td>
-      </tr>
-    </table><!-- /.table -->
   </div>
 
 </section><!-- /.Left col -->

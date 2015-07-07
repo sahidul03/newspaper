@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   def index
     last_day_date=Date.yesterday
     # @posts=Post.where(:all, :conditions =>["date(created_at) BETWEEN ? AND ? ", 2.days.ago,Time.now])
-    @posts=Post.where(["created_at > ?", 24.hours.ago])
+    @posts=Post.where(["created_at > ?", 48.hours.ago])
     render layout: 'admin_layout'
   end
 
@@ -79,6 +79,10 @@ class PostsController < ApplicationController
     @post.destroy
     flash[:notice] = "News deleted successfully."
     redirect_to posts_path
+  end
+
+  def post_search
+    @searched_posts=Post.where("title like ?", "%#{params[:search_string]}%").first(15)
   end
 
   private

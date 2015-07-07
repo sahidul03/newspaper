@@ -26,9 +26,11 @@
           </tr>
           <% @categories.each do |category| %>
               <tr>
-                <td><a href="#"><%= category.name %></a></td>
+                <td>
+                  <%= link_to category.name, category_path(category) %>
+                </td>
 
-                <td>12-05-2015</td>
+                <td><%= category.created_at.strftime('%d %B, %y') %></td>
                 <td class="text-right">
 
                   <div class="btn-group">
