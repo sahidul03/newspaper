@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :video
       t.integer :view_count, :default => 0
       t.references :category, index: true
+      t.references :division, index: true
 
       t.timestamps
     end

@@ -88,7 +88,7 @@ class PostsController < ApplicationController
   private
 
   def params_post
-    params.require(:post).permit(:title,:content,:photo,:video).merge(:category_id=>params[:category_id])
+    params.require(:post).permit(:title,:content,:photo,:video).merge(:category_id=>params[:category_id],:division_id=>params[:division_id])
   end
 
 end

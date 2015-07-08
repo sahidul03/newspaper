@@ -4,4 +4,5 @@ class Post < ActiveRecord::Base
   mount_uploader :photo, PostImageUploader
 
   belongs_to :category
+  belongs_to :division
 end

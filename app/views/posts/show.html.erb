@@ -53,6 +53,12 @@
             <h2 class="timeline-header"><a href="#">Title :</a> <%= @post.title %></h2>
             <div class='timeline-footer'>
               <a class="btn btn-primary btn-xs"><%= @post.category.name %></a>
+              <% if @post.division %>
+                    <a class="btn btn-primary btn-xs"><%= @post.division.name %></a>
+              <% end %>
+              <% if @post.view_count %>
+                  <a class="btn btn-primary btn-xs">Views : <%= @post.view_count %></a>
+              <% end %>
 
             </div>
             <div class="timeline-body">

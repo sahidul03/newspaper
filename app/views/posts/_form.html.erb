@@ -4,16 +4,10 @@
     <div  class="btn-group pad">
       <%= f.label 'Select Category' %>
       <%= select_tag 'category_id', options_from_collection_for_select(Category.all,:id, :name, :selected=>@post.category_id), { :class => 'btn btn-default col-md-12' } %>
-      <!--<select  class="btn btn-default col-md-12">-->
-        <!--<option>select category</option>-->
-        <!--<option>jation</option>-->
-        <!--<option>jation</option>-->
-        <!--<option>jation</option>-->
-        <!--<option>jation</option>-->
-        <!--<option>jation</option>-->
-        <!--<option>jation</option>-->
-
-      <!--</select>-->
+    </div>
+    <div  class="btn-group pad">
+      <%= f.label 'Select Division (optional)' %>
+      <%= select_tag 'division_id', options_from_collection_for_select(Division.all,:id, :name, :selected=>@post.division_id), {:prompt => 'Select Division', :class => 'btn btn-default col-md-12' } %>
     </div>
     <div class="input-group margin col-md-12">
       <%= f.text_field :title, :class=>'form-control', :placeholder=>"Title hare.." %>

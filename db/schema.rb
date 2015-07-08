@@ -11,9 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150705112231) do
+ActiveRecord::Schema.define(version: 20150708174241) do
 
   create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "divisions", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -26,11 +32,13 @@ ActiveRecord::Schema.define(version: 20150705112231) do
     t.string   "video"
     t.integer  "view_count",  default: 0
     t.integer  "category_id"
+    t.integer  "division_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "posts", ["category_id"], name: "index_posts_on_category_id"
+  add_index "posts", ["division_id"], name: "index_posts_on_division_id"
 
   create_table "users", force: true do |t|
     t.string   "name"
