@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       get 'previous_record'
     end
   end
+  resources :galleries
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
