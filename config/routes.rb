@@ -13,6 +13,11 @@ Rails.application.routes.draw do
       get 'post_search'
     end
   end
+  resources :archives do
+    collection do
+      get 'previous_record'
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

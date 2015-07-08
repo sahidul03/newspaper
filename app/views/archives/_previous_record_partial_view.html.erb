@@ -1,0 +1,29 @@
+<% if @posts.any? %>
+    <table class="table table-hover">
+      <tr>
+        <th>Category</th>
+        <th>Date</th>
+        <th>Title</th>
+
+        <th>Edit/Delete</th>
+      </tr>
+      <% @posts.each do |post|  %>
+          <tr>
+            <td><%= post.category.name %></td>
+            <td><%= post.created_at.strftime('%d %B, %y') %></td>
+            <td><%= link_to post.title, post_path(post) %></td>
+            <td>
+              <div class="btn-group">
+                <%= link_to edit_post_path(post), :class=>'btn btn-info' do %>
+                    <i class='fa fa-align-left fa-edit'></i> edit
+                <% end %>
+                <%= link_to post_path(post), :class=>'btn btn-info', method: :delete,data: { confirm: 'Are you sure?' } do %>
+                    <i class='fa fa-align-right fa-crop'></i> delete
+                <% end %>
+                <%= link_to 'show', post_path(post), :class => 'btn btn-info' %>
+              </div>
+            </td>
+          </tr>
+      <% end %>
+    </table>
+<% end %>

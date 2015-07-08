@@ -12,23 +12,10 @@
 
   <!-- quick email widget -->
   <div class="box box-info">
-    <div class="box-header">
-      <i class="fa fa-check"></i>
-      <h3 class="box-title">Creat category</h3>
-      <!-- tools box -->
-
-    </div>
-    <div class="box-body">
-      <form action="#" method="post">
-        <div class="form-group">
-          <input type="email" class="form-control" name="emailto" placeholder="category name..."/>
-        </div>
-
-
-      </form>
-    </div>
     <div class="box-footer clearfix">
-      <button class="pull-right btn btn-default" id="sendEmail">Create <i class="fa fa-check"></i></button>
+      <%= link_to new_category_path do %>
+          <button class="pull-right btn btn-default" id="sendEmail">Category Create  <i class="fa fa-check"></i></button>
+    <% end %>
     </div>
   </div>
   <div class="table-responsive">

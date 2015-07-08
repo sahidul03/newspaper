@@ -3729,3 +3729,11 @@ span.format {
 #category_id_select_post_page{
     width: 200px;
 }
+
+/*Archive*/
+.date_field_archive{
+    width: 250px !important;
+}
+#category_id_select_archive_post{
+    width: 200px;
+}

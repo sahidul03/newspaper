@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20150705112231) do
     t.text     "content"
     t.string   "photo"
     t.string   "video"
+    t.integer  "view_count",  default: 0
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"

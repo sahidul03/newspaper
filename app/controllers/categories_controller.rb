@@ -59,6 +59,7 @@ class CategoriesController < ApplicationController
     redirect_to categories_path
   end
 
+
   private
 
   def layout_load

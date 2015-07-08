@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.text :content
       t.string :photo
       t.string :video
+      t.integer :view_count, :default => 0
       t.references :category, index: true
 
       t.timestamps
