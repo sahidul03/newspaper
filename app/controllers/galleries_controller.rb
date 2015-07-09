@@ -9,6 +9,19 @@ class GalleriesController < ApplicationController
     @gallery=Gallery.new
     render layout: 'admin_layout'
   end
+  def edit
+    @gallery=Gallery.find(params[:id])
+    render layout: 'admin_layout'
+  end
+
+  def show
+    @gallery=Gallery.find(params[:id]) rescue nil
+    unless @gallery
+      redirect_to galleries_path
+    else
+      render layout: 'admin_layout'
+    end
+  end
 
   def create
     @gallery=Gallery.new
@@ -26,6 +39,17 @@ class GalleriesController < ApplicationController
     else
       flash[:alert] = "Gallery name can't be blank."
       redirect_to new_gallery_path
+    end
+  end
+
+  def update
+    @gallery=Gallery.find(params[:id])
+    if @gallery.update(:title=>params[:gallery][:title])
+      flash[:notice] = "Gallery name updated successfully."
+      redirect_to gallery_path(@gallery)
+    else
+      flash[:alert] = "Gallery name can't be blank."
+      redirect_to edit_gallery_path(@gallery)
     end
   end
 

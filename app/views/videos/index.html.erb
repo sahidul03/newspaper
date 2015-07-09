@@ -1,0 +1,66 @@
+<div class="box box-info">
+  <div class="box-header">
+    <i class="fa fa-check"></i>
+    <h3 class="box-title"> All videos</h3>
+    <%= link_to new_video_path, :class=>'pull-right btn btn-default category_create_button' do %>
+        Upload video <i class="fa fa-video-camera"></i>
+    <% end %>
+    <!-- tools box -->
+
+  </div>
+</div>
+<!-- Main content -->
+<section class="content">
+
+  <!-- row -->
+  <div class="row">
+    <div class="col-md-12">
+      <!-- The time line -->
+      <ul class="timeline">
+        <!-- timeline time label -->
+        <li class="time-label">
+                                    <span class="bg-red">
+                                      Video Gallery
+                                    </span>
+        </li>
+        <!-- /.timeline-label -->
+        <!-- timeline item -->
+
+        <!-- END timeline item -->
+
+        <!-- timeline item -->
+
+        <% if @videos.any? %>
+            <li>
+              <i class="fa fa-video-camera bg-maroon"></i>
+              <div class="timeline-item row">
+                <% @videos.each do |video|  %>
+                    <div class="col-md-4">
+                      <%= link_to video_path(video) do %>
+                      <div class="timeline-body video_gallery_iframe">
+                        <%= video.url.html_safe %>
+                      </div>
+                      <div class="video_gallery_iframe_cover_div"></div>
+                          <span class="time"><i class="fa fa-calendar"></i> <%= video.created_at.strftime('%d %B, %y') %></span>
+                          <p class="timeline-header"> <%= video.title if video.title %></p>
+                      <% end %>
+                    </div>
+                <% end %>
+              </div>
+            </li>
+        <% end %>
+        <!-- END timeline item -->
+        <!-- timeline item -->
+
+        <!-- END timeline item -->
+        <li>
+          <i class="fa fa-clock-o"></i>
+        </li>
+      </ul>
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+
+
+
+</section><!-- /.content -->
+<!-- Main content -->

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708184808) do
+ActiveRecord::Schema.define(version: 20150709095337) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(version: 20150708184808) do
     t.datetime "updated_at"
   end
 
+  create_table "headlines", force: true do |t|
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "headlines", ["post_id"], name: "index_headlines_on_post_id", using: :btree
+
   create_table "photos", force: true do |t|
     t.string   "image"
     t.string   "title"
@@ -39,7 +47,7 @@ ActiveRecord::Schema.define(version: 20150708184808) do
     t.datetime "updated_at"
   end
 
-  add_index "photos", ["gallery_id"], name: "index_photos_on_gallery_id"
+  add_index "photos", ["gallery_id"], name: "index_photos_on_gallery_id", using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -53,8 +61,8 @@ ActiveRecord::Schema.define(version: 20150708184808) do
     t.datetime "updated_at"
   end
 
-  add_index "posts", ["category_id"], name: "index_posts_on_category_id"
-  add_index "posts", ["division_id"], name: "index_posts_on_division_id"
+  add_index "posts", ["category_id"], name: "index_posts_on_category_id", using: :btree
+  add_index "posts", ["division_id"], name: "index_posts_on_division_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -72,7 +80,14 @@ ActiveRecord::Schema.define(version: 20150708184808) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "videos", force: true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

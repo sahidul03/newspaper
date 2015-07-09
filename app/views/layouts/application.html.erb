@@ -41,9 +41,8 @@
       <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
   <% end %>
 
-
+</p>
 <div id="wrapper" class="wide">
-  <%= render 'layouts/header_user' %>
   <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
   <% end %>
@@ -51,7 +50,6 @@
       <p class="alert alert-danger"><%= alert %></p>
   <% end %>
   <%= yield %>
-  <%= render 'layouts/footer_user' %>
 </div>
 
 

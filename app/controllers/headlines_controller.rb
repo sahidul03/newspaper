@@ -1,0 +1,2 @@
+class HeadlinesController < ApplicationController
+end

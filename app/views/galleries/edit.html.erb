@@ -1,0 +1,58 @@
+<!-- Main content -->
+<section class="content">
+
+
+
+  <!-- Main row -->
+  <div class="row">
+    <!-- Left col -->
+    <section class="col-lg-6 connectedSortable">
+      <!-- Box (with bar chart) -->
+      <!-- quick email widget -->
+      <div class="box box-info">
+        <div class="box-header">
+          <i class="fa fa-check"></i>
+          <h3 class="box-title">Create Gallery</h3>
+          <!-- tools box -->
+
+        </div>
+        <%= form_for @gallery do |f| %>
+            <% if @gallery.errors.any? %>
+                <div id="error_explanation">
+                  <h2>
+                    <%= pluralize(@gallery.errors.count, "error") %> prohibited
+                    this article from being saved:
+                  </h2>
+                  <ul>
+                    <% @gallery.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                    <% end %>
+                  </ul>
+                </div>
+            <% end %>
+            <div class="box-body">
+              <div class="form-group">
+                <%= f.text_field :title , :class=>'form-control', placeholder: 'Gallery title...' %>
+                <!--<input type="email" class="form-control" name="emailto" placeholder="category name..."/>-->
+              </div>
+            </div>
+            <div class="box-footer clearfix">
+              <%= f.submit :class=>'pull-right btn btn-default' %>
+              <!--<button class="pull-right btn btn-default" id="sendEmail">Create <i class="fa fa-check"></i></button>-->
+            </div>
+        <% end %>
+      </div>
+    </section><!-- /.Left col -->
+    <!-- right col (We are only adding the ID to make the widgets sortable)-->
+    <section class="col-lg-6 connectedSortable">
+      <!-- Map box -->
+      <%= render 'admins/visitor_map' %>
+      <!-- /.box -->
+      <!--to to list box-->
+      <%= render 'admins/visitor_to_do_list' %>
+      <!-- /.box -->
+
+    </section><!-- right col -->
+  </div><!-- /.row (main row) -->
+
+</section><!-- /.content -->

@@ -1,0 +1,32 @@
+<%= form_for @video do |f| %>
+    <% if @video.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@video.errors.count, "error") %> prohibited
+            this article from being saved:
+          </h2>
+          <ul>
+            <% @video.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="box-body">
+      <div class="form-group">
+        <%= f.text_field :title , :class=>'form-control', placeholder: 'video title...' %>
+        <!--<input type="email" class="form-control" name="emailto" placeholder="category name..."/>-->
+      </div>
+    </div>
+    <div class="box-body">
+      <div class="form-group">
+        <%= f.label 'Give youtube iframe url of a video' %>
+        <%= f.text_field :url , :class=>'form-control', placeholder: 'Youtube iframe url' %>
+        <!--<input type="email" class="form-control" name="emailto" placeholder="category name..."/>-->
+      </div>
+    </div>
+    <div class="box-footer clearfix">
+      <%= f.submit 'Submit', :class=>'pull-right btn btn-default' %>
+      <!--<button class="pull-right btn btn-default" id="sendEmail">Create <i class="fa fa-check"></i></button>-->
+    </div>
+<% end %>

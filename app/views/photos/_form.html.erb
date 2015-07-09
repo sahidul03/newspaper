@@ -1,0 +1,32 @@
+<%= form_for [@gallery,@photo] do |f| %>
+    <% if @photo.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@photo.errors.count, "error") %> prohibited
+            this article from being saved:
+          </h2>
+          <ul>
+            <% @photo.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="box-body">
+      <div class="form-group">
+        <%= f.text_field :title , :class=>'form-control', placeholder: 'Photo title...' %>
+        <!--<input type="email" class="form-control" name="emailto" placeholder="category name..."/>-->
+      </div>
+    </div>
+    <div class="form-group pad">
+      <div class="btn btn-success btn-file">
+        <i class="fa fa-paperclip"></i> Photo
+        <%= f.file_field :image %>
+      </div>
+      <p class="help-block">Max. 3MB per Photo</p>
+    </div>
+    <div class="box-footer clearfix">
+      <%= f.submit 'Submit', :class=>'pull-right btn btn-default' %>
+      <!--<button class="pull-right btn btn-default" id="sendEmail">Create <i class="fa fa-check"></i></button>-->
+    </div>
+<% end %>

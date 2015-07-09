@@ -1,0 +1,69 @@
+<div class="box box-info">
+  <div class="box-header">
+    <i class="fa fa-video-camera"></i>
+    <h3 class="box-title"><%=link_to 'Video Gallery', videos_path %></h3>
+    <%= link_to new_video_path, :class=>'pull-right btn btn-default category_create_button' do %>
+        Upload video <i class="fa fa-video-camera"></i>
+    <% end %>
+    <!-- tools box -->
+
+  </div>
+</div>
+<!-- Main content -->
+<section class="content">
+
+  <!-- row -->
+  <div class="row">
+    <div class="col-md-12">
+      <!-- The time line -->
+      <ul class="timeline">
+        <!-- timeline time label -->
+        <li class="time-label">
+                                    <span class="bg-red">
+                                      Watch
+                                    </span>
+        </li>
+        <!-- /.timeline-label -->
+        <!-- timeline item -->
+
+        <!-- END timeline item -->
+
+        <!-- timeline item -->
+
+        <% if @video %>
+            <li>
+              <i class="fa fa-video-camera bg-maroon"></i>
+              <div class="timeline-item row">
+                <span class="time">
+                      <%= link_to edit_video_path(@video), :class=>'btn btn-primary btn-xs' do %>
+                             <i class='fa fa-align-left fa-edit'></i> edit
+                       <% end %>
+                  <%= link_to video_path(@video), :class=>'btn btn-primary btn-xs', method: :delete,data: { confirm: 'Are you sure?' } do %>
+                             <i class='fa fa-align-right fa-crop'></i> delete
+                      <% end %>
+                    </span>
+                <h3 class="timeline-header"> <%= @video.title if @video.title %></h3>
+
+                <div class="col-md-12">
+                          <div class="timeline-body">
+                            <%= @video.url.html_safe %>
+                          </div>
+                    </div>
+              </div>
+            </li>
+        <% end %>
+        <!-- END timeline item -->
+        <!-- timeline item -->
+
+        <!-- END timeline item -->
+        <li>
+          <i class="fa fa-clock-o"></i>
+        </li>
+      </ul>
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+
+
+
+</section><!-- /.content -->
+<!-- Main content -->
