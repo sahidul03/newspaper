@@ -6,4 +6,6 @@ class Post < ActiveRecord::Base
   belongs_to :category
   belongs_to :division
   has_one :headline
+  has_one :special_news
+  has_one :slider_news
 end

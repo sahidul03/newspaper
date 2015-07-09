@@ -3732,7 +3732,7 @@ span.format {
 
 /*Archive*/
 .date_field_archive{
-    width: 250px !important;
+    width: 220px !important;
 }
 #category_id_select_archive_post{
     width: 200px;
@@ -3752,4 +3752,10 @@ span.format {
     opacity: .5;
     z-index: 89789789;
     width: 100%;
+}
+#category_id_for_headline_add{
+    width: 200px;
+}
+#date_for_headline_add{
+    width: 220px !important;
 }

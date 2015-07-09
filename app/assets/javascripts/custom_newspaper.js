@@ -57,5 +57,25 @@ $(document).ready(function(){
                 });
             };
         };
+        this.SetNewToHeadlines=new function(){
+            $('#category_id_for_headline_add').click(function(){
+                var date=$('#archive_date_for_headline_add').val();
+                var category_id=$('#category_id_for_headline_add').val();
+                $.ajax({
+                    url:'/headlines/post_search_for_headline',
+                    data: {date: date,category_id:category_id},
+                    type: 'get'
+                });
+            });
+            $('#archive_date_for_headline_add').change(function(){
+                var date=$('#archive_date_for_headline_add').val();
+                var category_id=$('#category_id_for_headline_add').val();
+                $.ajax({
+                    url:'/headlines/post_search_for_headline',
+                    data: {date: date,category_id:category_id},
+                    type: 'get'
+                });
+            });
+        };
     };
 })

@@ -22,7 +22,13 @@ Rails.application.routes.draw do
     resources :photos
   end
   resources :videos
-  resources :headlines
+  resources :headlines do
+    collection do
+      get 'post_search_for_headline'
+    end
+  end
+  resources :special_news
+  resources :slider_news
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

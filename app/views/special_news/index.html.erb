@@ -10,7 +10,7 @@
           <!-- tools box -->
 
         </div>
-        <%= form_for @headline do |f| %>
+        <%= form_for @sp_new do |f| %>
             <div class="box-tools">
               <%= select_tag 'category_id_for_headline_add', options_from_collection_for_select(Category.all,:id, :name), {:prompt=>'Select Category', :class => 'form-control input-sm pull-right' } %>
               <!--<input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>-->
@@ -39,45 +39,45 @@
       <div class="box box-info">
         <div class="box-header">
           <i class="fa fa-check"></i>
-          <h3 class="box-title">Headlines</h3>
+          <h3 class="box-title">Special News</h3>
           <!-- tools box -->
 
         </div>
-          <!-- Box (with bar chart) -->
-          <!-- quick email widget -->
+        <!-- Box (with bar chart) -->
+        <!-- quick email widget -->
 
 
         <div class="table-responsive">
-        <!-- .table - Uses sparkline charts-->
-        <% if @headlines.any? %>
-            <table class="table table-striped">
-              <tr>
-                <th class="col-md-8">Headline title</th>
-                <th class="col-md-2">Date</th>
-                <th class="text-right col-md-2">Delete</th>
-              </tr>
-              <% @headlines.each do |headline| %>
-                  <tr>
-                    <td>
-                      <%= link_to headline.post.title, post_path(headline.post) %>
-                    </td>
+          <!-- .table - Uses sparkline charts-->
+          <% if @special_news.any? %>
+              <table class="table table-striped">
+                <tr>
+                  <th class="col-md-8">Headline title</th>
+                  <th class="col-md-2">Date</th>
+                  <th class="text-right col-md-2">Delete</th>
+                </tr>
+                <% @special_news.each do |sp_news| %>
+                    <tr>
+                      <td>
+                        <%= link_to sp_news.post.title, post_path(sp_news.post) %>
+                      </td>
 
-                    <td><%= headline.post.created_at.strftime('%d %B, %y') %></td>
-                    <td class="text-right">
+                      <td><%= sp_news.post.created_at.strftime('%d %B, %y') %></td>
+                      <td class="text-right">
 
-                      <div class="btn-group">
-                        <%= link_to headline_path(headline), :class=>'btn btn-info', method: :delete,data: { confirm: 'Are you sure?' } do %>
-                            <i class='fa fa-align-center fa-crop'></i> delete
-                        <% end %>
-                      </div>
+                        <div class="btn-group">
+                          <%= link_to special_news_path(sp_news), :class=>'btn btn-info', method: :delete,data: { confirm: 'Are you sure?' } do %>
+                              <i class='fa fa-align-center fa-crop'></i> delete
+                          <% end %>
+                        </div>
 
-                    </td>
-                  </tr>
-              <% end %>
-            </table><!-- /.table -->
-        <% end %>
+                      </td>
+                    </tr>
+                <% end %>
+              </table><!-- /.table -->
+          <% end %>
 
-      </div>
+        </div>
       </div>
     </section><!-- /.Left col -->
     <!-- right col (We are only adding the ID to make the widgets sortable)-->
@@ -87,24 +87,24 @@
 </section><!-- /.content -->
 
 <script>
-  $(document).ready(function(){
-  $('#category_id_for_headline_add').click(function(){
-      var date=$('#archive_date_for_headline_add').val();
-      var category_id=$('#category_id_for_headline_add').val();
-      $.ajax({
-          url:'/headlines/post_search_for_headline',
-          data: {date: date,category_id:category_id},
-          type: 'get'
-      });
-  });
-  $('#archive_date_for_headline_add').change(function(){
-      var date=$('#archive_date_for_headline_add').val();
-      var category_id=$('#category_id_for_headline_add').val();
-      $.ajax({
-          url:'/headlines/post_search_for_headline',
-          data: {date: date,category_id:category_id},
-          type: 'get'
-      });
-  });
-  });
+    $(document).ready(function(){
+        $('#category_id_for_headline_add').click(function(){
+            var date=$('#archive_date_for_headline_add').val();
+            var category_id=$('#category_id_for_headline_add').val();
+            $.ajax({
+                url:'/headlines/post_search_for_headline',
+                data: {date: date,category_id:category_id},
+                type: 'get'
+            });
+        });
+        $('#archive_date_for_headline_add').change(function(){
+            var date=$('#archive_date_for_headline_add').val();
+            var category_id=$('#category_id_for_headline_add').val();
+            $.ajax({
+                url:'/headlines/post_search_for_headline',
+                data: {date: date,category_id:category_id},
+                type: 'get'
+            });
+        });
+    });
 </script>

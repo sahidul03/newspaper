@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709095337) do
+ActiveRecord::Schema.define(version: 20150709133213) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -63,6 +63,22 @@ ActiveRecord::Schema.define(version: 20150709095337) do
 
   add_index "posts", ["category_id"], name: "index_posts_on_category_id", using: :btree
   add_index "posts", ["division_id"], name: "index_posts_on_division_id", using: :btree
+
+  create_table "slider_news", force: true do |t|
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "slider_news", ["post_id"], name: "index_slider_news_on_post_id", using: :btree
+
+  create_table "special_news", force: true do |t|
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "special_news", ["post_id"], name: "index_special_news_on_post_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
