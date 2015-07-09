@@ -5,5 +5,5 @@ class Post < ActiveRecord::Base
 
   belongs_to :category
   belongs_to :division
-  has_one :headline, dependent: destroy
+  has_one :headline
 end
