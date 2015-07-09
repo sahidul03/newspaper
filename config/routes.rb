@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   end
   resources :special_news
   resources :slider_news
+  resources :breaking_news
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
