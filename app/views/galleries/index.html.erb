@@ -30,14 +30,14 @@
           </div>
         </div><!-- /.box-header -->
         <div class="box-body table-responsive no-padding">
-          <% if @gallery.any? %>
+          <% if @galleries.any? %>
               <table class="table table-hover">
                 <tr>
                   <th>Gallery</th>
                   <th>Date</th>
                   <th>Edit/Delete</th>
                 </tr>
-                <% @gallery.each do |gallery|  %>
+                <% @galleries.each do |gallery|  %>
                     <tr>
                       <td><%= link_to gallery.title, gallery_path(gallery) %></td>
                       <td><%= gallery.created_at.strftime('%d %B, %y') %></td>

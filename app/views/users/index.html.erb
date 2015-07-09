@@ -11,45 +11,31 @@
 <!-- Content slider -->
 <div class="content_slider">
   <ul>
-    <!-- Item -->
-    <li>
-      <a href="post_single.html"><img height="350" src="/images/5.jpg" alt="Slider"></a>
-      <div class="slider_caption">
-        <div class="thumb_meta">
-          <span class="category" style="background-color: #2ECC71"><a href="#">জাতীয়</a></span>
-          <span class="comments"><a href="post_single.html">358 Comments</a></span>
-        </div>
-        <div class="thumb_link">
-          <h3><a href="post_single.html">যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা যাবে না</a></h3>
-        </div>
-      </div>
-    </li><!-- End Item -->
-    <!-- Item -->
-    <li>
-      <a href="post_single.html"><img height="350" src="/images/7.jpg" alt="Slider"></a>
-      <div class="slider_caption">
-        <div class="thumb_meta">
-          <span class="category" style="background-color: #D2527F"><a href="blog.html">জাতীয়</a></span>
-          <span class="comments"><a href="post_single.html">358 Comments</a></span>
-        </div>
-        <div class="thumb_link">
-          <h3><a href="post_single.html">প্রধানমন্ত্রীর সঙ্গে বিদায়ী সেনাপ্রধানের সাক্ষাৎ</a></h3>
-        </div>
-      </div>
-    </li><!-- End Item -->
-    <!-- Item -->
-    <li>
-      <a href="post_single.html"><img height="350" src="/images/8.jpg" alt="Slider"></a>
-      <div class="slider_caption">
-        <div class="thumb_meta">
-          <span class="category" style="background-color: #2574A9"><a href="blog.html">জাতীয়</a></span>
-          <span class="comments"><a href="post_single.html">358 Comments</a></span>
-        </div>
-        <div class="thumb_link">
-          <h3><a href="post_single.html">প্রধানমন্ত্রীর সঙ্গে বিদায়ী সেনাপ্রধানের সাক্ষাৎ</a></h3>
-        </div>
-      </div>
-    </li><!-- End Item -->
+    <% if @sl_news.any?%>
+    <% @sl_news.each do |sl_news| %>
+            <li>
+              <%= link_to post_path(sl_news.post) do %>
+                  <%= image_tag sl_news.post.photo, alt: 'Slider', height: '350' %>
+              <% end %>
+              <!--<a href="post_single.html"><img height="350" src="/images/5.jpg" alt="Slider"></a>-->
+              <div class="slider_caption">
+                <div class="thumb_meta">
+                  <span class="category" style="background-color: #2ECC71">
+                    <%= link_to sl_news.post.category.name, category_path(sl_news.post.category) %>
+                    <!--<a href="#">জাতীয়</a>-->
+                  </span>
+                  <!--<span class="comments"><a href="post_single.html">358 Comments</a></span>-->
+                </div>
+                <div class="thumb_link">
+                  <h3>
+                    <%= link_to sl_news.post.title, post_path(sl_news.post) %>
+                    <!--<a href="post_single.html">যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা যাবে না</a>-->
+                  </h3>
+                </div>
+              </div>
+            </li>
+    <% end %>
+    <% end  %>
   </ul>
 </div><!-- End Content slider -->
 <div class="panel_title">
@@ -59,93 +45,49 @@
 </div><!-- End Panel title -->
 <!-- Layout post 1 -->
 <div class="row">
+<% if @sp_news.any? %>
+  <% @sp_news.each do |sp_news| %>
+          <div class="col col_6_of_12">
 
-  <div class="col col_6_of_12">
-
-    <!-- Layout post 1 -->
-    <div class="layout_post_1">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html" style="background-color: #2574A9"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/3.jpg" alt="Post"></a>
-        </div>
-        <div class="thumb_meta">
-          <span class="category" style="background-color: #2574A9"><a href="blog.html">জাতীয়</a></span>
-          <span class="comments"><a href="post_single.html">15 Comments</a></span>
-        </div>
-      </div>
-      <div class="item_content">
-        <h4><a href="post_single.html">জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিল ইউনিয়ন ঐক্যবদ্ধ</a></h4>
-        <p>ঢাকা: জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিলে নেতারা সাংবাদিক ইউনিয়ন ঐক্যবদ্ধ করার ওপর গুরুত্বারোপ </p>
-      </div>
-    </div><!-- End Layout post 1 -->
-  </div><!-- End col col_6_of_12 -->
-  <div class="col col_6_of_12">
-    <!-- Layout post 1 -->
-    <div class="layout_post_1">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html" style="background-color: #2574A9"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/2.jpg" alt="Post"></a>
-        </div>
-        <div class="thumb_meta">
-          <span class="category" style="background-color: #2574A9"><a href="blog.html">জাতীয়</a></span>
-          <span class="comments"><a href="post_single.html">15 Comments</a></span>
-        </div>
-      </div>
-      <div class="item_content">
-        <h4><a href="post_single.html">জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিল ইউনিয়ন ঐক্যবদ্ধ</a></h4>
-        <p>ঢাকা: জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিলে নেতারা সাংবাদিক ইউনিয়ন ঐক্যবদ্ধ করার ওপর গুরুত্বারোপ </p>
-      </div>
-    </div><!-- End Layout post 1 -->
-  </div><!-- End col col_6_of_12 -->
-  <div class="col col_6_of_12">
-    <!-- Layout post 1 -->
-    <div class="layout_post_1">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html" style="background-color: #2574A9"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/5.jpg" alt="Post"></a>
-        </div>
-        <div class="thumb_meta">
-          <span class="category" style="background-color: #2574A9"><a href="blog.html">জাতীয়</a></span>
-          <span class="comments"><a href="post_single.html">15 Comments</a></span>
-        </div>
-      </div>
-      <div class="item_content">
-        <h4><a href="post_single.html">জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিল ইউনিয়ন ঐক্যবদ্ধ</a></h4>
-        <p>ঢাকা: জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিলে নেতারা সাংবাদিক ইউনিয়ন ঐক্যবদ্ধ করার ওপর গুরুত্বারোপ </p>
-      </div>
-    </div><!-- End Layout post 1 -->
-  </div><!-- End col col_6_of_12 -->
-
-  <div class="col col_6_of_12">
-    <!-- Layout post 1 -->
-    <div class="layout_post_1">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/1.jpg" alt="Post"></a>
-        </div>
-        <div class="thumb_meta">
-          <span class="category"><a href="blog.html">জাতীয়</a></span>
-          <span class="comments"><a href="post_single.html">15 Comments</a></span>
-        </div>
-      </div>
-      <div class="item_content">
-        <h4><a href="post_single.html">জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিল ইউনিয়ন ঐক্যবদ্ধ</a></h4>
-        <p>ঢাকা: জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিলে নেতারা সাংবাদিক ইউনিয়ন ঐক্যবদ্ধ করার ওপর গুরুত্বারোপ </p>
-      </div>
-    </div><!-- End Layout post 1 -->
-  </div>
+            <!-- Layout post 1 -->
+            <div class="layout_post_1">
+              <div class="item_thumb">
+                <div class="thumb_icon">
+                  <%= link_to post_path(sp_news.post),{:style=>'background-color:#2574A9;'} do %>
+                      <i class="fa fa-copy"></i>
+                  <% end %>
+                  <!--<a href="post_single.html" style="background-color: #2574A9"><i class="fa fa-copy"></i></a>-->
+                </div>
+                <div class="thumb_hover">
+                  <%= link_to post_path(sp_news.post) do %>
+                      <%= image_tag sp_news.post.photo, alt: 'Post' %>
+                      <!--<img src="/images/3.jpg" alt="Post">-->
+                  <% end %>
+                  <!--<a href="post_single.html"><img src="/images/3.jpg" alt="Post"></a>-->
+                </div>
+                <div class="thumb_meta">
+                  <span class="category" style="background-color: #2574A9">
+                    <%= link_to sp_news.post.category.name, category_path(sp_news.post.category) %>
+                    <!--<a href="blog.html">জাতীয়</a>-->
+                  </span>
+                  <!--<span class="comments"><a href="post_single.html">15 Comments</a></span>-->
+                </div>
+              </div>
+              <div class="item_content">
+                <h4>
+                  <%= link_to sp_news.post.title, post_path(sp_news.post) %>
+                  <!--<a href="post_single.html">জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিল ইউনিয়ন ঐক্যবদ্ধ</a>-->
+                </h4>
+                <p>
+                  <%= sp_news.post.division.name+' : ' if sp_news.post.division %>
+                  <%= sp_news.post.content.to_s[0..100] %>
+                  <!--ঢাকা: জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিলে নেতারা সাংবাদিক ইউনিয়ন ঐক্যবদ্ধ করার ওপর গুরুত্বারোপ-->
+                </p>
+              </div>
+            </div><!-- End Layout post 1 -->
+          </div>
+  <% end %>
+<% end %>
 </div><!-- End Layout post 1 -->
 
 
@@ -597,77 +539,22 @@
     <div class="widget_title"><h3>সর্বশেষ খবর</h3></div>
     <div class="tb_widget_posts_big clearfix">
       <!-- Post item -->
-      <div class="item clearfix">
-        <div class="item_content">
-          <h4><a href="post_single.html"><span class="format" style="background-color: #2F88D6">আর্ন্তজাতিক</span>সময় শেষে সময় জামায়াতের
-            ইফতারে খালেদা</a></h4>
-
-        </div>
-      </div><!-- End Post item -->
-      <!-- Post item -->
-      <div class="item clearfix">
-        <div class="item_content">
-          <h4><a href="post_single.html"><span class="format" style="background-color: #2F88D6">তথ্য-প্রযুক্তি</span>সময় শেষে জামায়াতের
-            ইফতারে খালেদা</a></h4>
-
-        </div>
-      </div><!-- End Post item -->
-      <!-- Post item -->
-      <div class="item clearfix">
-        <div class="item_content">
-          <h4><a href="post_single.html"><span class="format" style="background-color: #2F88D6">রাজনীতি</span>সময় শেষে জামায়াতের
-            ইফতারে খালেদা</a></h4>
-        </div>
-      </div><!-- End Post item -->
-      <!-- Post item -->
-      <div class="item clearfix">
-        <div class="item_content">
-          <h4><a href="post_single.html"><span class="format" style="background-color: #2F88D6">আর্ন্তজাতিক</span>সময় শেষে সময় জামায়াতের
-            ইফতারে খালেদা</a></h4>
-        </div>
-      </div><!-- End Post item -->
-      <!-- Post item -->
-      <div class="item clearfix">
-        <div class="item_content">
-          <h4><a href="post_single.html"><span class="format" style="background-color: #2F88D6">আর্ন্তজাতিক</span>সময় শেষে জামায়াতের
-            ইফতারে খালেদা</a></h4>
-        </div>
-      </div><!-- End Post item -->
-      <!-- Post item -->
-      <div class="item clearfix">
-        <div class="item_content">
-          <h4><a href="post_single.html"><span class="format" style="background-color: #2F88D6">আর্ন্তজাতিক</span>সময় শেষে জামায়াতের
-            ইফতারে খালেদা</a></h4>
-        </div>
-      </div><!-- End Post item -->
-      <!-- Post item -->
-      <div class="item clearfix">
-        <div class="item_content">
-          <h4><a href="post_single.html"><span class="format" style="background-color: #2F88D6">আর্ন্তজাতিক</span>সময় শেষে সময় জামায়াতের
-            ইফতারে খালেদা</a></h4>
-        </div>
-      </div><!-- End Post item -->
-      <!-- Post item -->
-      <div class="item clearfix">
-        <div class="item_content">
-          <h4><a href="post_single.html"><span class="format" style="background-color: #2F88D6">আর্ন্তজাতিক</span>সময় শেষে জামায়াতের
-            ইফতারে খালেদা</a></h4>
-        </div>
-      </div><!-- End Post item -->
-      <!-- Post item -->
-      <div class="item clearfix">
-        <div class="item_content">
-          <h4><a href="post_single.html"><span class="format" style="background-color: #2F88D6">আর্ন্তজাতিক</span>সময় শেষে জামায়াতের
-            ইফতারে খালেদা</a></h4>
-        </div>
-      </div><!-- End Post item -->
-      <!-- Post item -->
-      <div class="item clearfix">
-        <div class="item_content">
-          <h4><a href="post_single.html"><span class="format" style="background-color: #2F88D6">আর্ন্তজাতিক</span>সময় শেষে সময় জামায়াতের
-            ইফতারে খালেদা</a></h4>
-        </div>
-      </div><!-- End Post item -->
+      <% if @last_ten_news.any? %>
+      <% @last_ten_news.each do |ltn|  %>
+              <div class="item clearfix">
+                <div class="item_content">
+                  <h4>
+                    <%= link_to post_path(ltn) do %>
+                        <span class="format" style="background-color: #2F88D6">
+                          <%= ltn.category.name %>
+                        </span>
+                        <%= ltn.title %>
+                    <% end %>
+                  </h4>
+                </div>
+              </div>
+      <% end %>
+      <% end %>
     </div>
   </div>
 
@@ -784,105 +671,26 @@
 <div class="widget">
   <div class="widget_title"><h3>সর্বাধিক পঠিত</h3></div>
   <div class="tb_widget_top_rated clearfix">
-    <!-- Post item -->
-    <div class="item clearfix">
-      <div class="item_thumb clearfix">
-        <a href="#"><img src="/images/2.jpg" alt="Post" class="visible animated"></a>
-      </div>
-      <div class="item_content">
+    <% if @most_viewed_news.any? %>
+      <% @most_viewed_news.each do |mv_news| %>
+            <div class="item clearfix">
+              <div class="item_thumb clearfix">
+                <%= link_to post_path(mv_news, :class=>'visible animated'), alt: 'Post' do  %>
+                <%= image_tag mv_news.photo %>
+                <% end %>
+                <!--<a href="#"><img src="/images/2.jpg" alt="Post" class="visible animated"></a>-->
+              </div>
+              <div class="item_content">
 
-        <h4><a href="#">পদ্মা সেতু নির্মাণে বিঘ্ন ঘটার আশঙ্কা নেই : সেতুমন্ত্রী</a></h4>
-      </div>
+                <h4>
+                  <%= link_to mv_news.title, post_path(mv_news) %>
+                  <!--<a href="#">পদ্মা সেতু নির্মাণে বিঘ্ন ঘটার আশঙ্কা নেই : সেতুমন্ত্রী</a>-->
+                </h4>
+              </div>
 
-    </div><!-- End Post item -->
-    <!-- Post item -->
-    <div class="item clearfix">
-      <div class="item_thumb clearfix">
-        <a href="#"><img src="/images/4.jpg" alt="Post" class="visible animated"></a>
-      </div>
-      <div class="item_content">
-
-        <h4><a href="#">পদ্মা সেতু নির্মাণে বিঘ্ন ঘটার আশঙ্কা নেই : সেতুমন্ত্রী</a></h4>
-      </div>
-
-    </div><!-- End Post item -->
-    <!-- Post item -->
-    <div class="item clearfix">
-      <div class="item_thumb clearfix">
-        <a href="#"><img src="/images/3.jpg" alt="Post" class="visible animated"></a>
-      </div>
-      <div class="item_content">
-
-        <h4><a href="#">পদ্মা সেতু নির্মাণে বিঘ্ন ঘটার আশঙ্কা নেই : সেতুমন্ত্রী</a></h4>
-      </div>
-
-    </div><!-- End Post item -->
-    <!-- Post item -->
-    <div class="item clearfix">
-      <div class="item_thumb clearfix">
-        <a href="#"><img src="/images/4.jpg" alt="Post" class="visible animated"></a>
-      </div>
-      <div class="item_content">
-
-        <h4><a href="#">পদ্মা সেতু নির্মাণে বিঘ্ন ঘটার আশঙ্কা নেই : সেতুমন্ত্রী</a></h4>
-      </div>
-
-    </div><!-- End Post item -->
-    <!-- Post item -->
-    <div class="item clearfix">
-      <div class="item_thumb clearfix">
-        <a href="#"><img src="/images/3.jpg" alt="Post" class="visible animated"></a>
-      </div>
-      <div class="item_content">
-
-        <h4><a href="#">পদ্মা সেতু নির্মাণে বিঘ্ন ঘটার আশঙ্কা নেই : সেতুমন্ত্রী</a></h4>
-      </div>
-
-    </div><!-- End Post item -->
-    <!-- Post item -->
-    <div class="item clearfix">
-      <div class="item_thumb clearfix">
-        <a href="#"><img src="/images/4.jpg" alt="Post" class="visible animated"></a>
-      </div>
-      <div class="item_content">
-
-        <h4><a href="#">পদ্মা সেতু নির্মাণে বিঘ্ন ঘটার আশঙ্কা নেই : সেতুমন্ত্রী</a></h4>
-      </div>
-
-    </div><!-- End Post item -->
-    <!-- Post item -->
-    <div class="item clearfix">
-      <div class="item_thumb clearfix">
-        <a href="#"><img src="/images/3.jpg" alt="Post" class="visible animated"></a>
-      </div>
-      <div class="item_content">
-
-        <h4><a href="#">পদ্মা সেতু নির্মাণে বিঘ্ন ঘটার আশঙ্কা নেই : সেতুমন্ত্রী</a></h4>
-      </div>
-
-    </div><!-- End Post item -->
-    <!-- Post item -->
-    <div class="item clearfix">
-      <div class="item_thumb clearfix">
-        <a href="#"><img src="/images/4.jpg" alt="Post" class="visible animated"></a>
-      </div>
-      <div class="item_content">
-
-        <h4><a href="#">পদ্মা সেতু নির্মাণে বিঘ্ন ঘটার আশঙ্কা নেই : সেতুমন্ত্রী</a></h4>
-      </div>
-
-    </div><!-- End Post item -->
-    <!-- Post item -->
-    <div class="item clearfix">
-      <div class="item_thumb clearfix">
-        <a href="#"><img src="/images/3.jpg" alt="Post" class="visible animated"></a>
-      </div>
-      <div class="item_content">
-
-        <h4><a href="#">পদ্মা সেতু নির্মাণে বিঘ্ন ঘটার আশঙ্কা নেই : সেতুমন্ত্রী</a></h4>
-      </div>
-
-    </div><!-- End Post item -->
+            </div>
+      <% end %>
+    <% end %>
   </div>
 </div><!-- End Widget top rated -->
 

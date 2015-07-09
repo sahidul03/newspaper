@@ -1,7 +1,7 @@
 class GalleriesController < ApplicationController
 
   def index
-    @gallery=Gallery.all
+    @galleries=Gallery.all
     render layout: 'admin_layout'
   end
 
