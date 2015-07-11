@@ -1,8 +1,18 @@
 <div class="container">
   <div class="row">
+
     <!-- Main content -->
     <div class="col col_9_of_12">
+      <div class="box-tools">
+        <%= select_tag 'category_id_select_archive_news_user', options_from_collection_for_select(Category.all,:id, :name), {:prompt=>'Select Category', :class => 'form-control input-sm pull-right' } %>
 
+        <div class="input-group">
+          <%= date_field(:archive_user, :date_search, :class=>'form-control input-sm pull-right date_field_archive',:value=>@current_date) %>
+          <div class="input-group-btn">
+            <button class="btn btn-sm btn-default search_btn_for_user_archive_AT_date"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+      </div>
       <!-- Panel title -->
       <div class="panel_title">
         <div>
@@ -12,7 +22,7 @@
         </div>
       </div><!-- End Panel title -->
       <div class="row">
-        <div class="col col_12_of_12">
+        <div class="col col_12_of_12 user_archive_news_container">
           <!-- Layout post 1 -->
           <% if @archive_news.any? %>
               <% @archive_news.each do |c_news| %>
@@ -67,3 +77,35 @@
     </div><!-- End Sidebar -->
   </div>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('.search_btn_for_user_archive_AT_date').click(function(){
+          var date=$('#archive_user_date_search').val();
+          var category=$('#category_id_select_archive_news_user').val();
+          $.ajax({
+              url:'/news/previous_record',
+              data: {date: date,category:category},
+              type: 'get'
+          });
+      });
+      $('#category_id_select_archive_news_user').click(function(){
+          var date=$('#archive_user_date_search').val();
+          var category=$('#category_id_select_archive_news_user').val();
+          $.ajax({
+              url:'/news/previous_record',
+              data: {date: date,category:category},
+              type: 'get'
+          });
+      });
+      $('#archive_user_date_search').change(function(){
+          var date=$('#archive_user_date_search').val();
+          var category=$('#category_id_select_archive_news_user').val();
+          $.ajax({
+              url:'/news/previous_record',
+              data: {date: date,category:category},
+              type: 'get'
+          });
+      });
+  });
+</script>

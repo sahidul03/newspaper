@@ -1,5 +1,5 @@
 class NewsController < ApplicationController
-  before_action :authenticate_user!, :except => [:show,:category_news,:video_gallery, :photo_gallery,:division, :archive]
+  before_action :authenticate_user!, :except => [:show,:category_news,:video_gallery, :photo_gallery,:division, :archive,:previous_record]
   def index
 
   end
@@ -10,6 +10,9 @@ class NewsController < ApplicationController
     @last_ten_news=Post.last(10)
     @most_viewed_news= Post.order(view_count: :desc).first(9)
     @single_news=Post.find(params[:id])
+    view_count=@single_news.view_count
+    view_count=view_count+1
+    @single_news.update(:view_count=>view_count)
     render layout: 'user_layout'
   end
 
@@ -19,7 +22,7 @@ class NewsController < ApplicationController
     @last_ten_news=Post.last(10)
     @most_viewed_news= Post.order(view_count: :desc).first(9)
     @single_category=Category.find(params[:id])
-    @category_news=@single_category.posts.last(25)
+    @category_news=@single_category.posts.last(25).reverse
     render layout: 'user_layout'
   end
 
@@ -57,9 +60,18 @@ class NewsController < ApplicationController
     @current_date=Date.today
     @archive_news=Post.where("DATE(created_at) = ?", Date.today)
     @most_viewed_news= Post.order(view_count: :desc).first(9)
-    @single_category=Category.second
-    @category_news=@single_category.posts.last(25)
     render layout: 'user_layout'
+  end
+
+  def previous_record
+    @current_date=params[:date]
+    @category_id=params[:category]
+    if @category_id!=''
+      @category=Category.find(@category_id)
+      @archive_news=@category.posts.where("DATE(created_at) = ?", @current_date)
+    else
+      @archive_news=Post.where("DATE(created_at) = ?", @current_date)
+    end
   end
 
 

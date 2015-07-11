@@ -56,6 +56,35 @@ $(document).ready(function(){
                     });
                 });
             };
+            this.ArchiveForUser=new function(){
+                $('.search_btn_for_user_archive_AT_date').click(function(){
+                    var date=$('#archive_user_date_search').val();
+                    var category=$('#category_id_select_archive_news_user').val();
+                    $.ajax({
+                        url:'/news/previous_record',
+                        data: {date: date,category:category},
+                        type: 'get'
+                    });
+                });
+                $('#category_id_select_archive_news_user').click(function(){
+                    var date=$('#archive_user_date_search').val();
+                    var category=$('#category_id_select_archive_news_user').val();
+                    $.ajax({
+                        url:'/news/previous_record',
+                        data: {date: date,category:category},
+                        type: 'get'
+                    });
+                });
+                $('#archive_user_date_search').change(function(){
+                    var date=$('#archive_user_date_search').val();
+                    var category=$('#category_id_select_archive_news_user').val();
+                    $.ajax({
+                        url:'/news/previous_record',
+                        data: {date: date,category:category},
+                        type: 'get'
+                    });
+                });
+            };
         };
         this.SetNewToHeadlines=new function(){
             $('#category_id_for_headline_add').click(function(){

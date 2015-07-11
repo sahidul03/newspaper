@@ -7,9 +7,16 @@
         <img src="/img/avatar3.png" class="img-circle" alt="User Image" />
       </div>
       <div class="pull-left info">
-        <p>Hello, Jane</p>
+        <% if user_signed_in? %>
 
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        <p><%= current_user.email %></p>
+            <%= link_to edit_user_registration_path, :class => 'navbar-link' do  %>
+                <i class="fa fa-edit text-success"></i> Edit profile
+            <% end %>
+        <%= link_to destroy_user_session_path, method: :delete, :class => 'navbar-link' do  %>
+        <i class="fa fa-sign-out text-success"></i> Logout
+        <% end %>
+        <% end %>
       </div>
     </div>
     <!-- search form -->

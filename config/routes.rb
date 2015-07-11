@@ -37,6 +37,7 @@ Rails.application.routes.draw do
       get "photo_gallery/:id", action: 'photo_gallery', as: :photo_gallery
       get "division/:id", action: 'division', as: :division
       get "archive"
+      get "previous_record"
     end
   end
   resources :left_category_news

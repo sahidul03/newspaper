@@ -1270,8 +1270,8 @@ article.post .entry_content {
     margin-bottom: 15px
 }
 article.post .entry_content p {
-    font-size:15px;
-    line-height:30px;
+    font-size:16px;
+    line-height:32px;
 }
 article.post .entry_content img{
 
@@ -3865,6 +3865,12 @@ span.format {
 #category_id_select_archive_post{
     width: 200px;
 }
+.date_field_archive{
+    width: 220px !important;
+}
+#category_id_select_archive_news_user{
+    width: 200px;
+}
 
 /*video gallery*/
 .video_gallery_iframe iframe{
@@ -3905,5 +3911,9 @@ span.format {
     color: #ffffff;
     opacity: .5;
     z-index: 89789789;
+    width: 100%;
+}
+article.post .entry_content iframe{
+    height: 415px;
     width: 100%;
 }
