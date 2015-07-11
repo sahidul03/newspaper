@@ -3733,10 +3733,10 @@ span.format {
     margin-top:6px;
 }
 .sironam_news{
-    width:84.5%;
+    /*width:84.5%;*/
     height:34px;
     background-color:#F4F6F8;
-    margin:-10px auto 15px auto;
+    margin:-19px auto 15px auto;
 
 }
 .sironam_news .headline{
@@ -3760,11 +3760,12 @@ span.format {
     background-color:#0069AE;
 }
 .sironam_news .headline h3{
-    padding-top:7px;
+    padding-top:0px;
     font-size:18px;
     color:#FFF;
     text-align:center;
     height:34px;
+    margin-top: 7px;
 
 }
 .sironam_news .sironam_title{
@@ -3812,6 +3813,7 @@ span.format {
     color:#FFF;
     text-align:center;
     height:34px;
+    margin-top: 7px;
 
 }
 .brteaking_news .brteaking_title{
