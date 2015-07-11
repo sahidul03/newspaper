@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row">
+    <!-- Main content -->
+    <div class="col col_9_of_12">
+
+      <!-- Panel title -->
+      <div class="panel_title">
+        <div>
+          <h4>
+            <%= link_to @single_division.name, division_news_index_path(@single_division) %>
+            <!--<a href="#">তথ্য-প্রযুক্তি</a>-->
+          </h4>
+        </div>
+      </div><!-- End Panel title -->
+      <div class="row">
+        <div class="col col_12_of_12">
+          <!-- Layout post 1 -->
+          <% if @division_news.any? %>
+              <% @division_news.each do |c_news| %>
+                  <div class="layout_post_2 clearfix">
+                    <div class="item_thumb">
+                      <div class="thumb_icon">
+                        <%= link_to news_path(c_news) do %>
+                            <i class="fa fa-copy"></i>
+                        <% end %>
+                        <!--<a href="post_single.html"><i class="fa fa-copy"></i></a>-->
+                      </div>
+                      <div class="thumb_hover">
+                        <%= link_to news_path(c_news) do %>
+                            <%= image_tag(c_news.photo, :alt => 'Post') %>
+                        <% end %>
+                        <!--<a href="post_single.html"><img src="/images/2.jpg" alt="Post"></a>-->
+                      </div>
+                      <div class="thumb_meta">
+                    <span class="category">
+                      <%= link_to @single_division.name, division_news_index_path(@single_division) %>
+                    </span>
+                        <!--<span class="comments"><a href="post_single.html">15 Comments</a></span>-->
+                      </div>
+                    </div>
+                    <div class="item_content">
+                      <h4>
+                        <%= link_to c_news.title, news_path(c_news) %>
+                        <!--<a href="#">যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা যাবে না</a>-->
+                      </h4>
+                      <p>
+                        <%= c_news.content.to_s[0..400]  %>
+                      </p>
+                      <div class="item_meta clearfix">
+                    <span class="meta_date">
+                      <%= c_news.created_at.strftime('%d %B, %y') %>
+                    </span>
+                        <!--<span class="meta_likes"><a href="#">29</a></span>-->
+                      </div>
+                    </div>
+                  </div>
+              <% end %>
+          <% end %>
+
+        </div>
+      </div>
+
+
+    </div><!-- End Main content -->
+    <!-- Sidebar -->
+    <div class="col col_3_of_12">
+      <%= render 'users/last_right_side_row_user_tem' %>
+    </div><!-- End Sidebar -->
+  </div>
+</div>

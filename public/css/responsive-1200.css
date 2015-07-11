@@ -293,7 +293,7 @@ nav.site_navigation ul.menu > li > .cart_content {
     position: absolute;
     z-index: 9;
     margin-top: 5px;
-    min-width: 250px;
+    min-width: 190px;
     background-color: #fff;
     border-left: 1px solid #eee;
     border-bottom: 1px solid #eee;
@@ -326,9 +326,9 @@ nav.site_navigation ul.cart_list li {
 }
 nav.site_navigation ul.cart_list li a {
     padding: 0;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 16px;
-    font-weight: 700;
+    font-weight: 500;
     width: auto;
     display: block;
     position: relative;

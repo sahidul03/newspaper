@@ -1,5 +1,5 @@
 class NewsController < ApplicationController
-  before_action :authenticate_user!, :except => [:show,:category_news,:video_gallery, :photo_gallery]
+  before_action :authenticate_user!, :except => [:show,:category_news,:video_gallery, :photo_gallery,:division, :archive]
   def index
 
   end
@@ -19,7 +19,7 @@ class NewsController < ApplicationController
     @last_ten_news=Post.last(10)
     @most_viewed_news= Post.order(view_count: :desc).first(9)
     @single_category=Category.find(params[:id])
-    @category_news=@single_category.posts.last(15)
+    @category_news=@single_category.posts.last(25)
     render layout: 'user_layout'
   end
 
@@ -39,8 +39,28 @@ class NewsController < ApplicationController
     @last_ten_news=Post.last(10)
     @most_viewed_news= Post.order(view_count: :desc).first(9)
     @single_gallery=Gallery.find(params[:id])
-    @all_galleries=Gallery.page(params[:page]).per(2)
+    @all_galleries=Gallery.page(params[:page]).per(18)
     render layout: 'user_layout'
   end
+
+  def division
+    @sp_news=SpecialNews.last(4)
+    @sl_news=SliderNews.all
+    @last_ten_news=Post.last(10)
+    @most_viewed_news= Post.order(view_count: :desc).first(9)
+    @single_division=Division.find(params[:id])
+    @division_news=@single_division.posts.last(25)
+    render layout: 'user_layout'
+  end
+
+  def archive
+    @current_date=Date.today
+    @archive_news=Post.where("DATE(created_at) = ?", Date.today)
+    @most_viewed_news= Post.order(view_count: :desc).first(9)
+    @single_category=Category.second
+    @category_news=@single_category.posts.last(25)
+    render layout: 'user_layout'
+  end
+
 
 end

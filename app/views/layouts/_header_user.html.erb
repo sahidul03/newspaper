@@ -47,28 +47,47 @@
       <nav class="site_navigation" role="navigation">
         <span class="site_navigation_toggle"><i class="fa fa-reorder"></i></span>
         <ul class="menu">
-          <li><a href="#"><i class="fa fa-home"></i> প্রচ্ছদ</a></li>
-          <li><a href="#">জাতীয়</a></li>
-          <li><a href="#">সারাদেশ</a></li>
-          <li><a href="#">রাজনীতি</a></li>
-          <li><a href="#">অর্থনীতি</a></li>
-          <li><a href="#">আর্ন্তজাতিক</a></li>
-          <li><a href="#">খেলাধুলা</a></li>
-          <li><a href="#">তথ্য-প্রযুক্তি</a></li>
-          <li><a href="#">বিনোদন</a></li>
-          <li><a href="#">প্রবাসের কথা</a></li>
-          <li><a href="#">সারাদেশ</a></li>
+          <li>
+            <%= link_to root_path do %>
+                <i class="fa fa-home"></i> প্রচ্ছদ
+            <% end %>
+          </li>
+          <% if Category.all.any? %>
+          <% Category.first(11).each do |cat| %>
+              <li>
+                <%= link_to cat.name, category_news_news_index_path(cat) %>
+              </li>
+          <% end %>
+          <% end %>
 
-          <li><a href="#">ঢাকার বাইরে</a></li>
+
           <li class="menu-item-has-children"><a href="#">আরো </a>
             <span class="site_sub_menu_toggle"></span>
             <div class="cart_content">
               <div class="widget_shopping_cart_content">
                 <ul class="cart_list product_list_widget">
-                  <li><a href="post_single.html">Post image</a></li>
-                  <li><a href="post_gallery.html">Post gallery</a></li>
-                  <li><a href="post_video.html">Post video</a></li>
-                  <li><a href="post_audio.html">Post audio</a></li><li><a href="post_none.html">Post none</a></li>
+                  <% if Category.all.any? %>
+                  <% if Category.all.count>11 %>
+                      <% cat_index=0 %>
+                      <% Category.all.each do |cat| %>
+                            <% if cat_index>10 %>
+                                  <li>
+                                    <%= link_to cat.name, category_news_news_index_path(cat) %>
+                                  </li>
+                            <% end %>
+                            <% cat_index=cat_index+1 %>
+                      <% end %>
+                  <% end %>
+                  <% end %>
+                  <li>
+                    <%= link_to 'ভিডিও সংবাদ ', video_gallery_news_index_path(Video.last) %>
+                  </li>
+                  <li>
+                    <%= link_to 'ফটো সংবাদ ', photo_gallery_news_index_path(Gallery.last) %>
+                  </li>
+                  <li>
+                    <%= link_to 'আর্কাইভ', archive_news_index_path %>
+                  </li>
                 </ul>
               </div>
             </div>

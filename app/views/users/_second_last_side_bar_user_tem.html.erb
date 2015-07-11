@@ -25,21 +25,22 @@
   <a href="#" target="_blank"><img src="/images/336132624679568204.gif"></a>
 
 </div>
-<div class="widget">
-  <div class="widget_title"><h3>বিভাগ</h3></div>
-  <div class="tb_widget_categories">
-    <ul>
-      <li><a href="#">ঢাকা</a> (159)</li>
-      <li><a href="#">চট্টগ্রাম</a> (159)</li>
-      <li><a href="#">রাজশাহী</a> (159)</li>
-      <li><a href="#">বরিশাল</a> (159)</li>
-      <li><a href="#">খুলনা</a> (159)</li>
-      <li><a href="#">সিলেট</a> (159)</li>
-      <li><a href="#">রংপুর</a> (159)</li>
-
-    </ul>
-  </div>
-</div><!-- End widget -->
+<% if Division.all.any? %>
+    <div class="widget">
+      <div class="widget_title"><h3>বিভাগ</h3></div>
+      <div class="tb_widget_categories">
+        <ul>
+          <% Division.all.each do |division| %>
+          <li>
+            <%= link_to division.name, division_news_index_path(division) %>
+            <%= '('+ division.posts.count.to_s+')' %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+<% end %>
+<!-- End widget -->
 
 <div class="widget add-banner">
   <a href="#" target="_blank"><img src="/images/1eb1ca26e633618341a4a27809fc6e32.gif"></a>
@@ -47,72 +48,38 @@
 <div class="widget add-banner">
   <a href="#" target="_blank"><img src="/images/walton28-12.gif"></a>
 </div>
-<div class="widget">
-  <div class="widget_title"><h3><a href="#">স্পোর্টস</a></h3></div>
-  <div class="tb_widget_categories">
-    <div class="widget sports-news">
-      <a href="#"><img src="/images/7(3).jpg">
-        <h4>সময় শেষে সময় জামায়াতের
-          ইফতারে খালেদা</h4></a>
-    </div>
-    <ul>
-      <li><a href="#">
 
-        যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা </a> </li>
-      <li><a href="#">যতোই কল্পকাহিনী তৈরি করা হোক</a> </li>
-      <li><a href="#">দায়মুক্তি থাকায় বাংলাদেশে
-        মানবাধিকার লঙ্ঘন হচ্ছে</a> </li>
-      <li><a  href="#">
 
-        যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা </a> </li>
+<% if RightCategoryNews.all.any? %>
+    <% RightCategoryNews.all.each do |rcn| %>
+        <div class="widget">
+          <div class="widget_title">
+            <h3>
+              <%= link_to rcn.category.name, category_news_news_index_path(rcn.category) %>
+            </h3>
+          </div>
+          <% if rcn.category.posts.any? %>
+              <div class="tb_widget_categories">
+                <div class="widget sports-news">
+                  <%= link_to news_path(rcn.category.posts.last) do %>
+                      <%= image_tag(rcn.category.posts.last.photo) %>
+                      <h4>
+                        <%= rcn.category.posts.last.title %>
+                      </h4>
+                  <% end %>
 
-    </ul>
-  </div><!-- End tb_widget_categories -->
-</div><!-- End widget -->
-<div class="widget">
-  <div class="widget_title"><h3><a href="">শিক্ষাঙ্গন</a></h3></div>
-  <div class="tb_widget_categories">
-    <div class="widget sports-news">
-      <a href="#"><img src="/images/image_130654_0.jpg">
-        <h4>সময় শেষে সময় জামায়াতের
-          ইফতারে খালেদা</h4></a>
-    </div>
-    <ul>
-      <li><a href="#">
-
-        যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা </a> </li>
-      <li><a href="#">যতোই কল্পকাহিনী তৈরি করা হোক</a> </li>
-      <li><a href="#">দায়মুক্তি থাকায় বাংলাদেশে
-        মানবাধিকার লঙ্ঘন হচ্ছে</a> </li>
-      <li><a  href="#">
-
-        যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা </a> </li>
-
-    </ul>
-  </div><!-- End tb_widget_categories -->
-</div><!-- End widget -->
-<div class="widget add-banner">
-  <a href="#" target="_blank"><img src="/images/ibbl29-1-15.gif"></a>
-</div>
-<div class="widget">
-  <div class="widget_title"><h3><a href="#">স্বাস্থ্য</a></h3></div>
-  <div class="tb_widget_categories">
-    <div class="widget sports-news">
-      <a href="#"><img src="/images/4.jpg">
-        <h4>সময় শেষে সময় জামায়াতের
-          ইফতারে খালেদা</h4></a>
-    </div>
-    <ul>
-      <li><a href="#">
-
-        যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা </a> </li>
-      <li><a href="#">যতোই কল্পকাহিনী তৈরি করা হোক</a> </li>
-      <li><a href="#">দায়মুক্তি থাকায় বাংলাদেশে
-        মানবাধিকার লঙ্ঘন হচ্ছে</a> </li>
-      <li><a  href="#">
-
-        যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা </a> </li>
-
-    </ul>
-  </div><!-- End tb_widget_categories -->
-</div><!-- End widget -->
+                </div>
+                <ul>
+                  <% rcn.category.posts.last(5).each do |post| %>
+                  <% unless rcn.category.posts.last==post %>
+                      <li>
+                        <%= link_to post.title, news_path(post) %>
+                      </li>
+                  <% end %>
+                  <% end %>
+                </ul>
+              </div><!-- End tb_widget_categories -->
+          <% end %>
+        </div>
+    <% end %>
+<% end %>
