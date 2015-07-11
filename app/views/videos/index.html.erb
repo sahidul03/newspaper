@@ -46,7 +46,11 @@
                       <% end %>
                     </div>
                 <% end %>
+                <div class="col-md-12">
+                  <%= paginate @videos %>
+                </div>
               </div>
+
             </li>
         <% end %>
 
@@ -54,11 +58,10 @@
         <!-- timeline item -->
 
         <!-- END timeline item -->
-        <li>
-          <i class="fa fa-clock-o"></i>
-        </li>
+
       </ul>
     </div><!-- /.col -->
+
   </div><!-- /.row -->
 
 

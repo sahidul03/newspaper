@@ -1,7 +1,7 @@
 class VideosController < ApplicationController
 
   def index
-    @videos=Video.all
+    @videos=Video.page(params[:page]).per(9)
     @post=Post.first
    render layout: 'admin_layout'
   end

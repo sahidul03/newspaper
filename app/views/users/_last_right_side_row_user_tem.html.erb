@@ -44,47 +44,45 @@
   <div class="tb_widget_top_rated clearfix">
     <!-- Post item -->
     <div class="widget">
-      <div class="video-play">
-        <a href="#"><img src="/images/2.jpg" alt="Post" class="visible animated"></a>
+      <div class="video_news_right_side_bar">
+        <div class="video-play">
+          <%= link_to video_gallery_news_index_path(Video.last) do %>
+              <%= Video.last.url.html_safe %>
+          <% end %>
+        </div>
+        <%= link_to video_gallery_news_index_path(Video.last) do %>
+            <div class="video_gallery_iframe_cover_div"></div>
+        <% end %>
       </div>
       <div class="item_content">
 
-        <h4><a href="#">পদ্মা সেতু নির্মাণে বিঘ্ন ঘটার আশঙ্কা নেই : সেতুমন্ত্রী</a></h4>
+        <h4>
+          <%= link_to Video.last.title, video_gallery_news_index_path(Video.last) %>
+          <!--<a href="#">পদ্মা সেতু নির্মাণে বিঘ্ন ঘটার আশঙ্কা নেই : সেতুমন্ত্রী</a>-->
+        </h4>
       </div>
 
     </div><!-- End Post item -->
-    <div class="item clearfix">
-      <div class="item_thumb clearfix">
-        <a href="#"><img src="/images/2.jpg" alt="Post" class="visible animated"></a>
-      </div>
-      <div class="item_content">
+    <% Video.last(3).each do |video| %>
+        <div class="item clearfix">
+          <div class="item_thumb clearfix">
 
-        <h6><a href="#">পদ্মা সেতু নির্মাণে বিঘ্ন ঘটার আশঙ্কা নেই : সেতুমন্ত্রী</a></h6>
-      </div>
+            <!--<a href="#"><img src="/images/2.jpg" alt="Post" class="visible animated"></a>-->
+          </div>
+          <div class="item_content">
 
-    </div><!-- End Post item -->
-    <!-- Post item -->
-    <div class="item clearfix">
-      <div class="item_thumb clearfix">
-        <a href="#"><img src="/images/1.jpg" alt="Post" class="visible animated"></a>
-      </div>
-      <div class="item_content">
+            <h6>
+              <%= link_to video_gallery_news_index_path(video) do %>
+                  <i class="fa fa-video-camera"></i> &nbsp;&nbsp;
+                  <%= video.title %>
+              <% end %>
+            </h6>
+          </div>
 
-        <h6><a href="#">পদ্মা সেতু নির্মাণে বিঘ্ন ঘটার আশঙ্কা নেই : সেতুমন্ত্রী</a></h6>
-      </div>
+        </div>
+    <% end %>
+    <!-- End Post item -->
 
-    </div><!-- End Post item -->
-    <!-- Post item -->
-    <div class="item clearfix">
-      <div class="item_thumb clearfix">
-        <a href="#"><img src="/images/3.jpg" alt="Post" class="visible animated"></a>
-      </div>
-      <div class="item_content">
-
-        <h6><a href="#">পদ্মা সেতু নির্মাণে বিঘ্ন ঘটার আশঙ্কা নেই : সেতুমন্ত্রী</a></h6>
-      </div>
-
-    </div><!-- End Post item -->
 
 
   </div>
@@ -96,36 +94,28 @@
 
     <div class="content_slider">
       <ul>
-        <!-- Item -->
-        <li>
-          <a href="post_single.html"><img height="150" src="/images/5.jpg" alt="Slider"></a>
-          <div class="slider_caption">
+        <% if Gallery.last %>
+        <%  if Gallery.last.photos.any? %>
+            <% Gallery.last.photos.each do |photo| %>
+                    <!-- Item -->
+                    <li>
+                      <%= link_to photo_gallery_news_index_path(Gallery.last) do %>
+                          <%= image_tag(photo.image, alt: 'Slider', height: 150) %>
+                    <% end %>
 
-            <div class="thumb_link">
-              <h6><a href="post_single.html">যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা যাবে না</a></h6>
-            </div>
-          </div>
-        </li><!-- End Item -->
-        <!-- Item -->
-        <li>
-          <a href="post_single.html"><img height="150" src="/images/7.jpg" alt="Slider"></a>
-          <div class="slider_caption">
+                      <div class="slider_caption">
 
-            <div class="thumb_link">
-              <h6><a href="post_single.html">প্রধানমন্ত্রীর সঙ্গে বিদায়ী সেনাপ্রধানের সাক্ষাৎ</a></h6>
-            </div>
-          </div>
-        </li><!-- End Item -->
-        <!-- Item -->
-        <li>
-          <a href="post_single.html"><img height="150" src="/images/8.jpg" alt="Slider"></a>
-          <div class="slider_caption">
+                        <div class="thumb_link">
+                          <h6>
+                            <%= link_to  photo.title.to_s[0..35],  photo_gallery_news_index_path(Gallery.last) if photo.title %>
+                          </h6>
+                        </div>
+                      </div>
+                    </li><!-- End Item -->
+            <% end %>
+        <% end %>
+        <% end %>
 
-            <div class="thumb_link">
-              <h6><a href="post_single.html">প্রধানমন্ত্রীর সঙ্গে বিদায়ী সেনাপ্রধানের সাক্ষাৎ</a></h6>
-            </div>
-          </div>
-        </li><!-- End Item -->
       </ul>
     </div><!-- End Content slider -->
   </div>

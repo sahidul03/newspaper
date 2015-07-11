@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+    <div class="col col_7_of_12">
+      <!-- Content slider -->
+      <div style="margin-bottom:20px;" class="video_view ">
+        <div class="item_content">
+          <h4><a ><%= @single_video.title %></a></h4>
+
+        </div>
+        <%= @single_video.url.html_safe %>
+
+      </div><!-- End Content slider -->
+      <div class="panel_title">
+        <div>
+          <h4><a>Video Gallery</a></h4>
+        </div>
+      </div><!-- End Panel title -->
+      <!-- Layout post 1 -->
+      <div class="row">
+        <% if @all_videos.any? %>
+        <% @all_videos.each do |video| %>
+                <div class="col col_6_of_12">
+
+                  <!-- Layout post 1 -->
+                  <div class="layout_post_1">
+                    <div class="item_thumb">
+                      <div class="thumb_icon">
+                        <%= link_to video_gallery_news_index_path(video),{:style=>'background-color:#2574A9;'} do %>
+                            <i class="fa fa-video-camera"></i>
+                        <% end %>
+                        <!--<a href="post_single.html" style="background-color: #2574A9"><i class="fa fa-video-camera"></i></a>-->
+                      </div>
+                      <%= link_to video_gallery_news_index_path(video) do %>
+                          <div class="video_gallery_iframe_cover_div"></div>
+                    <% end %>
+                      <div class="thumb_hover">
+                        <%= link_to video_gallery_news_index_path(video) do %>
+                        <%= video.url.html_safe %>
+                        <% end %>
+                        <!--<a href="post_single.html"><img src="/images/3.jpg" alt="Post"></a>-->
+                      </div>
+
+                    </div>
+                    <div class="item_content">
+                      <h4>
+                        <%= link_to video.title.to_s[0..35], video_gallery_news_index_path(video) %>
+                        <!--<a href="post_single.html">জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিল ইউনিয়ন ঐক্যবদ্ধ</a>-->
+                      </h4>
+
+                    </div>
+                  </div><!-- End Layout post 1 -->
+                </div>
+        <% end %>
+        <% end %>
+
+      </div><!-- End Layout post 1 -->
+      <div class="col-md-9">
+        <%= paginate @all_videos %>
+      </div>
+      </div>
+    <div class="col col_2_of_12">
+      <%= render 'users/second_last_side_bar_user_tem' %>
+    </div>
+    <div class="col col_3_of_12">
+      <%= render 'users/last_right_side_row_user_tem' %>
+    </div>
+  </div>
+</div>

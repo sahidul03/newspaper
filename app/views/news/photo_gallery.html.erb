@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="row">
+    <div class="col col_7_of_12">
+    <!-- Content slider -->
+    <div class="content_slider">
+      <ul>
+        <% if @single_gallery.photos.any? %>
+        <% @single_gallery.photos.each do |photo| %>
+                <li>
+                  <a >
+                    <%= image_tag(photo.image, alt: 'Slider') %>
+                    <!--<img  src="/images/5.jpg" alt="Slider">-->
+                  </a>
+                  <div class="slider_caption">
+
+                    <div class="thumb_link">
+                      <h3>
+                        <a>
+                        <%= photo.title if photo.title %>
+                        </a>
+                      </h3>
+                    </div>
+                  </div>
+                </li>
+        <% end %>
+        <% end %>
+
+      </ul>
+    </div><!-- End Content slider -->
+    <div class="panel_title">
+      <div>
+        <h4><a > ফটো সংবাদ </a></h4>
+      </div>
+    </div><!-- End Panel title -->
+    <!-- Layout post 1 -->
+    <div class="row">
+      <% if @all_galleries.any? %>
+      <% @all_galleries.each do |gallery|  %>
+          <% if gallery.photos.any? %>
+                <div class="col col_6_of_12">
+
+                  <!-- Layout post 1 -->
+                  <div class="layout_post_1">
+                    <div class="item_thumb">
+                      <div class="thumb_icon">
+                        <%= link_to photo_gallery_news_index_path(gallery),{:style=>'background-color:#2574A9;'} do %>
+                        <i class="fa fa-image"></i>
+                        <% end %>
+                        <!--<a href="post_single.html" style="background-color: #2574A9"><i class="fa fa-copy"></i></a>-->
+                      </div>
+                      <div class="thumb_hover">
+                        <%= link_to photo_gallery_news_index_path(gallery) do %>
+                           <%= image_tag(gallery.photos.first.image) %>
+                        <% end %>
+                        <!--<a href="post_single.html"><img src="/images/3.jpg" alt="Post"></a>-->
+                      </div>
+                    </div>
+                    <div class="item_content">
+                      <h4>
+                        <%= link_to gallery.title.to_s[0..35], photo_gallery_news_index_path(gallery) if gallery.title%>
+                        <!--<a href="post_single.html">জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিল ইউনিয়ন ঐক্যবদ্ধ</a>-->
+                      </h4>
+
+                    </div>
+                  </div><!-- End Layout post 1 -->
+                </div>
+          <% end %>
+      <% end %>
+      <% end %>
+      <div class="col-md-9">
+        <%= paginate @all_galleries %>
+      </div>
+
+    </div><!-- End Layout post 1 -->
+    </div>
+    <div class="col col_2_of_12">
+      <%= render 'users/second_last_side_bar_user_tem' %>
+    </div>
+    <div class="col col_3_of_12">
+      <%= render 'users/last_right_side_row_user_tem' %>
+    </div>
+  </div>
+</div>

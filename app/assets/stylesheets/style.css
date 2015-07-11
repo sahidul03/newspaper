@@ -2972,7 +2972,6 @@ span.format {
     21. Widgets
 ------------------------------------------------------------------------------*/
 .sidebar {
-    width: 300px;
     float: left;
     position: relative;
     margin-bottom: 15px;
@@ -3886,4 +3885,24 @@ span.format {
 }
 #date_for_headline_add{
     width: 220px !important;
+}
+
+/*video gallery user*/
+.layout_post_1 .item_thumb .thumb_hover iframe {
+    width: 100%;
+    height: 190px;
+}
+.video-play iframe{
+    width:100%;
+    height:160px;
+}
+.video-play .video_news_right_side_bar .video_gallery_iframe_cover_div{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 160px;
+    color: #ffffff;
+    opacity: .5;
+    z-index: 89789789;
+    width: 100%;
 }

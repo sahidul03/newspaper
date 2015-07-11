@@ -33,6 +33,8 @@ Rails.application.routes.draw do
   resources :news do
     collection do
       get "category_news/:id", action: 'category_news', as: :category_news
+      get "video_gallery/:id", action: 'video_gallery', as: :video_gallery
+      get "photo_gallery/:id", action: 'photo_gallery', as: :photo_gallery
     end
   end
 
