@@ -1,0 +1,118 @@
+
+<div class="widget">
+  <div class="widget_title"><h3>সর্বশেষ খবর</h3></div>
+  <div class="tb_widget_posts_big clearfix">
+    <!-- Post item -->
+    <% if @last_ten_news.any? %>
+        <% @last_ten_news.each do |ltn|  %>
+            <div class="item clearfix">
+              <div class="item_content">
+                <h4>
+                  <%= link_to news_path(ltn) do %>
+                        <span class="format" style="background-color: #2F88D6">
+                          <%= ltn.category.name %>
+                        </span>
+                      <%= ltn.title %>
+                  <% end %>
+                </h4>
+              </div>
+            </div>
+        <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="widget add-banner">
+  <a href="#" target="_blank"><img src="/images/336132624679568204.gif"></a>
+
+</div>
+<div class="widget">
+  <div class="widget_title"><h3>বিভাগ</h3></div>
+  <div class="tb_widget_categories">
+    <ul>
+      <li><a href="#">ঢাকা</a> (159)</li>
+      <li><a href="#">চট্টগ্রাম</a> (159)</li>
+      <li><a href="#">রাজশাহী</a> (159)</li>
+      <li><a href="#">বরিশাল</a> (159)</li>
+      <li><a href="#">খুলনা</a> (159)</li>
+      <li><a href="#">সিলেট</a> (159)</li>
+      <li><a href="#">রংপুর</a> (159)</li>
+
+    </ul>
+  </div>
+</div><!-- End widget -->
+
+<div class="widget add-banner">
+  <a href="#" target="_blank"><img src="/images/1eb1ca26e633618341a4a27809fc6e32.gif"></a>
+</div>
+<div class="widget add-banner">
+  <a href="#" target="_blank"><img src="/images/walton28-12.gif"></a>
+</div>
+<div class="widget">
+  <div class="widget_title"><h3><a href="#">স্পোর্টস</a></h3></div>
+  <div class="tb_widget_categories">
+    <div class="widget sports-news">
+      <a href="#"><img src="/images/7(3).jpg">
+        <h4>সময় শেষে সময় জামায়াতের
+          ইফতারে খালেদা</h4></a>
+    </div>
+    <ul>
+      <li><a href="#">
+
+        যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা </a> </li>
+      <li><a href="#">যতোই কল্পকাহিনী তৈরি করা হোক</a> </li>
+      <li><a href="#">দায়মুক্তি থাকায় বাংলাদেশে
+        মানবাধিকার লঙ্ঘন হচ্ছে</a> </li>
+      <li><a  href="#">
+
+        যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা </a> </li>
+
+    </ul>
+  </div><!-- End tb_widget_categories -->
+</div><!-- End widget -->
+<div class="widget">
+  <div class="widget_title"><h3><a href="">শিক্ষাঙ্গন</a></h3></div>
+  <div class="tb_widget_categories">
+    <div class="widget sports-news">
+      <a href="#"><img src="/images/image_130654_0.jpg">
+        <h4>সময় শেষে সময় জামায়াতের
+          ইফতারে খালেদা</h4></a>
+    </div>
+    <ul>
+      <li><a href="#">
+
+        যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা </a> </li>
+      <li><a href="#">যতোই কল্পকাহিনী তৈরি করা হোক</a> </li>
+      <li><a href="#">দায়মুক্তি থাকায় বাংলাদেশে
+        মানবাধিকার লঙ্ঘন হচ্ছে</a> </li>
+      <li><a  href="#">
+
+        যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা </a> </li>
+
+    </ul>
+  </div><!-- End tb_widget_categories -->
+</div><!-- End widget -->
+<div class="widget add-banner">
+  <a href="#" target="_blank"><img src="/images/ibbl29-1-15.gif"></a>
+</div>
+<div class="widget">
+  <div class="widget_title"><h3><a href="#">স্বাস্থ্য</a></h3></div>
+  <div class="tb_widget_categories">
+    <div class="widget sports-news">
+      <a href="#"><img src="/images/4.jpg">
+        <h4>সময় শেষে সময় জামায়াতের
+          ইফতারে খালেদা</h4></a>
+    </div>
+    <ul>
+      <li><a href="#">
+
+        যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা </a> </li>
+      <li><a href="#">যতোই কল্পকাহিনী তৈরি করা হোক</a> </li>
+      <li><a href="#">দায়মুক্তি থাকায় বাংলাদেশে
+        মানবাধিকার লঙ্ঘন হচ্ছে</a> </li>
+      <li><a  href="#">
+
+        যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা </a> </li>
+
+    </ul>
+  </div><!-- End tb_widget_categories -->
+</div><!-- End widget -->

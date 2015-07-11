@@ -42,7 +42,7 @@
 //= require icheck.min
 
 
-
+//marque slider
 
 //= require app
 //= require dashboard

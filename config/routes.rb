@@ -30,6 +30,11 @@ Rails.application.routes.draw do
   resources :special_news
   resources :slider_news
   resources :breaking_news
+  resources :news do
+    collection do
+      get "category_news/:id", action: 'category_news', as: :category_news
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
