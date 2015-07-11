@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709134743) do
+ActiveRecord::Schema.define(version: 20150711095348) do
+
+  create_table "bottom_category_news", force: true do |t|
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bottom_category_news", ["category_id"], name: "index_bottom_category_news_on_category_id", using: :btree
 
   create_table "breaking_news", force: true do |t|
     t.string   "title"
@@ -45,6 +53,14 @@ ActiveRecord::Schema.define(version: 20150709134743) do
 
   add_index "headlines", ["post_id"], name: "index_headlines_on_post_id", using: :btree
 
+  create_table "left_category_news", force: true do |t|
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "left_category_news", ["category_id"], name: "index_left_category_news_on_category_id", using: :btree
+
   create_table "photos", force: true do |t|
     t.string   "image"
     t.string   "title"
@@ -69,6 +85,14 @@ ActiveRecord::Schema.define(version: 20150709134743) do
 
   add_index "posts", ["category_id"], name: "index_posts_on_category_id", using: :btree
   add_index "posts", ["division_id"], name: "index_posts_on_division_id", using: :btree
+
+  create_table "right_category_news", force: true do |t|
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "right_category_news", ["category_id"], name: "index_right_category_news_on_category_id", using: :btree
 
   create_table "slider_news", force: true do |t|
     t.integer  "post_id"

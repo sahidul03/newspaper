@@ -1,0 +1,2 @@
+module BottomCategoryNewsHelper
+end

@@ -87,7 +87,8 @@
                 </div>
                 <div class="item_content">
                   <h4>
-                    <%= link_to news.title.to_s[0..32]+'...', news_path(news) %>
+                    <%= link_to news.title.to_s[0..32]+'...', news_path(news) if news.title.to_s.length>32 %>
+                    <%= link_to news.title.to_s[0..32], news_path(news) if news.title.to_s.length<33 %>
                     <!--<a href="post_single.html">Maecenas tempor volutpat commodo uspendisse potenti</a>-->
                   </h4>
                   <div class="item_meta clearfix">

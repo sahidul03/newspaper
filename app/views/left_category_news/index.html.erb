@@ -1,0 +1,73 @@
+<section class="content">
+  <!-- Main row -->
+  <div class="row">
+    <!-- Left col -->
+    <section class="col-lg-12 connectedSortable">
+      <div class="box box-info">
+        <div class="box-header">
+          <i class="fa fa-check"></i>
+          <h3 class="box-title">Add Left Side Category</h3>
+          <!-- tools box -->
+
+        </div>
+        <%= form_for @left_category_news do |f| %>
+            <div class="form-group col-md-12">
+              <%= select_tag 'category_id', options_from_collection_for_select(Category.all,:id, :name), {:prompt=>'Select Category', :class => 'form-control input-sm pull-right' } %>
+            </div>
+
+            <div class="box-footer clearfix">
+              <%= f.submit :class=>'pull-right btn btn-default' %>
+              <!--<button class="pull-right btn btn-default" id="sendEmail">Create <i class="fa fa-check"></i></button>-->
+            </div>
+        <% end %>
+      </div>
+      <!-- Box (with bar chart) -->
+      <div class="box box-info">
+        <div class="box-header">
+          <i class="fa fa-check"></i>
+          <h3 class="box-title">Left Side Category</h3>
+          <!-- tools box -->
+
+        </div>
+        <!-- Box (with bar chart) -->
+        <!-- quick email widget -->
+
+
+        <div class="table-responsive">
+          <!-- .table - Uses sparkline charts-->
+          <% if @all_left_category_news.any? %>
+              <table class="table table-striped">
+                <tr>
+                  <th class="col-md-8">Left Side Category</th>
+                  <th class="col-md-2">Date</th>
+                  <th class="text-right col-md-2">Delete</th>
+                </tr>
+                <% @all_left_category_news.each do |ls_news| %>
+                    <tr>
+                      <td>
+                        <%= link_to ls_news.category.name, category_path(ls_news.category) %>
+                      </td>
+
+                      <td><%= ls_news.category.created_at.strftime('%d %B, %y') %></td>
+                      <td class="text-right">
+
+                        <div class="btn-group">
+                          <%= link_to left_category_news_path(ls_news), :class=>'btn btn-info', method: :delete,data: { confirm: 'Are you sure?' } do %>
+                              <i class='fa fa-align-center fa-crop'></i> delete
+                          <% end %>
+                        </div>
+
+                      </td>
+                    </tr>
+                <% end %>
+              </table><!-- /.table -->
+          <% end %>
+
+        </div>
+      </div>
+    </section><!-- /.Left col -->
+    <!-- right col (We are only adding the ID to make the widgets sortable)-->
+
+  </div><!-- /.row (main row) -->
+
+</section><!-- /.content -->

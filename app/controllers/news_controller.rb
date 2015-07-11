@@ -1,5 +1,5 @@
 class NewsController < ApplicationController
-  before_action :authenticate_user!, :except => [:show,:category_news,:video_gallery]
+  before_action :authenticate_user!, :except => [:show,:category_news,:video_gallery, :photo_gallery]
   def index
 
   end

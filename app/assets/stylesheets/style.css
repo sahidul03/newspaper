@@ -569,7 +569,8 @@ select {
     8. Panel title
 -------------------------------------------------------------------------------*/
 .panel_title {
-    margin-bottom: 30px
+    margin-bottom: 30px;
+    margin-top: 30px
 }
 .panel_title div {
     background-color: #eee;

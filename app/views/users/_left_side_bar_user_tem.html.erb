@@ -81,439 +81,87 @@
 
 <!--category start Post news -->
 <!-- Panel title -->
-<div class="panel_title">
-  <div>
-    <h4><a href="blog.html">আর্ন্তজাতিক</a></h4>
-  </div>
-</div><!-- End Panel title -->
-<div class="multipack clearfix">
-  <!-- Layout post 1 -->
-  <div class="layout_post_1">
-    <div class="item_thumb">
-      <div class="thumb_icon">
-        <a href="post_single.html" style="background-color: #2ECC71"><i class="fa fa-copy"></i></a>
-      </div>
-      <div class="thumb_hover">
-        <a href="post_single.html"><img src="/images/7.jpg" alt="Post"></a>
-      </div>
-      <div class="thumb_meta">
-        <span class="category" style="background-color: #2ECC71"><a href="blog.html">আর্ন্তজাতিক</a></span>
-        <span class="comments"><a href="post_single.html">15 Comments</a></span>
-      </div>
-    </div>
-    <div class="item_content">
-      <h4><a href="post_single.html">জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিল ইউনিয়ন ঐক্যবদ্ধ</a></h4>
-      <p>ঢাকা: জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিলে নেতারা সাংবাদিক ইউনিয়ন ঐক্যবদ্ধ করার ওপর গুরুত্বারোপ</p>
-    </div>
-  </div><!-- End Layout post 1 -->
-  <!-- Post lists -->
-  <div class="list_posts">
-    <!-- Post -->
-    <div class="post clearfix">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html" style="background-color: #4183D7"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/14.jpg" alt="Post" class="visible animated"></a>
-        </div>
-      </div>
-      <div class="item_content">
+<% if LeftCategoryNews.all.any? %>
+    <% LeftCategoryNews.all.each do |lcn| %>
+        <div class="panel_title">
+          <div>
+            <h4>
+              <%= link_to lcn.category.name, category_news_news_index_path(lcn.category) %>
+            </h4>
+          </div>
+        </div><!-- End Panel title -->
+        <div class="multipack clearfix">
+          <!-- Layout post 1 -->
+          <% if lcn.category.posts.last %>
+              <div class="layout_post_1">
+                <div class="item_thumb">
+                  <div class="thumb_icon">
+                    <%= link_to news_path(lcn.category.posts.last),{:style=>'background-color:#2ECC71;'} do %>
+                        <i class="fa fa-copy"></i>
+                  <% end %>
+                  </div>
+                  <div class="thumb_hover">
+                    <%= link_to news_path(lcn.category.posts.last) do %>
+                        <%= image_tag(lcn.category.posts.last.photo, alt: 'Post', :class => 'visible animated') %>
+                    <% end %>
+                  </div>
+                  <div class="thumb_meta">
+                    <span class="category" style="background-color: #2ECC71">
+                      <%= link_to lcn.category.name, category_news_news_index_path(lcn.category) %>
+                    </span>
+                  </div>
+                </div>
+                <div class="item_content">
+                  <h4>
+                    <%= link_to lcn.category.posts.last.title, news_path(lcn.category.posts.last) %>
+                  </h4>
+                  <p>
+                    <%= lcn.category.posts.last.division.name+' : ' if lcn.category.posts.last.division %>
+                    <%= lcn.category.posts.last.content.to_s[0..130]+'...' %>
+                  </p>
+                </div>
+              </div>
+          <% end %>
+          <!-- End Layout post 1 -->
+          <!-- Post lists -->
 
-        <h4><a href="post_single.html">১৭ হাজার কোটি টাকা ক্ষতি রাজনৈতিক অস্থিরতায়: বিশ্বব্যাংক</a></h4>
-        <div class="item_meta clearfix">
-          <span class="meta_date">October 3, 2014</span>
-          <span class="meta_likes"><a href="#">29</a></span>
-        </div>
-      </div>
-    </div><!-- End Post -->
-    <!-- Post -->
-    <div class="post clearfix">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/7.jpg" alt="Post" class="visible animated"></a>
-        </div>
-      </div>
-      <div class="item_content">
+          <div class="list_posts">
+            <% if lcn.category.posts.any? %>
+                <% lcn.category.posts.last(5).each do |post| %>
+                    <% unless post==lcn.category.posts.last %>
+                        <div class="post clearfix">
+                          <div class="item_thumb">
+                            <div class="thumb_icon">
+                              <%= link_to news_path(post),{:style=>'background-color:#4183D7;'} do %>
+                                  <i class="fa fa-copy"></i>
+                              <% end %>
+                              <!--<a href="post_single.html" style="background-color: #4183D7"><i class="fa fa-copy"></i></a>-->
+                            </div>
+                            <div class="thumb_hover">
+                              <%= link_to news_path(post) do %>
+                                  <%= image_tag(post.photo, alt: 'Post',:class => 'visible animated') %>
+                              <% end %>
+                            </div>
+                          </div>
+                          <div class="item_content">
 
-        <h4><a href="post_single.html">গভীর হতাশা প্রকাশ দুই মার্কিন কংগ্রেসম্যানের</a></h4>
-        <div class="item_meta clearfix">
-          <span class="meta_date">October 3, 2014</span>
-          <span class="meta_likes"><a href="#">29</a></span>
-        </div>
-      </div>
-    </div><!-- End Post -->
-    <!-- Post -->
-    <div class="post clearfix">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html" style="background-color: #4183D7"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/1.jpg" alt="Post" class="visible animated"></a>
-        </div>
-      </div>
-      <div class="item_content">
+                            <h4>
+                              <%= link_to post.title, news_path(post) %>
+                            </h4>
+                            <div class="item_meta clearfix">
+                              <span class="meta_date">
+                                <%= post.created_at.strftime('%B %d, %y') %>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                    <% end %>
+                <% end %>
+            <% end %>
 
-        <h4><a href="post_single.html">প্রশ্নবিদ্ধ গণতান্ত্রিক প্রক্রিয়া, সিটি নির্বাচনে ভোট কারচুপি ও জালিয়াতি তদন্তের</a></h4>
-        <div class="item_meta clearfix">
-          <span class="meta_date">October 3, 2014</span>
-          <span class="meta_likes"><a href="#">29</a></span>
-        </div>
-      </div>
-    </div><!-- End Post -->
-    <!-- Post -->
-    <div class="post clearfix">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html" style="background-color: #2ECC71"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/2.jpg" alt="Post" class="visible animated"></a>
-        </div>
-      </div>
-      <div class="item_content">
-        <h4><a href="post_single.html">পিটিআই ও পিএটি প্রধানদের বিরুদ্ধে গ্রেফতারি পরোয়ানা</a></h4>
-        <div class="item_meta clearfix">
-          <span class="meta_date">October 3, 2014</span>
-          <span class="meta_likes"><a href="#">29</a></span>
-        </div>
-      </div>
-    </div><!-- End Post -->
 
-  </div><!-- End Post lists -->
-</div>
-<!--category start end news -->
+          </div><!-- End Post lists -->
+        </div>
+    <% end %>
+<% end  %>
 
-<!--category start Post news -->
-<!-- Panel title -->
-<div class="panel_title">
-  <div>
-    <h4><a href="blog.html">রাজনীতি</a></h4>
-  </div>
-</div><!-- End Panel title -->
-<div class="multipack clearfix">
-  <!-- Layout post 1 -->
-  <div class="layout_post_1">
-    <div class="item_thumb">
-      <div class="thumb_icon">
-        <a href="post_single.html" style="background-color: #2ECC71"><i class="fa fa-copy"></i></a>
-      </div>
-      <div class="thumb_hover">
-        <a href="post_single.html"><img src="/images/7.jpg" alt="Post"></a>
-      </div>
-      <div class="thumb_meta">
-        <span class="category" style="background-color: #2ECC71"><a href="blog.html">আর্ন্তজাতিক</a></span>
-        <span class="comments"><a href="post_single.html">15 Comments</a></span>
-      </div>
-    </div>
-    <div class="item_content">
-      <h4><a href="post_single.html">জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিল ইউনিয়ন ঐক্যবদ্ধ</a></h4>
-      <p>ঢাকা: জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিলে নেতারা সাংবাদিক ইউনিয়ন ঐক্যবদ্ধ করার ওপর গুরুত্বারোপ</p>
-    </div>
-  </div><!-- End Layout post 1 -->
-  <!-- Post lists -->
-  <div class="list_posts">
-    <!-- Post -->
-    <div class="post clearfix">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html" style="background-color: #4183D7"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/14.jpg" alt="Post" class="visible animated"></a>
-        </div>
-      </div>
-      <div class="item_content">
-
-        <h4><a href="post_single.html">১৭ হাজার কোটি টাকা ক্ষতি রাজনৈতিক অস্থিরতায়: বিশ্বব্যাংক</a></h4>
-        <div class="item_meta clearfix">
-          <span class="meta_date">October 3, 2014</span>
-          <span class="meta_likes"><a href="#">29</a></span>
-        </div>
-      </div>
-    </div><!-- End Post -->
-    <!-- Post -->
-    <div class="post clearfix">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/7.jpg" alt="Post" class="visible animated"></a>
-        </div>
-      </div>
-      <div class="item_content">
-
-        <h4><a href="post_single.html">গভীর হতাশা প্রকাশ দুই মার্কিন কংগ্রেসম্যানের</a></h4>
-        <div class="item_meta clearfix">
-          <span class="meta_date">October 3, 2014</span>
-          <span class="meta_likes"><a href="#">29</a></span>
-        </div>
-      </div>
-    </div><!-- End Post -->
-    <!-- Post -->
-    <div class="post clearfix">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html" style="background-color: #4183D7"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/1.jpg" alt="Post" class="visible animated"></a>
-        </div>
-      </div>
-      <div class="item_content">
-
-        <h4><a href="post_single.html">প্রশ্নবিদ্ধ গণতান্ত্রিক প্রক্রিয়া, সিটি নির্বাচনে ভোট কারচুপি ও জালিয়াতি তদন্তের</a></h4>
-        <div class="item_meta clearfix">
-          <span class="meta_date">October 3, 2014</span>
-          <span class="meta_likes"><a href="#">29</a></span>
-        </div>
-      </div>
-    </div><!-- End Post -->
-    <!-- Post -->
-    <div class="post clearfix">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html" style="background-color: #2ECC71"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/2.jpg" alt="Post" class="visible animated"></a>
-        </div>
-      </div>
-      <div class="item_content">
-        <h4><a href="post_single.html">পিটিআই ও পিএটি প্রধানদের বিরুদ্ধে গ্রেফতারি পরোয়ানা</a></h4>
-        <div class="item_meta clearfix">
-          <span class="meta_date">October 3, 2014</span>
-          <span class="meta_likes"><a href="#">29</a></span>
-        </div>
-      </div>
-    </div><!-- End Post -->
-
-  </div><!-- End Post lists -->
-</div>
-<!--category End Post news -->
-<!-- start ad -->
-<div class="widget add-banner">
-  <a href="#" target="_blank"><img src="/images/blink24-6-15.jpg"></a>
-</div>
-<!-- End ad -->
-<!--category start Post news -->
-<!-- Panel title -->
-<div class="panel_title">
-  <div>
-    <h4><a href="blog.html">রাজনীতি</a></h4>
-  </div>
-</div><!-- End Panel title -->
-<div class="multipack clearfix">
-  <!-- Layout post 1 -->
-  <div class="layout_post_1">
-    <div class="item_thumb">
-      <div class="thumb_icon">
-        <a href="post_single.html" style="background-color: #2ECC71"><i class="fa fa-copy"></i></a>
-      </div>
-      <div class="thumb_hover">
-        <a href="post_single.html"><img src="/images/7.jpg" alt="Post"></a>
-      </div>
-      <div class="thumb_meta">
-        <span class="category" style="background-color: #2ECC71"><a href="blog.html">আর্ন্তজাতিক</a></span>
-        <span class="comments"><a href="post_single.html">15 Comments</a></span>
-      </div>
-    </div>
-    <div class="item_content">
-      <h4><a href="post_single.html">জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিল ইউনিয়ন ঐক্যবদ্ধ</a></h4>
-      <p>ঢাকা: জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিলে নেতারা সাংবাদিক ইউনিয়ন ঐক্যবদ্ধ করার ওপর গুরুত্বারোপ</p>
-    </div>
-  </div><!-- End Layout post 1 -->
-  <!-- Post lists -->
-  <div class="list_posts">
-    <!-- Post -->
-    <div class="post clearfix">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html" style="background-color: #4183D7"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/14.jpg" alt="Post" class="visible animated"></a>
-        </div>
-      </div>
-      <div class="item_content">
-
-        <h4><a href="post_single.html">১৭ হাজার কোটি টাকা ক্ষতি রাজনৈতিক অস্থিরতায়: বিশ্বব্যাংক</a></h4>
-        <div class="item_meta clearfix">
-          <span class="meta_date">October 3, 2014</span>
-          <span class="meta_likes"><a href="#">29</a></span>
-        </div>
-      </div>
-    </div><!-- End Post -->
-    <!-- Post -->
-    <div class="post clearfix">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/7.jpg" alt="Post" class="visible animated"></a>
-        </div>
-      </div>
-      <div class="item_content">
-
-        <h4><a href="post_single.html">গভীর হতাশা প্রকাশ দুই মার্কিন কংগ্রেসম্যানের</a></h4>
-        <div class="item_meta clearfix">
-          <span class="meta_date">October 3, 2014</span>
-          <span class="meta_likes"><a href="#">29</a></span>
-        </div>
-      </div>
-    </div><!-- End Post -->
-    <!-- Post -->
-    <div class="post clearfix">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html" style="background-color: #4183D7"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/1.jpg" alt="Post" class="visible animated"></a>
-        </div>
-      </div>
-      <div class="item_content">
-
-        <h4><a href="post_single.html">প্রশ্নবিদ্ধ গণতান্ত্রিক প্রক্রিয়া, সিটি নির্বাচনে ভোট কারচুপি ও জালিয়াতি তদন্তের</a></h4>
-        <div class="item_meta clearfix">
-          <span class="meta_date">October 3, 2014</span>
-          <span class="meta_likes"><a href="#">29</a></span>
-        </div>
-      </div>
-    </div><!-- End Post -->
-    <!-- Post -->
-    <div class="post clearfix">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html" style="background-color: #2ECC71"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/2.jpg" alt="Post" class="visible animated"></a>
-        </div>
-      </div>
-      <div class="item_content">
-        <h4><a href="post_single.html">পিটিআই ও পিএটি প্রধানদের বিরুদ্ধে গ্রেফতারি পরোয়ানা</a></h4>
-        <div class="item_meta clearfix">
-          <span class="meta_date">October 3, 2014</span>
-          <span class="meta_likes"><a href="#">29</a></span>
-        </div>
-      </div>
-    </div><!-- End Post -->
-
-  </div><!-- End Post lists -->
-</div>
-
-<!--category End Post news -->
-<!--category start Post news -->
-<!-- Panel title -->
-<div class="panel_title">
-  <div>
-    <h4><a href="blog.html">রাজনীতি</a></h4>
-  </div>
-</div><!-- End Panel title -->
-<div class="multipack clearfix">
-  <!-- Layout post 1 -->
-  <div class="layout_post_1">
-    <div class="item_thumb">
-      <div class="thumb_icon">
-        <a href="post_single.html" style="background-color: #2ECC71"><i class="fa fa-copy"></i></a>
-      </div>
-      <div class="thumb_hover">
-        <a href="post_single.html"><img src="/images/7.jpg" alt="Post"></a>
-      </div>
-      <div class="thumb_meta">
-        <span class="category" style="background-color: #2ECC71"><a href="blog.html">আর্ন্তজাতিক</a></span>
-        <span class="comments"><a href="post_single.html">15 Comments</a></span>
-      </div>
-    </div>
-    <div class="item_content">
-      <h4><a href="post_single.html">জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিল ইউনিয়ন ঐক্যবদ্ধ</a></h4>
-      <p>ঢাকা: জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিলে নেতারা সাংবাদিক ইউনিয়ন ঐক্যবদ্ধ করার ওপর গুরুত্বারোপ</p>
-    </div>
-  </div><!-- End Layout post 1 -->
-  <!-- Post lists -->
-  <div class="list_posts">
-    <!-- Post -->
-    <div class="post clearfix">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html" style="background-color: #4183D7"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/14.jpg" alt="Post" class="visible animated"></a>
-        </div>
-      </div>
-      <div class="item_content">
-
-        <h4><a href="post_single.html">১৭ হাজার কোটি টাকা ক্ষতি রাজনৈতিক অস্থিরতায়: বিশ্বব্যাংক</a></h4>
-        <div class="item_meta clearfix">
-          <span class="meta_date">October 3, 2014</span>
-          <span class="meta_likes"><a href="#">29</a></span>
-        </div>
-      </div>
-    </div><!-- End Post -->
-    <!-- Post -->
-    <div class="post clearfix">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/7.jpg" alt="Post" class="visible animated"></a>
-        </div>
-      </div>
-      <div class="item_content">
-
-        <h4><a href="post_single.html">গভীর হতাশা প্রকাশ দুই মার্কিন কংগ্রেসম্যানের</a></h4>
-        <div class="item_meta clearfix">
-          <span class="meta_date">October 3, 2014</span>
-          <span class="meta_likes"><a href="#">29</a></span>
-        </div>
-      </div>
-    </div><!-- End Post -->
-    <!-- Post -->
-    <div class="post clearfix">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html" style="background-color: #4183D7"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/1.jpg" alt="Post" class="visible animated"></a>
-        </div>
-      </div>
-      <div class="item_content">
-
-        <h4><a href="post_single.html">প্রশ্নবিদ্ধ গণতান্ত্রিক প্রক্রিয়া, সিটি নির্বাচনে ভোট কারচুপি ও জালিয়াতি তদন্তের</a></h4>
-        <div class="item_meta clearfix">
-          <span class="meta_date">October 3, 2014</span>
-          <span class="meta_likes"><a href="#">29</a></span>
-        </div>
-      </div>
-    </div><!-- End Post -->
-    <!-- Post -->
-    <div class="post clearfix">
-      <div class="item_thumb">
-        <div class="thumb_icon">
-          <a href="post_single.html" style="background-color: #2ECC71"><i class="fa fa-copy"></i></a>
-        </div>
-        <div class="thumb_hover">
-          <a href="post_single.html"><img src="/images/2.jpg" alt="Post" class="visible animated"></a>
-        </div>
-      </div>
-      <div class="item_content">
-        <h4><a href="post_single.html">পিটিআই ও পিএটি প্রধানদের বিরুদ্ধে গ্রেফতারি পরোয়ানা</a></h4>
-        <div class="item_meta clearfix">
-          <span class="meta_date">October 3, 2014</span>
-          <span class="meta_likes"><a href="#">29</a></span>
-        </div>
-      </div>
-    </div><!-- End Post -->
-
-  </div><!-- End Post lists -->
-</div>

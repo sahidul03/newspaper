@@ -37,6 +37,9 @@ Rails.application.routes.draw do
       get "photo_gallery/:id", action: 'photo_gallery', as: :photo_gallery
     end
   end
+  resources :left_category_news
+  resources :right_category_news
+  resources :bottom_category_news
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

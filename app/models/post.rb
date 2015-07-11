@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
 
   belongs_to :category
   belongs_to :division
-  has_one :headline
-  has_one :special_news
-  has_one :slider_news
+  has_one :headline, :dependent => :destroy
+  has_one :special_news, :dependent => :destroy
+  has_one :slider_news, :dependent => :destroy
 end
