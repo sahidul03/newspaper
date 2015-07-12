@@ -29,27 +29,27 @@
                   <div class="layout_post_2 clearfix">
                     <div class="item_thumb">
                       <div class="thumb_icon">
-                        <%= link_to news_path(c_news) do %>
+                        <%= link_to news_path(c_news),:data => { :no_turbolink => true } do %>
                             <i class="fa fa-copy"></i>
                         <% end %>
                         <!--<a href="post_single.html"><i class="fa fa-copy"></i></a>-->
                       </div>
                       <div class="thumb_hover">
-                        <%= link_to news_path(c_news) do %>
+                        <%= link_to news_path(c_news),:data => { :no_turbolink => true } do %>
                             <%= image_tag(c_news.photo, :alt => 'Post') %>
                         <% end %>
                         <!--<a href="post_single.html"><img src="/images/2.jpg" alt="Post"></a>-->
                       </div>
                       <div class="thumb_meta">
                     <span class="category">
-                      <%= link_to c_news.category.name, category_news_news_index_path(c_news.category) %>
+                      <%= link_to c_news.category.name, category_news_news_index_path(c_news.category),:data => { :no_turbolink => true } %>
                     </span>
                         <!--<span class="comments"><a href="post_single.html">15 Comments</a></span>-->
                       </div>
                     </div>
                     <div class="item_content">
                       <h4>
-                        <%= link_to c_news.title, news_path(c_news) %>
+                        <%= link_to c_news.title, news_path(c_news),:data => { :no_turbolink => true } %>
                         <!--<a href="#">যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা যাবে না</a>-->
                       </h4>
                       <p>

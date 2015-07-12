@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <!-- Favicons -->
-  <link rel="icon" href="/images/ANLogo.jpg">
+  <link rel="icon" href="/images/an-febicon.png">
 
   <!--&lt;!&ndash; Styles &ndash;&gt;-->
   <!--<link rel="stylesheet" href="css/normalize.css">-->
@@ -57,8 +57,15 @@
   <script type="text/javascript" src="/js/endlessRiver.js"></script>
   <script type="text/javascript">
       $(document).ready(function(){
-          $("#myUlBreakingNews").endlessRiver();
-          $("#SironamSlideUl").endlessRiver();
+          $("#myUlBreakingNews").endlessRiver({
+              speed: 50,
+              pause: true
+
+          });
+          $("#SironamSlideUl").endlessRiver({
+              speed: 50,
+              pause: true
+          });
       });
   </script>
 

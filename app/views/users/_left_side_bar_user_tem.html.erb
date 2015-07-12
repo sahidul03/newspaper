@@ -3,21 +3,21 @@
     <% if @sl_news.any?%>
         <% @sl_news.each do |sl_news| %>
             <li>
-              <%= link_to news_path(sl_news.post) do %>
+              <%= link_to news_path(sl_news.post),:data => { :no_turbolink => true } do %>
                   <%= image_tag sl_news.post.photo, alt: 'Slider', height: '350' %>
               <% end %>
               <!--<a href="post_single.html"><img height="350" src="/images/5.jpg" alt="Slider"></a>-->
               <div class="slider_caption">
                 <div class="thumb_meta">
                   <span class="category" style="background-color: #2ECC71">
-                    <%= link_to sl_news.post.category.name, category_news_news_index_path(sl_news.post.category) %>
+                    <%= link_to sl_news.post.category.name, category_news_news_index_path(sl_news.post.category),:data => { :no_turbolink => true } %>
                     <!--<a href="#">জাতীয়</a>-->
                   </span>
                   <!--<span class="comments"><a href="post_single.html">358 Comments</a></span>-->
                 </div>
                 <div class="thumb_link">
                   <h3>
-                    <%= link_to sl_news.post.title, news_path(sl_news.post) %>
+                    <%= link_to sl_news.post.title, news_path(sl_news.post),:data => { :no_turbolink => true } %>
                     <!--<a href="post_single.html">যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা যাবে না</a>-->
                   </h3>
                 </div>
@@ -42,13 +42,13 @@
             <div class="layout_post_1">
               <div class="item_thumb">
                 <div class="thumb_icon">
-                  <%= link_to news_path(sp_news.post),{:style=>'background-color:#2574A9;'} do %>
+                  <%= link_to news_path(sp_news.post),{:style=>'background-color:#2574A9;'},:data => { :no_turbolink => true } do %>
                       <i class="fa fa-copy"></i>
                   <% end %>
                   <!--<a href="post_single.html" style="background-color: #2574A9"><i class="fa fa-copy"></i></a>-->
                 </div>
                 <div class="thumb_hover">
-                  <%= link_to news_path(sp_news.post) do %>
+                  <%= link_to news_path(sp_news.post),:data => { :no_turbolink => true } do %>
                       <%= image_tag sp_news.post.photo, alt: 'Post' %>
                       <!--<img src="/images/3.jpg" alt="Post">-->
                   <% end %>
@@ -56,7 +56,7 @@
                 </div>
                 <div class="thumb_meta">
                   <span class="category" style="background-color: #2574A9">
-                    <%= link_to sp_news.post.category.name, category_news_news_index_path(sp_news.post.category) %>
+                    <%= link_to sp_news.post.category.name, category_news_news_index_path(sp_news.post.category),:data => { :no_turbolink => true } %>
                     <!--<a href="blog.html">জাতীয়</a>-->
                   </span>
                   <!--<span class="comments"><a href="post_single.html">15 Comments</a></span>-->
@@ -64,7 +64,7 @@
               </div>
               <div class="item_content">
                 <h4>
-                  <%= link_to sp_news.post.title, news_path(sp_news.post) %>
+                  <%= link_to sp_news.post.title, news_path(sp_news.post),:data => { :no_turbolink => true } %>
                   <!--<a href="post_single.html">জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিল ইউনিয়ন ঐক্যবদ্ধ</a>-->
                 </h4>
                 <p>
@@ -86,7 +86,7 @@
         <div class="panel_title">
           <div>
             <h4>
-              <%= link_to lcn.category.name, category_news_news_index_path(lcn.category) %>
+              <%= link_to lcn.category.name, category_news_news_index_path(lcn.category),:data => { :no_turbolink => true } %>
             </h4>
           </div>
         </div><!-- End Panel title -->
@@ -96,24 +96,24 @@
               <div class="layout_post_1">
                 <div class="item_thumb">
                   <div class="thumb_icon">
-                    <%= link_to news_path(lcn.category.posts.last),{:style=>'background-color:#2ECC71;'} do %>
+                    <%= link_to news_path(lcn.category.posts.last),{:style=>'background-color:#2ECC71;'},:data => { :no_turbolink => true } do %>
                         <i class="fa fa-copy"></i>
                   <% end %>
                   </div>
                   <div class="thumb_hover">
-                    <%= link_to news_path(lcn.category.posts.last) do %>
+                    <%= link_to news_path(lcn.category.posts.last),:data => { :no_turbolink => true } do %>
                         <%= image_tag(lcn.category.posts.last.photo, alt: 'Post', :class => 'visible animated') %>
                     <% end %>
                   </div>
                   <div class="thumb_meta">
                     <span class="category" style="background-color: #2ECC71">
-                      <%= link_to lcn.category.name, category_news_news_index_path(lcn.category) %>
+                      <%= link_to lcn.category.name, category_news_news_index_path(lcn.category),:data => { :no_turbolink => true } %>
                     </span>
                   </div>
                 </div>
                 <div class="item_content">
                   <h4>
-                    <%= link_to lcn.category.posts.last.title, news_path(lcn.category.posts.last) %>
+                    <%= link_to lcn.category.posts.last.title, news_path(lcn.category.posts.last),:data => { :no_turbolink => true } %>
                   </h4>
                   <p>
                     <%= lcn.category.posts.last.division.name+' : ' if lcn.category.posts.last.division %>
@@ -132,13 +132,13 @@
                         <div class="post clearfix">
                           <div class="item_thumb">
                             <div class="thumb_icon">
-                              <%= link_to news_path(post),{:style=>'background-color:#4183D7;'} do %>
+                              <%= link_to news_path(post),{:style=>'background-color:#4183D7;'},:data => { :no_turbolink => true } do %>
                                   <i class="fa fa-copy"></i>
                               <% end %>
                               <!--<a href="post_single.html" style="background-color: #4183D7"><i class="fa fa-copy"></i></a>-->
                             </div>
                             <div class="thumb_hover">
-                              <%= link_to news_path(post) do %>
+                              <%= link_to news_path(post),:data => { :no_turbolink => true } do %>
                                   <%= image_tag(post.photo, alt: 'Post',:class => 'visible animated') %>
                               <% end %>
                             </div>
@@ -146,7 +146,7 @@
                           <div class="item_content">
 
                             <h4>
-                              <%= link_to post.title, news_path(post) %>
+                              <%= link_to post.title, news_path(post),:data => { :no_turbolink => true } %>
                             </h4>
                             <div class="item_meta clearfix">
                               <span class="meta_date">

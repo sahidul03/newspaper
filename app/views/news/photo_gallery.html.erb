@@ -43,13 +43,13 @@
                   <div class="layout_post_1">
                     <div class="item_thumb">
                       <div class="thumb_icon">
-                        <%= link_to photo_gallery_news_index_path(gallery),{:style=>'background-color:#2574A9;'} do %>
+                        <%= link_to photo_gallery_news_index_path(gallery),{:style=>'background-color:#2574A9;'},:data => { :no_turbolink => true } do %>
                         <i class="fa fa-image"></i>
                         <% end %>
                         <!--<a href="post_single.html" style="background-color: #2574A9"><i class="fa fa-copy"></i></a>-->
                       </div>
                       <div class="thumb_hover">
-                        <%= link_to photo_gallery_news_index_path(gallery) do %>
+                        <%= link_to photo_gallery_news_index_path(gallery),:data => { :no_turbolink => true } do %>
                            <%= image_tag(gallery.photos.first.image) %>
                         <% end %>
                         <!--<a href="post_single.html"><img src="/images/3.jpg" alt="Post"></a>-->
@@ -57,7 +57,7 @@
                     </div>
                     <div class="item_content">
                       <h4>
-                        <%= link_to gallery.title.to_s[0..35], photo_gallery_news_index_path(gallery) if gallery.title%>
+                        <%= link_to gallery.title.to_s[0..35], photo_gallery_news_index_path(gallery),:data => { :no_turbolink => true } if gallery.title%>
                         <!--<a href="post_single.html">জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিল ইউনিয়ন ঐক্যবদ্ধ</a>-->
                       </h4>
 

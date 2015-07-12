@@ -3,7 +3,7 @@
   <div class="box-header">
     <i class="fa fa-check"></i>
     <h3 class="box-title"> Gallery Create/ Edit / Delete</h3>
-    <%= link_to new_gallery_path, :class=>'pull-right btn btn-default category_create_button' do %>
+    <%= link_to new_gallery_path, :class=>'pull-right btn btn-default category_create_button',:data => { :no_turbolink => true } do %>
         Create Gallery <i class="fa fa-check"></i>
     <% end %>
     <!-- tools box -->
@@ -39,17 +39,17 @@
                 </tr>
                 <% @galleries.each do |gallery|  %>
                     <tr>
-                      <td><%= link_to gallery.title, gallery_path(gallery) %></td>
+                      <td><%= link_to gallery.title, gallery_path(gallery),:data => { :no_turbolink => true } %></td>
                       <td><%= gallery.created_at.strftime('%d %B, %y') %></td>
                       <td>
                         <div class="btn-group">
-                          <%= link_to edit_gallery_path(gallery), :class=>'btn btn-info' do %>
+                          <%= link_to edit_gallery_path(gallery), :class=>'btn btn-info',:data => { :no_turbolink => true } do %>
                               <i class='fa fa-align-left fa-edit'></i> edit
                           <% end %>
                           <%= link_to gallery_path(gallery), :class=>'btn btn-info', method: :delete,data: { confirm: 'Are you sure?' } do %>
                               <i class='fa fa-align-right fa-crop'></i> delete
                           <% end %>
-                          <%= link_to 'show', gallery_path(gallery), :class => 'btn btn-info' %>
+                          <%= link_to 'show', gallery_path(gallery), :class => 'btn btn-info',data => { :no_turbolink => true } %>
                         </div>
                       </td>
                     </tr>

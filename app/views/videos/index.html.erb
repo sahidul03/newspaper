@@ -2,7 +2,7 @@
   <div class="box-header">
     <i class="fa fa-check"></i>
     <h3 class="box-title"> All videos</h3>
-    <%= link_to new_video_path, :class=>'pull-right btn btn-default category_create_button' do %>
+    <%= link_to new_video_path, :class=>'pull-right btn btn-default category_create_button',:data => { :no_turbolink => true } do %>
         Upload video <i class="fa fa-video-camera"></i>
     <% end %>
     <!-- tools box -->
@@ -36,7 +36,7 @@
               <div class="timeline-item row">
                 <% @videos.each do |video|  %>
                     <div class="col-md-4">
-                      <%= link_to video_path(video) do %>
+                      <%= link_to video_path(video),:data => { :no_turbolink => true } do %>
                       <div class="timeline-body video_gallery_iframe">
                         <%= video.url.html_safe %>
                       </div>

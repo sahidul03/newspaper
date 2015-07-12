@@ -59,7 +59,7 @@
               <% @headlines.each do |headline| %>
                   <tr>
                     <td>
-                      <%= link_to headline.post.title, post_path(headline.post) %>
+                      <%= link_to headline.post.title, post_path(headline.post),:data => { :no_turbolink => true } %>
                     </td>
 
                     <td><%= headline.post.created_at.strftime('%d %B, %y') %></td>

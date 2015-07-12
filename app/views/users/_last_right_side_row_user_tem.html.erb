@@ -12,7 +12,7 @@
         <% @most_viewed_news.each do |mv_news| %>
             <div class="item clearfix">
               <div class="item_thumb clearfix">
-                <%= link_to news_path(mv_news, :class=>'visible animated'), alt: 'Post' do  %>
+                <%= link_to news_path(mv_news, :class=>'visible animated'), alt: 'Post',:data => { :no_turbolink => true } do  %>
                     <%= image_tag mv_news.photo %>
                 <% end %>
                 <!--<a href="#"><img src="/images/2.jpg" alt="Post" class="visible animated"></a>-->
@@ -20,7 +20,7 @@
               <div class="item_content">
 
                 <h4>
-                  <%= link_to mv_news.title, news_path(mv_news) %>
+                  <%= link_to mv_news.title, news_path(mv_news),:data => { :no_turbolink => true } %>
                   <!--<a href="#">পদ্মা সেতু নির্মাণে বিঘ্ন ঘটার আশঙ্কা নেই : সেতুমন্ত্রী</a>-->
                 </h4>
               </div>
@@ -46,18 +46,18 @@
     <div class="widget">
       <div class="video_news_right_side_bar">
         <div class="video-play">
-          <%= link_to video_gallery_news_index_path(Video.last) do %>
+          <%= link_to video_gallery_news_index_path(Video.last),:data => { :no_turbolink => true } do %>
               <%= Video.last.url.html_safe %>
           <% end if Video.last %>
         </div>
-        <%= link_to video_gallery_news_index_path(Video.last) do %>
+        <%= link_to video_gallery_news_index_path(Video.last),:data => { :no_turbolink => true } do %>
             <!--<div class="video_gallery_iframe_cover_div"></div>-->
         <% end if Video.last%>
       </div>
       <div class="item_content">
 
         <h4>
-          <%= link_to Video.last.title, video_gallery_news_index_path(Video.last) if Video.last%>
+          <%= link_to Video.last.title, video_gallery_news_index_path(Video.last),:data => { :no_turbolink => true } if Video.last%>
           <!--<a href="#">পদ্মা সেতু নির্মাণে বিঘ্ন ঘটার আশঙ্কা নেই : সেতুমন্ত্রী</a>-->
         </h4>
       </div>
@@ -72,7 +72,7 @@
           <div class="item_content">
 
             <h6>
-              <%= link_to video_gallery_news_index_path(video) do %>
+              <%= link_to video_gallery_news_index_path(video),:data => { :no_turbolink => true } do %>
                   <i class="fa fa-video-camera"></i> &nbsp;&nbsp;
                   <%= video.title %>
               <% end %>
@@ -99,7 +99,7 @@
             <% Gallery.last.photos.each do |photo| %>
                     <!-- Item -->
                     <li>
-                      <%= link_to photo_gallery_news_index_path(Gallery.last) do %>
+                      <%= link_to photo_gallery_news_index_path(Gallery.last),:data => { :no_turbolink => true } do %>
                           <%= image_tag(photo.image, alt: 'Slider', height: 150) %>
                     <% end %>
 
@@ -107,7 +107,7 @@
 
                         <div class="thumb_link">
                           <h6>
-                            <%= link_to  photo.title.to_s[0..35],  photo_gallery_news_index_path(Gallery.last) if photo.title %>
+                            <%= link_to  photo.title.to_s[0..35],  photo_gallery_news_index_path(Gallery.last),:data => { :no_turbolink => true } if photo.title %>
                           </h6>
                         </div>
                       </div>

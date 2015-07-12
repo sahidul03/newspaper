@@ -32,77 +32,77 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
       <li class="active">
-        <%= link_to admins_path do %>
+        <%= link_to admins_path, :data => { :no_turbolink => true } do %>
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         <% end %>
       </li>
       <li>
-        <%= link_to categories_path do %>
+        <%= link_to categories_path, :data => { :no_turbolink => true } do %>
             <i class="fa fa-pencil-square-o"></i> <span>Categories</span>
         <% end %>
       </li>
       <li>
-        <%= link_to posts_path do %>
+        <%= link_to posts_path,:data => { :no_turbolink => true } do %>
             <i class="fa fa-pencil-square-o"></i> <span>News</span>
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to archives_path do %>
+        <%= link_to archives_path,:data => { :no_turbolink => true } do %>
             <i class="fa fa-pencil-square-o"></i>
             <span>Archive</span>
 
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to galleries_path do %>
+        <%= link_to galleries_path,:data => { :no_turbolink => true } do %>
             <i class="fa fa-photo"></i>
             <span>Galleries</span>
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to videos_path do %>
+        <%= link_to videos_path,:data => { :no_turbolink => true } do %>
             <i class="fa fa-file-video-o"></i>
             <span>Videos</span>
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to headlines_path do %>
+        <%= link_to headlines_path,:data => { :no_turbolink => true } do %>
             <i class="fa fa-pencil-square"></i>
             <span>Headlines</span>
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to special_news_index_path do %>
+        <%= link_to special_news_index_path,:data => { :no_turbolink => true } do %>
             <i class="fa fa-pencil-square"></i>
             <span>Special News</span>
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to slider_news_index_path do %>
+        <%= link_to slider_news_index_path,:data => { :no_turbolink => true } do %>
             <i class="fa fa-pencil-square"></i>
             <span>Slider News</span>
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to breaking_news_index_path do %>
+        <%= link_to breaking_news_index_path,:data => { :no_turbolink => true } do %>
             <i class="fa fa-pencil-square"></i>
             <span>Breaking News</span>
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to left_category_news_index_path do %>
+        <%= link_to left_category_news_index_path,:data => { :no_turbolink => true } do %>
             <i class="fa fa-pencil"></i>
             <span>Left Side Category</span>
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to right_category_news_index_path do %>
+        <%= link_to right_category_news_index_path, :data => { :no_turbolink => true } do %>
             <i class="fa fa-pencil"></i>
             <span>Right Side Category</span>
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to bottom_category_news_index_path do %>
+        <%= link_to bottom_category_news_index_path, :data => { :no_turbolink => true } do %>
             <i class="fa fa-pencil"></i>
             <span>Bottom Category</span>
         <% end %>

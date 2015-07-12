@@ -8,7 +8,7 @@
   <div class="box-header">
     <i class="fa fa-check"></i>
     <h3 class="box-title">Categories</h3>
-    <%= link_to new_category_path, :class=>'pull-right btn btn-default category_create_button' do %>
+    <%= link_to new_category_path, :class=>'pull-right btn btn-default category_create_button',:data => { :no_turbolink => true } do %>
         Create <i class="fa fa-check"></i>
     <% end %>
     <!-- tools box -->
@@ -27,14 +27,14 @@
           <% @categories.each do |category| %>
               <tr>
                 <td>
-                  <%= link_to category.name, category_path(category) %>
+                  <%= link_to category.name, category_path(category),:data => { :no_turbolink => true } %>
                 </td>
 
                 <td><%= category.created_at.strftime('%d %B, %y') %></td>
                 <td class="text-right">
 
                   <div class="btn-group">
-                    <%= link_to edit_category_path(category), :class=>'btn btn-info' do %>
+                    <%= link_to edit_category_path(category), :class=>'btn btn-info',:data => { :no_turbolink => true } do %>
                         <i class='fa fa-align-left fa-edit'></i> edit
                     <% end %>
                     <%= link_to category_path(category), :class=>'btn btn-info', method: :delete,data: { confirm: 'Are you sure?' } do %>

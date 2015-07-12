@@ -45,7 +45,7 @@
                 <% @all_right_category_news.each do |rs_news| %>
                     <tr>
                       <td>
-                        <%= link_to rs_news.category.name, category_path(rs_news.category) %>
+                        <%= link_to rs_news.category.name, category_path(rs_news.category),:data => { :no_turbolink => true } %>
                       </td>
 
                       <td><%= rs_news.category.created_at.strftime('%d %B, %y') %></td>

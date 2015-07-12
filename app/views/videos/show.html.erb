@@ -2,7 +2,7 @@
   <div class="box-header">
     <i class="fa fa-video-camera"></i>
     <h3 class="box-title"><%=link_to 'Video Gallery', videos_path %></h3>
-    <%= link_to new_video_path, :class=>'pull-right btn btn-default category_create_button' do %>
+    <%= link_to new_video_path, :class=>'pull-right btn btn-default category_create_button',:data => { :no_turbolink => true } do %>
         Upload video <i class="fa fa-video-camera"></i>
     <% end %>
     <!-- tools box -->
@@ -35,7 +35,7 @@
               <i class="fa fa-video-camera bg-maroon"></i>
               <div class="timeline-item row">
                 <span class="time">
-                      <%= link_to edit_video_path(@video), :class=>'btn btn-primary btn-xs' do %>
+                      <%= link_to edit_video_path(@video), :class=>'btn btn-primary btn-xs',:data => { :no_turbolink => true } do %>
                              <i class='fa fa-align-left fa-edit'></i> edit
                        <% end %>
                   <%= link_to video_path(@video), :class=>'btn btn-primary btn-xs', method: :delete,data: { confirm: 'Are you sure?' } do %>

@@ -6,7 +6,7 @@
       <ul id="SironamSlideUl">
         <% Headline.all.each do |headline| %>
             <li>
-              <%= link_to news_path(headline.post) do %>
+              <%= link_to news_path(headline.post),:data => { :no_turbolink => true } do %>
                   <img src="/images/list-style-2.png">
                   <%= headline.post.title %>!
               <% end %>

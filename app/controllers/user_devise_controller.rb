@@ -1,6 +1,3 @@
-class UserDeviseController < Devise
-  def news
-    redirect_to root_path
-  end
+class UserDeviseController < ApplicationController
 
 end

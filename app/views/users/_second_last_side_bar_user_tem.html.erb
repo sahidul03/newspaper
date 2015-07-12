@@ -8,7 +8,7 @@
             <div class="item clearfix">
               <div class="item_content">
                 <h4>
-                  <%= link_to news_path(ltn) do %>
+                  <%= link_to news_path(ltn),:data => { :no_turbolink => true } do %>
                         <span class="format" style="background-color: #2F88D6">
                           <%= ltn.category.name %>
                         </span>
@@ -32,7 +32,7 @@
         <ul>
           <% Division.all.each do |division| %>
           <li>
-            <%= link_to division.name, division_news_index_path(division) %>
+            <%= link_to division.name, division_news_index_path(division),:data => { :no_turbolink => true } %>
             <%= '('+ division.posts.count.to_s+')' %>
           </li>
           <% end %>
@@ -55,13 +55,13 @@
         <div class="widget">
           <div class="widget_title">
             <h3>
-              <%= link_to rcn.category.name, category_news_news_index_path(rcn.category) %>
+              <%= link_to rcn.category.name, category_news_news_index_path(rcn.category),:data => { :no_turbolink => true } %>
             </h3>
           </div>
           <% if rcn.category.posts.any? %>
               <div class="tb_widget_categories">
                 <div class="widget sports-news">
-                  <%= link_to news_path(rcn.category.posts.last) do %>
+                  <%= link_to news_path(rcn.category.posts.last),:data => { :no_turbolink => true } do %>
                       <%= image_tag(rcn.category.posts.last.photo) %>
                       <h4>
                         <%= rcn.category.posts.last.title %>
@@ -73,7 +73,7 @@
                   <% rcn.category.posts.last(5).each do |post| %>
                   <% unless rcn.category.posts.last==post %>
                       <li>
-                        <%= link_to post.title, news_path(post) %>
+                        <%= link_to post.title, news_path(post),:data => { :no_turbolink => true } %>
                       </li>
                   <% end %>
                   <% end %>

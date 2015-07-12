@@ -25,16 +25,16 @@
                   <div class="layout_post_1">
                     <div class="item_thumb">
                       <div class="thumb_icon">
-                        <%= link_to video_gallery_news_index_path(video),{:style=>'background-color:#2574A9;'} do %>
+                        <%= link_to video_gallery_news_index_path(video),{:style=>'background-color:#2574A9;'},:data => { :no_turbolink => true } do %>
                             <i class="fa fa-video-camera"></i>
                         <% end %>
                         <!--<a href="post_single.html" style="background-color: #2574A9"><i class="fa fa-video-camera"></i></a>-->
                       </div>
-                      <%= link_to video_gallery_news_index_path(video) do %>
+                      <%= link_to video_gallery_news_index_path(video),:data => { :no_turbolink => true } do %>
                           <div class="video_gallery_iframe_cover_div"></div>
                     <% end %>
                       <div class="thumb_hover">
-                        <%= link_to video_gallery_news_index_path(video) do %>
+                        <%= link_to video_gallery_news_index_path(video),:data => { :no_turbolink => true } do %>
                         <%= video.url.html_safe %>
                         <% end %>
                         <!--<a href="post_single.html"><img src="/images/3.jpg" alt="Post"></a>-->
@@ -43,7 +43,7 @@
                     </div>
                     <div class="item_content">
                       <h4>
-                        <%= link_to video.title.to_s[0..35], video_gallery_news_index_path(video) %>
+                        <%= link_to video.title.to_s[0..35], video_gallery_news_index_path(video),:data => { :no_turbolink => true } %>
                         <!--<a href="post_single.html">জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিল ইউনিয়ন ঐক্যবদ্ধ</a>-->
                       </h4>
 

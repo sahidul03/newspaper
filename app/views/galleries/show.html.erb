@@ -2,13 +2,13 @@
   <div class="box-header">
     <i class="fa fa-check"></i>
     <h3 class="box-title"> Gallery Details</h3>
-    <%= link_to galleries_path, :class=>'pull-right btn btn-default category_create_button' do %>
+    <%= link_to galleries_path, :class=>'pull-right btn btn-default category_create_button',:data => { :no_turbolink => true } do %>
         All Galleries
     <% end %>
-    <%= link_to new_gallery_path, :class=>'pull-right btn btn-default category_create_button' do %>
+    <%= link_to new_gallery_path, :class=>'pull-right btn btn-default category_create_button',:data => { :no_turbolink => true } do %>
         Create new Gallery <i class="fa fa-check"></i>
     <% end %>
-    <%= link_to edit_gallery_path(@gallery), :class=>'pull-right btn btn-default category_create_button' do %>
+    <%= link_to edit_gallery_path(@gallery), :class=>'pull-right btn btn-default category_create_button',:data => { :no_turbolink => true } do %>
         <i class='fa fa-align-left fa-edit'></i> edit
     <% end %>
     <%= link_to gallery_path(@gallery), :class=>'pull-right btn btn-default category_create_button', method: :delete,data: { confirm: 'Are you sure?' } do %>
@@ -25,7 +25,7 @@
   </h1>
   <ol class="breadcrumb">
     <span class="time">
-                      <%= link_to new_gallery_photo_path(@gallery), :class=>'btn btn-primary btn-xs' do %>
+                      <%= link_to new_gallery_photo_path(@gallery), :class=>'btn btn-primary btn-xs',:data => { :no_turbolink => true } do %>
                              <i class='fa fa-align-left fa-plus'></i> Add more photo
                        <% end %>
                     </span>
@@ -75,7 +75,7 @@
                   <i class="fa fa-camera bg-purple"></i>
                   <div class="timeline-item">
                     <span class="time">
-                      <%= link_to edit_gallery_photo_path(@gallery,photo), :class=>'btn btn-primary btn-xs' do %>
+                      <%= link_to edit_gallery_photo_path(@gallery,photo), :class=>'btn btn-primary btn-xs',:data => { :no_turbolink => true } do %>
                              <i class='fa fa-align-left fa-edit'></i> edit
                        <% end %>
                       <%= link_to gallery_photo_path(@gallery,photo), :class=>'btn btn-primary btn-xs', method: :delete,data: { confirm: 'Are you sure?' } do %>

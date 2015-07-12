@@ -59,7 +59,7 @@
                 <% @special_news.each do |sp_news| %>
                     <tr>
                       <td>
-                        <%= link_to sp_news.post.title, post_path(sp_news.post) %>
+                        <%= link_to sp_news.post.title, post_path(sp_news.post),:data => { :no_turbolink => true } %>
                       </td>
 
                       <td><%= sp_news.post.created_at.strftime('%d %B, %y') %></td>

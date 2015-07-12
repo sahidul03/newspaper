@@ -3,7 +3,7 @@
         <div class="panel_title">
           <div>
             <h4>
-              <%= link_to bcn.category.name, category_news_news_index_path(bcn) %>
+              <%= link_to bcn.category.name, category_news_news_index_path(bcn),:data => { :no_turbolink => true } %>
               <!--<a href="#">বিনোদন</a>-->
             </h4>
           </div>
@@ -16,24 +16,24 @@
                     <div class="layout_post_1">
                       <div class="item_thumb">
                         <div class="thumb_icon">
-                          <%= link_to news_path(post),{:style=>'background-color:#D2527F;'} do %>
+                          <%= link_to news_path(post),{:style=>'background-color:#D2527F;'},:data => { :no_turbolink => true } do %>
                               <i class="fa fa-copy"></i>
                           <% end %>
                         </div>
                         <div class="thumb_hover">
-                          <%= link_to news_path(post) do %>
+                          <%= link_to news_path(post),:data => { :no_turbolink => true } do %>
                               <%= image_tag(post.photo, alt: 'Post', :class => 'visible animated') %>
                           <% end %>
                         </div>
                         <div class="thumb_meta">
                     <span class="category" style="background-color: #D2527F">
-                      <%= link_to post.category.name, category_news_news_index_path(post.category) %>
+                      <%= link_to post.category.name, category_news_news_index_path(post.category),:data => { :no_turbolink => true } %>
                     </span>
                         </div>
                       </div>
                       <div class="item_content">
                         <h4>
-                          <%= link_to post.title, news_path(post) %>
+                          <%= link_to post.title, news_path(post),:data => { :no_turbolink => true } %>
                         </h4>
                         <div class="item_meta clearfix">
                           <span class="meta_date">

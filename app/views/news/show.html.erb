@@ -43,13 +43,13 @@
               <div class="layout_post_1">
                 <div class="item_thumb">
                   <div class="thumb_icon">
-                    <%= link_to news_path(news),{:style=>'background-color:#F89406;'} do %>
+                    <%= link_to news_path(news),{:style=>'background-color:#F89406;'},:data => { :no_turbolink => true } do %>
                         <i class="fa fa-copy"></i>
                     <% end %>
                     <!--<a href="post_single.html" style="background-color: #F89406"><i class="fa fa-copy"></i></a>-->
                   </div>
                   <div class="thumb_hover">
-                    <%= link_to news_path(news),{:style=>'background-color:#F89406;'} do %>
+                    <%= link_to news_path(news),{:style=>'background-color:#F89406;'},:data => { :no_turbolink => true } do %>
                         <%= image_tag(news.photo, alt: 'Post', class: 'visible animated') if news.photo %>
                     <% end %>
                     <!--<a href="post_single.html"><img src="/images/1.jpg" alt="Post" class="visible animated"></a>-->
@@ -57,8 +57,8 @@
                 </div>
                 <div class="item_content">
                   <h4>
-                    <%= link_to news.title.to_s[0..32]+'...', news_path(news) if news.title.to_s.length>32 %>
-                    <%= link_to news.title.to_s[0..32], news_path(news) if news.title.to_s.length<33 %>
+                    <%= link_to news.title.to_s[0..32]+'...', news_path(news),:data => { :no_turbolink => true } if news.title.to_s.length>32 %>
+                    <%= link_to news.title.to_s[0..32], news_path(news),:data => { :no_turbolink => true } if news.title.to_s.length<33 %>
                     <!--<a href="post_single.html">Maecenas tempor volutpat commodo uspendisse potenti</a>-->
                   </h4>
                   <div class="item_meta clearfix">

@@ -14,7 +14,7 @@
           <i class="fa fa-check"></i>
           <h3 class="box-title">Add Photo
             </h3>
-          <%= link_to gallery_path(@gallery) do %>
+          <%= link_to gallery_path(@gallery),:data => { :no_turbolink => true } do %>
               <h4 class="text-right" style="margin-right:10px ">
                 <i class="fa fa-photo"></i>
                 <%= @gallery.title %>

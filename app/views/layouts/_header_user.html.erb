@@ -33,7 +33,9 @@
   <!-- Header main -->
   <div class="logo-add">
     <div class="site_brand">
-      <img src="/images/ANLogo.jpg">
+      <%= link_to root_path, :class=>'logo',:data => { :no_turbolink => true } do %>
+      <img src="/images/ANLogo24.jpg">
+      <% end %>
     </div>
     <div class="site_brand_add">
       <img src="/images/add.jpg">
@@ -48,14 +50,14 @@
         <span class="site_navigation_toggle"><i class="fa fa-reorder"></i></span>
         <ul class="menu">
           <li>
-            <%= link_to root_path do %>
+            <%= link_to root_path,:data => { :no_turbolink => true } do %>
                 <i class="fa fa-home"></i> প্রচ্ছদ
             <% end %>
           </li>
           <% if Category.all.any? %>
           <% Category.first(11).each do |cat| %>
               <li>
-                <%= link_to cat.name, category_news_news_index_path(cat) %>
+                <%= link_to cat.name, category_news_news_index_path(cat),:data => { :no_turbolink => true } %>
               </li>
           <% end %>
           <% end %>
@@ -72,7 +74,7 @@
                       <% Category.all.each do |cat| %>
                             <% if cat_index>10 %>
                                   <li>
-                                    <%= link_to cat.name, category_news_news_index_path(cat) %>
+                                    <%= link_to cat.name, category_news_news_index_path(cat),:data => { :no_turbolink => true } %>
                                   </li>
                             <% end %>
                             <% cat_index=cat_index+1 %>
@@ -81,16 +83,16 @@
                   <% end %>
                   <% if Video.last %>
                       <li>
-                        <%= link_to 'ভিডিও সংবাদ ', video_gallery_news_index_path(Video.last) %>
+                        <%= link_to 'ভিডিও সংবাদ ', video_gallery_news_index_path(Video.last),:data => { :no_turbolink => true } %>
                       </li>
                   <% end %>
-                  <% if Video.last %>
+                  <% if Gallery.last %>
                       <li>
-                        <%= link_to 'ফটো সংবাদ ', photo_gallery_news_index_path(Gallery.last) if Video.last %>
+                        <%= link_to 'ফটো সংবাদ ', photo_gallery_news_index_path(Gallery.last),:data => { :no_turbolink => true } if Gallery.last %>
                       </li>
                   <% end %>
                   <li>
-                    <%= link_to 'আর্কাইভ', archive_news_index_path %>
+                    <%= link_to 'আর্কাইভ', archive_news_index_path,:data => { :no_turbolink => true } %>
                   </li>
                 </ul>
               </div>
