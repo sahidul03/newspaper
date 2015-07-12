@@ -80,10 +80,10 @@
                   <% end %>
                   <% end %>
                   <li>
-                    <%= link_to 'ভিডিও সংবাদ ', video_gallery_news_index_path(Video.last) %>
+                    <%= link_to 'ভিডিও সংবাদ ', video_gallery_news_index_path(Video.last) if Video.last %>
                   </li>
                   <li>
-                    <%= link_to 'ফটো সংবাদ ', photo_gallery_news_index_path(Gallery.last) %>
+                    <%= link_to 'ফটো সংবাদ ', photo_gallery_news_index_path(Gallery.last) if Video.last %>
                   </li>
                   <li>
                     <%= link_to 'আর্কাইভ', archive_news_index_path %>

@@ -48,16 +48,16 @@
         <div class="video-play">
           <%= link_to video_gallery_news_index_path(Video.last) do %>
               <%= Video.last.url.html_safe %>
-          <% end %>
+          <% end if Video.last %>
         </div>
         <%= link_to video_gallery_news_index_path(Video.last) do %>
             <!--<div class="video_gallery_iframe_cover_div"></div>-->
-        <% end %>
+        <% end if Video.last%>
       </div>
       <div class="item_content">
 
         <h4>
-          <%= link_to Video.last.title, video_gallery_news_index_path(Video.last) %>
+          <%= link_to Video.last.title, video_gallery_news_index_path(Video.last) if Video.last%>
           <!--<a href="#">পদ্মা সেতু নির্মাণে বিঘ্ন ঘটার আশঙ্কা নেই : সেতুমন্ত্রী</a>-->
         </h4>
       </div>
@@ -80,7 +80,7 @@
           </div>
 
         </div>
-    <% end %>
+    <% end if Video.all.any?%>
     <!-- End Post item -->
 
 
