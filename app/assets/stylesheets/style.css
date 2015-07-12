@@ -2701,7 +2701,7 @@ nav.top_navigation ul li {
     18. Navigation
 ------------------------------------------------------------------------------*/
 nav.site_navigation ul {
-    z-index: 9;
+    z-index: 345;
     list-style: none;
     padding: 0;
     margin: 0
