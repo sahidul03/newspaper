@@ -1,7 +1,25 @@
+<% if BreakingNews.all.any? %>
 <div class="brteaking_news container">
   <div class="headline"><h3>ব্রেকিং নিউজ </h3></div>
-  <div class="brteaking_title">
-    <li><a><i class="fa fa-angle-double-left"></i> ভিওআইপি কল আনছে টেলিটক!</a></li>
+  <div class="brteaking_title myUlBreaking_news">
+    <ul id="myUlBreakingNews">
+
+      <% BreakingNews.all.each do |br_news| %>
+              <li><a><i class="fa fa-angle-double-left"></i> <%= br_news.title %>!</a></li>
+      <% end %>
+      <!--<li><a><i class="fa fa-angle-double-left"></i> ভিওআইপি কল আনছে টেলিটক!</a></li>-->
+    </ul>
+
 
   </div>
 </div>
+<% end %>
+
+<!--<link rel="stylesheet" type="text/css"  href="/css/endlessRiver.css">-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+<!--<script type="text/javascript" src="/js/endlessRiver.js"></script>-->
+<!--<script type="text/javascript">-->
+    <!--$(document).ready(function(){-->
+        <!--$("#myUl").endlessRiver();-->
+    <!--});-->
+<!--</script>-->

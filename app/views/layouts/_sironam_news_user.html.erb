@@ -1,8 +1,21 @@
-<div class="sironam_news container">
-  <div class="headline"><h3>শিরোনাম </h3></div>
-  <div class="sironam_title">
-    <li><a href="#"><img src="/images/list-style-2.png"> ভিওআইপি কল আনছে টেলিটক!</a></li>
-    <li><a href="#"><img src="/images/list-style-2.png"> যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা যাবে না</a></li>
-    <li><a href="#"><img src="/images/list-style-2.png"> যতোই কল্পকাহিনী তৈরি </a></li>
-  </div>
-</div>
+<% if Headline.all.any? %>
+    <div class="sironam_news container">
+      <div class="headline"><h3>শিরোনাম </h3></div>
+      <div class="sironam_title ticker"data-duration="20" data-loop="2" data-effect="linear">
+    <span>
+      <ul id="SironamSlideUl">
+        <% Headline.all.each do |headline| %>
+            <li>
+              <%= link_to news_path(headline.post) do %>
+                  <img src="/images/list-style-2.png">
+                  <%= headline.post.title %>!
+              <% end %>
+            </li>
+        <% end %>
+      </ul>
+
+    </span>
+
+      </div>
+    </div>
+<% end %>
