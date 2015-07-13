@@ -41,7 +41,7 @@
                 </tr>
                 <% @posts.each do |post|  %>
                     <tr>
-                      <td><%= post.category.name %></td>
+                      <td><%= link_to post.category.name, category_path(post.category),:data => { :no_turbolink => true }  %></td>
                       <td><%= post.created_at.strftime('%d %B, %y') %></td>
                       <td>
                         <%= link_to post.title.to_s[0..60]+'...', post_path(post),:data => { :no_turbolink => true } if post.title.to_s.length>60 %>
@@ -63,15 +63,15 @@
               </table>
           <% end %>
 
-          <div class="box-tools">
-            <ul class="pagination pagination-sm no-margin pull-left">
-              <li><a href="#">&laquo;</a></li>
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">&raquo;</a></li>
-            </ul>
-          </div>
+          <!--<div class="box-tools">-->
+            <!--<ul class="pagination pagination-sm no-margin pull-left">-->
+              <!--<li><a href="#">&laquo;</a></li>-->
+              <!--<li><a href="#">1</a></li>-->
+              <!--<li><a href="#">2</a></li>-->
+              <!--<li><a href="#">3</a></li>-->
+              <!--<li><a href="#">&raquo;</a></li>-->
+            <!--</ul>-->
+          <!--</div>-->
         </div><!-- /.box-body -->
 
       </div><!-- /.box -->

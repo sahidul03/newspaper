@@ -194,3 +194,126 @@ ul.products li.product:nth-child(2n) {
     float: right;
     clear: none;
 }
+/*responsive*/
+
+
+.wide_slider .slider_caption {
+    display: none
+}
+/* Pager */
+#wide_slider_pager {
+    display: none
+}
+.content_slider .bx-wrapper img {
+    height:auto;
+}
+.layout_post_1 .item_thumb img {
+    width: 100%;
+    height: auto;
+    transition: all 0.2s ease 0s;
+}
+#header .logo-add {
+    padding-left:7%;
+    width: 100%
+}
+#header .logo-add .site_brand img {
+
+    width: 100%;
+    float:left;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+#header .logo-add .site_brand_add img {
+    width: 100%;
+    float:right;
+    height:auto;
+    margin-right:0%;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+
+.sironam_news{
+    width:87%;
+    height:30px;
+    float:left;
+    margin-top:-25px;
+
+}
+.sironam_news .headline{
+    width:15%;
+    height:30px;
+    float:left;
+    border-radius:0px;
+    display:inline-block;
+}
+
+
+.sironam_news .headline h3{
+    font-size:12px;
+    color:#FFF;
+    text-align:center;
+    height:30px;
+
+}
+.sironam_news .sironam_title{
+    width:85%;
+    height:30px;
+    float:left;
+    display:inline-block;
+}
+.sironam_news .sironam_title li{
+    list-style:none;
+    line-height:30px;
+    float:left;
+    display:inline-block;
+    padding-left:30px;
+}
+.sironam_news .sironam_title li a{
+    color:#2F88D6;
+    font-size:13px;
+}
+
+
+.brteaking_news{
+    width:100%;
+    height:30px;
+    bottom:0;
+    z-index:2000;
+    left:0%;
+    margin:0 auto 0 auto;
+    position:fixed;
+
+}
+.brteaking_news .headline{
+    width:20%;
+    height:30px;
+    float:left;
+    border-radius:0px;
+    display:inline-block;
+}
+
+.brteaking_news .headline h3{
+    font-size:13px;
+    color:#FFF;
+    text-align:center;
+    height:30px;
+
+}
+.brteaking_news .brteaking_title{
+    width:80%;
+    height:30px;
+    float:left;
+    display:inline-block;
+}
+.brteaking_news .brteaking_title li{
+    list-style:none;
+    line-height:30px;
+    float:left;
+    display:inline-block;
+    padding-left:30px;
+}
+.brteaking_news .brteaking_title li a{
+    color:#FFFFFF;
+    font-size:15px;
+}

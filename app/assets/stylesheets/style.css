@@ -2633,14 +2633,15 @@ img.mfp-img {
 }
 #header .logo-add .site_brand img {
 
-    width: 24%;
+    width: 35%;
     float:left;
+    height:120px;
     padding-top:20px;
     padding-bottom:20px;
 }
 #header .logo-add .site_brand_add img {
 
-    width: 60%;
+    width: 50%;
     float:right;
     height:auto;
     margin-right:8%;
