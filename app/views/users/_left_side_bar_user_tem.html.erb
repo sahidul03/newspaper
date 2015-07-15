@@ -64,7 +64,9 @@
               </div>
               <div class="item_content">
                 <h4>
-                  <%= link_to sp_news.post.title, news_path(sp_news.post),:data => { :no_turbolink => true } %>
+                  <%= link_to sp_news.post.title.to_s[0..32]+'...', news_path(sp_news.post),:data => { :no_turbolink => true } if sp_news.post.title.to_s.length>32 %>
+                  <%= link_to sp_news.post.title.to_s[0..32], news_path(sp_news.post),:data => { :no_turbolink => true } if sp_news.post.title.to_s.length<33 %>
+
                   <!--<a href="post_single.html">জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিল ইউনিয়ন ঐক্যবদ্ধ</a>-->
                 </h4>
                 <p>
