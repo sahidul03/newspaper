@@ -10,8 +10,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <!-- Favicons -->
-  <link rel="icon" href="/images/an-febicon.png">
-
+  <!--<link rel="icon" href="/images/an-febicon.png">-->
+  <% if NewsProperty.last %>
+      <% if NewsProperty.last.febicon %>
+          <link rel="icon" href="/images/an-febicon.png">
+      <% else %>
+          <link rel="icon" href="<%= NewsProperty.last.febicon %>">
+      <% end %>
+  <% end %>
   <!--&lt;!&ndash; Styles &ndash;&gt;-->
   <!--<link rel="stylesheet" href="css/normalize.css">-->
   <!--<link rel="stylesheet" href="css/font-awesome.min.css">-->

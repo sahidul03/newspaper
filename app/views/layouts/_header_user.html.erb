@@ -34,7 +34,9 @@
   <div class="logo-add">
     <div class="site_brand">
       <%= link_to root_path, :class=>'logo',:data => { :no_turbolink => true } do %>
-      <img src="/images/ANLogo24.jpg">
+          <% if NewsProperty.last %>
+              <%= image_tag(NewsProperty.last.logo) if NewsProperty.last.logo %>
+          <% end %>
       <% end %>
     </div>
     <div class="site_brand_add">

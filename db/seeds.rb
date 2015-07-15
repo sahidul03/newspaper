@@ -23,6 +23,10 @@ Category.create(name: 'তথ্য-প্রযুক্তি')
 Category.create(name: 'প্রবাসের কথা')
 Category.create(name: 'বিনোদন')
 Category.create(name: 'ঢাকার বাইরে')
-User.create(email: 'sahidul03@gmail.com',password: 'abcd1234')
-User.create(email: 'sahid.kuet@gmail.com',password: 'abcd1234')
-User.create(email: 'abcd@gmail.com',password: 'abcd1234')
+
+User.create(email: 'sahidul03@gmail.com',password: 'asdf@#098')
+User.create(email: 'sahid.kuet@gmail.com',password: 'asdf@#098')
+User.create(email: 'asad@gmail.com',password: 'asdf@#098')
+User.create(email: 'abcd@gmail.com',password: 'asdf@#098')
+
+NewsProperty.create(:name=>'রুবী হক ',:address=>'২৮ নং আল্লামা ইকবাল রোড । নারায়ণগঞ্জ , ১৪০০- বাংলাদেশ ',:phone=>'+৮৮০১৬৭৩২২৯৮৩১ ',:email=>'info@alokitonarayanganj24.com')

@@ -43,6 +43,7 @@ Rails.application.routes.draw do
   resources :left_category_news
   resources :right_category_news
   resources :bottom_category_news
+  resources :newsproperties
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

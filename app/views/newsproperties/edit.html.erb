@@ -1,0 +1,57 @@
+<section class="content">
+
+  <div class='row'>
+    <div class='col-md-11'>
+      <div class='box box-info'>
+        <div class='box-header'>
+          <h3 class='box-title'>Edit News properties <small></small></h3>
+          <!-- tools box -->
+        </div><!-- /.box-header -->
+        <%= form_for @newsproperty, :url => newsproperty_path(@newsproperty) do |f| %>
+            <div class="row">
+              <div class="col-md-10">
+                <div class="input-group margin col-md-12">
+                  <%= f.text_field :name, :class=>'form-control', :placeholder=>"Editor name.." %>
+                </div>
+                <div class="input-group margin col-md-12">
+                  <%= f.text_field :address, :class=>'form-control', :placeholder=>"Address here.." %>
+                </div>
+                <div class="input-group margin col-md-12">
+                  <%= f.text_field :phone, :class=>'form-control', :placeholder=>"Phone number here.." %>
+                </div>
+                <div class="input-group margin col-md-12">
+                  <%= f.text_field :email, :class=>'form-control', :placeholder=>"Email address here.." %>
+                </div>
+
+                <!-- /input-group -->
+                <div class="form-group pad">
+                  <div class="btn btn-success btn-file">
+                    <i class="fa fa-paperclip"></i> Logo
+                    <%= f.file_field :logo, :class=>'' %>
+                  </div>
+                  <p class="help-block">Size(600,84)</p>
+                </div>
+                <div class="form-group pad">
+                  <div class="btn btn-success btn-file">
+                    <i class="fa fa-paperclip"></i> Title Logo
+                    <%= f.file_field :febicon, :class=>'' %>
+                  </div>
+                  <p class="help-block">Size(30,30)</p>
+                </div>
+              </div>
+            </div>
+            <div class="input-group margin pad">
+              <%= f.submit 'Submit', :class=>'btn btn-primary' %>
+            </div><!-- /btn-group -->
+        <% end %>
+
+
+      </div><!-- /.box -->
+
+
+    </div><!-- /.col-->
+  </div><!-- ./row -->
+
+
+
+</section><!-- /.content -->
