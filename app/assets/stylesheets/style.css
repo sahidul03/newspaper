@@ -947,6 +947,7 @@ ul.page-numbers li span.current {
     14.1 Post layout 1
 ------------------------------------------------------------------------------*/
 .layout_post_1 {
+    min-height: 295px;
     margin-bottom: 15px
 }
 /* Image */
@@ -3737,7 +3738,7 @@ span.format {
     /*width:84.5%;*/
     height:34px;
     background-color:#F4F6F8;
-    margin:-19px auto 15px auto;
+    margin:-19px auto 8px auto;
 
 }
 .sironam_news .headline{
