@@ -12,9 +12,9 @@
       <nav class="top_navigation" role="navigation">
         <span class="top_navigation_toggle"><i class="fa fa-reorder"></i></span>
         <ul class="menu">
-          <li><a><i class="fa fa-calendar-o"></i> <%= Time.now.strftime(' %d %B, %y') %></a></li>
+          <li><a><i class="fa fa-calendar-o"></i> <%= Time.now.in_time_zone("Dhaka").strftime(' %d %B, %y') %></a></li>
           <!--<li><a></i> ২৬ জুন ২০১৫ খ্রিষ্টাব্দ</a></li>-->
-          <li><a><i class="fa fa-clock-o"></i><%= Time.now.strftime(' %I:%M %p') %></a></li>
+          <li><a><i class="fa fa-clock-o"></i><%= Time.now.in_time_zone("Dhaka").strftime(' %I:%M %p') %></a></li>
           <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
           <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
           <li><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
