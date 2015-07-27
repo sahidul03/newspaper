@@ -129,7 +129,7 @@
 
           <div class="list_posts">
             <% if lcn.category.posts.any? %>
-                <% lcn.category.posts.last(5).each do |post| %>
+                <% lcn.category.posts.last(5).reverse.each do |post| %>
                     <% unless post==lcn.category.posts.last %>
                         <div class="post clearfix">
                           <div class="item_thumb">

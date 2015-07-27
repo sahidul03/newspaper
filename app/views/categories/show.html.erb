@@ -2,7 +2,7 @@
 <div class="box box-info">
   <div class="box-header">
     <i class="fa fa-check"></i>
-    <h3 class="box-title"> News Create/ Edit / Delete</h3>
+    <h3 class="box-title"> <%= @category.name%></h3>
     <%= link_to new_post_path, :class=>'pull-right btn btn-default category_create_button',:data => { :no_turbolink => true } do %>
         Create News <i class="fa fa-check"></i>
     <% end %>
@@ -39,7 +39,7 @@
 
                   <th>Edit/Delete</th>
                 </tr>
-                <% @posts.each do |post|  %>
+                <% @posts.reverse_order.each do |post|  %>
                     <tr>
                       <td><%= post.category.name %></td>
                       <td><%= post.created_at.strftime('%d %B, %y') %></td>

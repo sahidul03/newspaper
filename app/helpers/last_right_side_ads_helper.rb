@@ -1,0 +1,2 @@
+module LastRightSideAdsHelper
+end

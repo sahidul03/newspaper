@@ -37,7 +37,7 @@
                   <th>Date</th>
                   <th>Edit/Delete</th>
                 </tr>
-                <% @galleries.each do |gallery|  %>
+                <% @galleries.reverse_order.each do |gallery|  %>
                     <tr>
                       <td><%= link_to gallery.title, gallery_path(gallery),:data => { :no_turbolink => true } %></td>
                       <td><%= gallery.created_at.strftime('%d %B, %y') %></td>

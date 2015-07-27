@@ -1,0 +1,2 @@
+module HeaderBottomAdsHelper
+end

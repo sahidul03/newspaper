@@ -26,7 +26,9 @@
 
 <!-- start ad -->
 <div>
-  <a href="#" target="_blank"><img src="/images/add.jpg"></a>
+  <a href="#" target="_blank">
+    <%= image_tag(HeaderBottomAd.last.ad_picture) if HeaderBottomAd.last %>
+  </a>
 </div>
 <!-- end ad -->
 <!-- Panel title -->

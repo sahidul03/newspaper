@@ -44,6 +44,9 @@ Rails.application.routes.draw do
   resources :right_category_news
   resources :bottom_category_news
   resources :newsproperties
+  resources :header_bottom_ads
+  resources :last_right_side_ads
+  resources :second_last_right_side_ads
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,9 +1,10 @@
-<div class="widget add-banner">
-  <img src="/images/13471096154350703595.gif">
-</div>
-<div class="widget add-banner">
-  <img src="/images/pran4-2-15.gif">
-</div>
+<% if LastRightSideAd.any? %>
+    <% LastRightSideAd.last(2).each do |ad| %>
+        <div class="widget add-banner">
+          <%= image_tag(ad.ad_picture) %>
+        </div>
+    <% end %>
+<% end %>
 <!-- Widget top rated -->
 <div class="widget">
   <div class="widget_title"><h3>সর্বাধিক পঠিত</h3></div>
@@ -34,7 +35,7 @@
 <!-- Widget Banners facebook -->
 <div class="widget add-banner">
   <div class="widget_title "><h3>ফেসবুক পেইজ</h3></div>
-  <img src="/images/fb.jpg">
+  <div class="fb-page" data-href="https://www.facebook.com/pages/Alokito-Narayanganj-24/663374857096078" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/pages/Alokito-Narayanganj-24/663374857096078"><a href="https://www.facebook.com/pages/Alokito-Narayanganj-24/663374857096078">Alokito Narayanganj 24</a></blockquote></div></div>
 
 </div><!-- End Widget Banners facebook -->
 <!-- Widget Recent list posts -->
@@ -63,7 +64,7 @@
       </div>
 
     </div><!-- End Post item -->
-    <% Video.last(3).each do |video| %>
+    <% Video.last(3).reverse.each do |video| %>
         <div class="item clearfix">
           <div class="item_thumb clearfix">
 
@@ -122,7 +123,6 @@
 </div><!-- End Widget posts -->
 <!-- Widget Banners facebook -->
 <div class="widget add-banner">
-  <div class="widget_title "><h3>টুইটার</h3></div>
-  <img src="/images/fb.jpg">
+
 
 </div><!-- End Widget Banners facebook -->

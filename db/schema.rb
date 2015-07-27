@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150715160825) do
+ActiveRecord::Schema.define(version: 20150727165520) do
 
   create_table "bottom_category_news", force: true do |t|
     t.integer  "category_id"
@@ -45,6 +45,12 @@ ActiveRecord::Schema.define(version: 20150715160825) do
     t.datetime "updated_at"
   end
 
+  create_table "header_bottom_ads", force: true do |t|
+    t.string   "ad_picture"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "headlines", force: true do |t|
     t.integer  "post_id"
     t.datetime "created_at"
@@ -52,6 +58,12 @@ ActiveRecord::Schema.define(version: 20150715160825) do
   end
 
   add_index "headlines", ["post_id"], name: "index_headlines_on_post_id", using: :btree
+
+  create_table "last_right_side_ads", force: true do |t|
+    t.string   "ad_picture"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "left_category_news", force: true do |t|
     t.integer  "category_id"
@@ -104,6 +116,12 @@ ActiveRecord::Schema.define(version: 20150715160825) do
   end
 
   add_index "right_category_news", ["category_id"], name: "index_right_category_news_on_category_id", using: :btree
+
+  create_table "second_last_right_side_ads", force: true do |t|
+    t.string   "ad_picture"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "slider_news", force: true do |t|
     t.integer  "post_id"

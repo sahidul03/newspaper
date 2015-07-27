@@ -40,7 +40,7 @@
       <% end %>
     </div>
     <div class="site_brand_add">
-      <img src="/images/add.jpg">
+      <%= image_tag(HeaderBottomAd.first.ad_picture) if HeaderBottomAd.first %>
     </div>
   </div>
   <div id="header_main" class="sticky header_main">

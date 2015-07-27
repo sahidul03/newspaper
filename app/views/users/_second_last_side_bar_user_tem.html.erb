@@ -22,8 +22,9 @@
   </div>
 </div>
 <div class="widget add-banner">
-  <a href="#" target="_blank"><img src="/images/336132624679568204.gif"></a>
-
+  <a href="#" target="_blank">
+    <%= image_tag(SecondLastRightSideAd.last.ad_picture) if SecondLastRightSideAd.last %>
+  </a>
 </div>
 <% if Division.all.any? %>
     <div class="widget">
@@ -41,13 +42,15 @@
     </div>
 <% end %>
 <!-- End widget -->
-
-<div class="widget add-banner">
-  <a href="#" target="_blank"><img src="/images/1eb1ca26e633618341a4a27809fc6e32.gif"></a>
-</div>
-<div class="widget add-banner">
-  <a href="#" target="_blank"><img src="/images/walton28-12.gif"></a>
-</div>
+<% if SecondLastRightSideAd.any? %>
+    <% SecondLastRightSideAd.last(3).each do |ad| %>
+        <% if ad!=SecondLastRightSideAd.last %>
+            <div class="widget add-banner">
+              <%= image_tag(ad.ad_picture) %>
+            </div>
+        <% end %>
+    <% end %>
+<% end %>
 
 
 <% if RightCategoryNews.all.any? %>
@@ -70,7 +73,7 @@
 
                 </div>
                 <ul>
-                  <% rcn.category.posts.last(5).each do |post| %>
+                  <% rcn.category.posts.last(5).reverse.each do |post| %>
                   <% unless rcn.category.posts.last==post %>
                       <li>
                         <%= link_to post.title, news_path(post),:data => { :no_turbolink => true } %>

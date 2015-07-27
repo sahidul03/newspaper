@@ -3922,3 +3922,7 @@ article.post .entry_content iframe{
     height: 415px;
     width: 100%;
 }
+/*ad section*/
+.ad_image_show{
+    max-width: 100%;
+}
