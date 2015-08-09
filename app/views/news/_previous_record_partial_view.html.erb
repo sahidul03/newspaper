@@ -27,7 +27,7 @@
               <!--<a href="#">যতোই কল্পকাহিনী তৈরি করা হোক বিএনপিকে ভাঙা যাবে না</a>-->
             </h4>
             <p>
-              <%= c_news.content.to_s[0..400]  %>
+              <%= c_news.content.to_s[0..400].html_safe %>
             </p>
             <div class="item_meta clearfix">
                     <span class="meta_date">

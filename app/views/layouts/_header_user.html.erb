@@ -40,7 +40,11 @@
       <% end %>
     </div>
     <div class="site_brand_add">
-      <%= image_tag(HeaderBottomAd.first.ad_picture) if HeaderBottomAd.first %>
+      <% if HeaderBottomAd.first %>
+      <a href="<%= HeaderBottomAd.first.link %>" target="_blank">
+        <%= image_tag(HeaderBottomAd.first.ad_picture) %>
+      </a>
+      <% end %>
     </div>
   </div>
   <div id="header_main" class="sticky header_main">

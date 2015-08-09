@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
     unless @category
       redirect_to posts_path
     else
-      @posts=@category.posts.where(["created_at > ?", 48.hours.ago])
+      @posts=@category.posts.last(30)
     end
     render layout: 'admin_layout'
   end

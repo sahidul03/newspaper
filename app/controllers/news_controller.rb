@@ -58,7 +58,7 @@ class NewsController < ApplicationController
 
   def archive
     @current_date=Date.today
-    @archive_news=Post.where("DATE(created_at) = ?", Date.today)
+    @archive_news=Post.last(30)
     @most_viewed_news= Post.order(view_count: :desc).first(9)
     render layout: 'user_layout'
   end

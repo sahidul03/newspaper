@@ -29,7 +29,7 @@
 </div><!-- End Content slider -->
 <div class="panel_title">
   <div>
-    <h4><a href="#">বিশেষ খবর</a></h4>
+    <h4><a href="">বিশেষ খবর</a></h4>
   </div>
 </div><!-- End Panel title -->
 <!-- Layout post 1 -->
@@ -71,7 +71,7 @@
                 </h4>
                 <p>
                   <%= sp_news.post.division.name+' : ' if sp_news.post.division %>
-                  <%= sp_news.post.content.to_s[0..100] %>
+                  <%= sp_news.post.content.to_s[0..100].html_safe %>
                   <!--ঢাকা: জাতীয়তাবাদী সাংবাদিক ফোরামের ইফতার মাহফিলে নেতারা সাংবাদিক ইউনিয়ন ঐক্যবদ্ধ করার ওপর গুরুত্বারোপ-->
                 </p>
               </div>
@@ -119,7 +119,7 @@
                   </h4>
                   <p>
                     <%= lcn.category.posts.last.division.name+' : ' if lcn.category.posts.last.division %>
-                    <%= lcn.category.posts.last.content.to_s[0..130]+'...' %>
+                    <%= lcn.category.posts.last.content.to_s[0..130].html_safe+'...' %>
                   </p>
                 </div>
               </div>

@@ -1,7 +1,9 @@
 <% if LastRightSideAd.any? %>
     <% LastRightSideAd.last(2).each do |ad| %>
         <div class="widget add-banner">
-          <%= image_tag(ad.ad_picture) %>
+          <a href="<%= ad.link %>" target="_blank">
+            <%= image_tag(ad.ad_picture) %>
+          </a>
         </div>
     <% end %>
 <% end %>

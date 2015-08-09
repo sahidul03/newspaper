@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727165520) do
+ActiveRecord::Schema.define(version: 20150809152524) do
 
   create_table "bottom_category_news", force: true do |t|
     t.integer  "category_id"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20150727165520) do
     t.string   "ad_picture"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "link"
   end
 
   create_table "headlines", force: true do |t|
@@ -63,6 +64,7 @@ ActiveRecord::Schema.define(version: 20150727165520) do
     t.string   "ad_picture"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "link"
   end
 
   create_table "left_category_news", force: true do |t|
@@ -121,6 +123,7 @@ ActiveRecord::Schema.define(version: 20150727165520) do
     t.string   "ad_picture"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "link"
   end
 
   create_table "slider_news", force: true do |t|

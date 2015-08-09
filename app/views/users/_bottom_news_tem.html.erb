@@ -42,8 +42,8 @@
                         </div>
                         <p>
                           <%= post.division.name+' : ' if post.division %>
-                          <%= post.content.to_s[0..130]+'...' if post.content.to_s.length>130%>
-                          <%= post.content if post.content.to_s.length<131%>
+                          <%= post.content.to_s[0..130].html_safe+'...' if post.content.to_s.length>130%>
+                          <%= post.content.html_safe if post.content.to_s.length<131%>
                         </p>
                       </div>
                     </div>

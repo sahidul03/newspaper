@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   def index
     last_day_date=Date.yesterday
     # @posts=Post.where(:all, :conditions =>["date(created_at) BETWEEN ? AND ? ", 2.days.ago,Time.now])
-    @posts=Post.where(["created_at > ?", 48.hours.ago])
+    @posts=Post.last(40)
     render layout: 'admin_layout'
   end
 

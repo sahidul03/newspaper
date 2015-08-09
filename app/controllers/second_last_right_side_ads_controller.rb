@@ -30,7 +30,7 @@ class SecondLastRightSideAdsController < ApplicationController
   end
   private
   def params_second_last_right_ad
-    params.require(:second_last_right_side_ad).permit(:ad_picture);
+    params.require(:second_last_right_side_ad).permit(:ad_picture,:link);
   end
 
 end

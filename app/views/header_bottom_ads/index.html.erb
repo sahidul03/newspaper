@@ -13,7 +13,9 @@
         <%= form_for @hf_ad do |f| %>
 
             <div class="box-body">
+              <%= f.text_field :link, :class=>'form-control', :placeholder=>'Ad link....' %>
               <div class="form-group pad">
+
                 <div class="btn btn-success btn-file">
                   <i class="fa fa-paperclip"></i> Ad Image
                   <%= f.file_field :ad_picture, :class=>'' %>
@@ -44,7 +46,8 @@
           <% if @header_footer_ads.any? %>
               <table class="table table-striped">
                 <tr>
-                  <th class="col-md-8">Ad</th>
+                  <th class="col-md-4">Ad</th>
+                  <th class="col-md-4">Link</th>
                   <th class="col-md-2">Date</th>
                   <th class="text-right col-md-2">Delete</th>
                 </tr>
@@ -53,7 +56,7 @@
                       <td>
                         <%= image_tag(hf_ad.ad_picture,:class => 'ad_image_show') %>
                       </td>
-
+                      <td><%= hf_ad.link %></td>
                       <td><%= hf_ad.created_at.strftime('%d %B, %y') %></td>
                       <td class="text-right">
 

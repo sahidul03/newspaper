@@ -23,7 +23,7 @@
       </a>
 
       <p>
-        <%= @single_news.content %>
+        <%= @single_news.content.html_safe %>
       </p>
       <%= @single_news.video.html_safe if @single_news.video %>
     </div>

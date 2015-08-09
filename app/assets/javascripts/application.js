@@ -14,6 +14,7 @@
 //= require jqueryscript.min
 //= require jqueryuiscript.min
 //= require jquery_ujs
+//= require ckeditor-jquery
 //= require turbolinks
 //= require custom_newspaper
 

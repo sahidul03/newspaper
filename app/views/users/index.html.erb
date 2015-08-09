@@ -26,9 +26,11 @@
 
 <!-- start ad -->
 <div>
-  <a href="#" target="_blank">
-    <%= image_tag(HeaderBottomAd.last.ad_picture) if HeaderBottomAd.last %>
-  </a>
+  <% if HeaderBottomAd.last %>
+      <a href="<%= HeaderBottomAd.last.link %>" target="_blank">
+        <%= image_tag(HeaderBottomAd.last.ad_picture) %>
+      </a>
+  <% end %>
 </div>
 <!-- end ad -->
 <!-- Panel title -->

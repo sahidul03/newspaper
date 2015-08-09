@@ -22,9 +22,11 @@
   </div>
 </div>
 <div class="widget add-banner">
-  <a href="#" target="_blank">
-    <%= image_tag(SecondLastRightSideAd.last.ad_picture) if SecondLastRightSideAd.last %>
-  </a>
+  <% if SecondLastRightSideAd.last %>
+      <a href="<%= SecondLastRightSideAd.last.link %>" target="_blank">
+        <%= image_tag(SecondLastRightSideAd.last.ad_picture) %>
+      </a>
+  <% end %>
 </div>
 <% if Division.all.any? %>
     <div class="widget">

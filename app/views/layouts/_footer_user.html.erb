@@ -1,7 +1,13 @@
 <div id="copyright" role="contentinfo">
   <div class="col col_4_of_12 copyright_logo ">
     <%= link_to root_path,:data => { :no_turbolink => true } do %>
-    <img src="/images/ANLogo24.jpg">
+        <% if NewsProperty.all.any? %>
+        <% if NewsProperty.first.logo %>
+            <%= image_tag(NewsProperty.first.logo) %>
+        <% else %>
+                <img src="/images/ANLogo24.jpg">
+        <% end %>
+        <% end %>
     <% end %>
     <h5>Copyright © 2015
       All rights reserved </h5>

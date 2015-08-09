@@ -30,7 +30,7 @@ class HeaderBottomAdsController < ApplicationController
   end
   private
   def params_header_bottom_ad
-    params.require(:header_bottom_ad).permit(:ad_picture);
+    params.require(:header_bottom_ad).permit(:ad_picture,:link);
   end
 
 end

@@ -2,7 +2,7 @@ class ArchivesController < ApplicationController
 
   def index
     @current_date=Date.today
-    @posts=Post.where("DATE(created_at) = ?", Date.today)
+    @posts=Post.last(40)
     render layout: 'admin_layout'
   end
 
