@@ -15,8 +15,8 @@
   </div>
   <div class="copyright_content col_4_of_12">
     <p>
-       <%= ' বার্তা সম্পাদকঃ '+ NewsProperty.last.name if NewsProperty.last %> <br>
-        <%= 'প্রচার সম্পাদকঃ ' +NewsProperty.last.sub_editor if NewsProperty.last %> <br>
+      বার্তা সম্পাদকঃ <%=  NewsProperty.last.name if NewsProperty.last %> <br>
+      প্রচার সম্পাদকঃ  <%= NewsProperty.last.sub_editor if NewsProperty.last %> <br>
       <%= NewsProperty.last.address if NewsProperty.last %><br>
       ফোন : <%= NewsProperty.last.phone if NewsProperty.last %> <br>
       ই-মেইল : <%= NewsProperty.last.email if NewsProperty.last %> </p>
