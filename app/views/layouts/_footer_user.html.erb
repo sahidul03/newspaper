@@ -1,4 +1,4 @@
-<div id="copyright" role="contentinfo">
+<div id="copyright" role="contentinfo" style="min-height: 53px">
   <div class="col col_4_of_12 copyright_logo ">
     <%= link_to root_path,:data => { :no_turbolink => true } do %>
         <% if NewsProperty.all.any? %>
@@ -15,8 +15,9 @@
   </div>
   <div class="copyright_content col_4_of_12">
     <p>
-      বার্তা সম্পাদকঃ <%=  NewsProperty.last.name if NewsProperty.last %> <br>
+       সম্পাদকঃ <%=  NewsProperty.last.name if NewsProperty.last %> <br>
       প্রচার সম্পাদকঃ  <%= NewsProperty.last.sub_editor if NewsProperty.last %> <br>
+      বার্তা সম্পাদকঃ  <%= NewsProperty.last.sub_editor2 if NewsProperty.last %> <br>
       <%= NewsProperty.last.address if NewsProperty.last %><br>
       ফোন : <%= NewsProperty.last.phone if NewsProperty.last %> <br>
       ই-মেইল : <%= NewsProperty.last.email if NewsProperty.last %> </p>

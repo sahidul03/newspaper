@@ -9,7 +9,7 @@
         <% @single_gallery.photos.each do |photo| %>
                 <li>
                   <a >
-                    <%= image_tag(photo.image, alt: 'Slider') %>
+                    <%= image_tag(photo.image, alt: 'Slider',height: 375) %>
                     <!--<img  src="/images/5.jpg" alt="Slider">-->
                   </a>
                   <div class="slider_caption">
@@ -28,6 +28,7 @@
 
       </ul>
     </div><!-- End Content slider -->
+
     <div class="panel_title">
       <div>
         <h4><a > ফটো সংবাদ </a></h4>

@@ -24,7 +24,7 @@ class NewspropertiesController < ApplicationController
 
   private
   def params_newsproperty
-    params.require(:news_property).permit(:name,:address,:phone,:email,:logo,:febicon,:sub_editor)
+    params.require(:news_property).permit(:name,:address,:phone,:email,:logo,:febicon,:sub_editor, :sub_editor2)
   end
 
 end

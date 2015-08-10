@@ -205,7 +205,7 @@ ul.products li.product:nth-child(2n) {
     display: none
 }
 .content_slider .bx-wrapper img {
-    height:auto;
+    height:340px;
 }
 .layout_post_1 .item_thumb img {
     width: 100%;

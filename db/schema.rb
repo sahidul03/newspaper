@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150809171448) do
+ActiveRecord::Schema.define(version: 20150810173311) do
 
   create_table "bottom_category_news", force: true do |t|
     t.integer  "category_id"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20150809171448) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "sub_editor"
+    t.string   "sub_editor2"
   end
 
   create_table "photos", force: true do |t|
