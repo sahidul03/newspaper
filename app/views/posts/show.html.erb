@@ -1,3 +1,11 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=341662166013282";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <div class="box box-info">
   <div class="box-header">
     <i class="fa fa-check"></i>
@@ -59,7 +67,9 @@
               <% if @post.view_count %>
                   <a class="btn btn-primary btn-xs">Views : <%= @post.view_count %></a>
               <% end %>
-              <%= render_shareable :title=>@post.title,:image=>@post.photo, :url=> news_path(@post.id), :facebook=> {:send=> 'true', :url=> news_path(@post.id), :image=>@post.photo} %>
+              <meta property="og:image" content="http://alokitonarayanganj24.com/uploads/post/photo/34/daroga_faruk.jpg"/>
+              <div class="fb-share-button" data-src="http://alokitonarayanganj24.com/uploads/post/photo/34/daroga_faruk.jpg" data-href='<%= 'http://alokitonarayanganj24.com/news/'+@post.id.to_s %>' data-layout="button"></div>
+              <%= render_shareable :title=>@post.title,:image=>'http://alokitonarayanganj24.com/uploads/post/photo/34/daroga_faruk.jpg', :url=> 'http://alokitonarayanganj24.com/news/'+@post.id.to_s, :facebook=> {:turbolinks => false,:send=> 'true', :url=>'http://alokitonarayanganj24.com/news/'+@post.id.to_s , :image=>'http://alokitonarayanganj24.com/uploads/post/photo/34/daroga_faruk.jpg'} %>
             </div>
             <div class="timeline-body">
               <p>
