@@ -69,7 +69,7 @@
                   <a class="btn btn-primary btn-xs">Views : <%= @post.view_count %></a>
               <% end %>
               <div class="fb-share-button" data-src="http://alokitonarayanganj24.com/uploads/post/photo/34/daroga_faruk.jpg" data-href='<%= 'http://alokitonarayanganj24.com/news/'+@post.id.to_s %>' data-layout="button"></div>
-              <%= render_shareable :title=>@post.title,:image=>'http://alokitonarayanganj24.com/uploads/post/photo/34/daroga_faruk.jpg', :url=> 'http://alokitonarayanganj24.com/news/'+@post.id.to_s, :facebook=> {:turbolinks => false,:send=> 'true', :url=>'http://alokitonarayanganj24.com/news/'+@post.id.to_s , :image=>'http://alokitonarayanganj24.com/uploads/post/photo/34/daroga_faruk.jpg'} %>
+              <%= render_shareable :title=>@post.title, :url=> 'http://alokitonarayanganj24.com/news/'+@post.id.to_s, :facebook=> {:turbolinks => false,:send=> 'true', :url=>'http://alokitonarayanganj24.com/news/'+@post.id.to_s } %>
             </div>
             <div class="timeline-body">
               <p>
