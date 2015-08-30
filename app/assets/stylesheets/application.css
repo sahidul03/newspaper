@@ -53,6 +53,9 @@
       *= require AdminLTE
 
 
+ <!-->social share button -->
+ *= require social-share-button
+
  *= require_tree .
  *= require_self
  */

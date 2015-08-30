@@ -59,4 +59,7 @@
 //    <script type="text/javascript" src="js/viewportchecker.js"></script>
 //    <script type="text/javascript" src="js/init.js"></script>
 
+// social share button
+//= require social-share-button
+
 //= require_tree .
