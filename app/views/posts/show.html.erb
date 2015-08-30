@@ -59,7 +59,7 @@
               <% if @post.view_count %>
                   <a class="btn btn-primary btn-xs">Views : <%= @post.view_count %></a>
               <% end %>
-              <%= social_share_button_tag(@post.title, :url => news_path(@post.id), :image => @post.photo) %>
+              <%= render_shareable :title=>@post.title,:image=>@post.photo, :url=> news_path(@post.id), :facebook=> {:send=> 'true', :url=> news_path(@post.id), :image=>@post.photo} %>
             </div>
             <div class="timeline-body">
               <p>

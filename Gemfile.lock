@@ -117,6 +117,9 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    shareable (1.1.4)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     social-share-button (0.1.8)
       coffee-rails
       sass-rails
@@ -171,6 +174,7 @@ DEPENDENCIES
   rails_12factor
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  shareable
   social-share-button
   spring
   therubyracer

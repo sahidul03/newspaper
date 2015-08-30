@@ -32,6 +32,7 @@ gem "mini_magick"
 gem 'carrierwave'
 gem 'ckeditor_rails'
 gem 'social-share-button'
+gem 'shareable'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
