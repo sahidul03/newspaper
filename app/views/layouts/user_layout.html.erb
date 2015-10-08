@@ -6,15 +6,25 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <!--<title>convergentsoft news</title>-->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
   <!-- Favicons -->
   <link rel="icon" href="/images/an-febicon.png">
   <% if params[:controller]=='news' && params[:action]=='show'  %>
       <meta property="og:title" content="<%= @single_news.title %>" />
       <meta property="og:site_name" content="Alokitonarayanganj24.com"/>
-      <meta property="og:description" content="<%= @single_news.content.html_safe %>" />
+      <meta property="og:description" content="<%= @single_news.content %>" />
+
+      <meta property="og:url" content="<%= 'http://alokitonarayanganj24.com/news/'+@single_news.id.to_s %>" />
+      <% if @single_news.photo %>
+          <% image_url='http://alokitonarayanganj24.com' + @single_news.photo.to_s %>
+          <meta property="og:image" content="<%=  image_url %>" />
+      <% end %>
+  <% elsif params[:controller]=='posts' && params[:action]=='show' %>
+      <meta property="og:title" content="<%= @single_news.title %>" />
+      <meta property="og:site_name" content="Alokitonarayanganj24.com"/>
+      <meta property="og:description" content="<%= @single_news.content %>" />
 
       <meta property="og:url" content="<%= 'http://alokitonarayanganj24.com/news/'+@single_news.id.to_s %>" />
       <% if @single_news.photo %>

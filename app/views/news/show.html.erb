@@ -27,7 +27,7 @@
         <%= @single_news.content.html_safe %>
       </p>
       <%= @single_news.video.html_safe if @single_news.video %>
-      <div style="margin-top: 20px" class="fb-share-button" data-src="<%= 'http://alokitonarayanganj24.com/news/'+@single_news.id.to_s %>" data-href='<%= 'http://alokitonarayanganj24.com/news/'+@single_news.id.to_s %>' data-layout="button"></div>
+      <div style="margin-top: 20px" class="fb-share-button"  data-href='<%= 'http://alokitonarayanganj24.com/news/'+@single_news.id.to_s %>' data-layout="button"></div>
 
     </div>
 
