@@ -8,17 +8,26 @@
   <!--<title>alokito naranganj 24</title>-->
   <!--<meta charset="UTF-8">-->
   <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-  <% if params[:controller]=='posts' && params[:action]=='show' %>
-  <meta property="og:title" content="<%= @single_news.title %>" />
-  <meta property="og:site_name" content="Alokitonarayanganj24.com"/>
-  <meta property="og:description" content="<%= @single_news.content.html_safe %>" />
+  <% if params[:controller]=='news' && params[:action]=='show'  %>
+      <meta property="og:title" content="<%= @post.title %>" />
+      <meta property="og:site_name" content="Alokitonarayanganj24.com"/>
+      <meta property="og:description" content="<%= @post.content.html_safe %>" />
 
-  <meta property="og:url" content="<%= 'http://alokitonarayanganj24.com/news/'+@single_news.id.to_s %>" />
-  <% if @single_news.photo %>
-      <% image_url='http://alokitonarayanganj24.com' + @single_news.photo.to_s %>
-      <meta property="og:image" content="<%=  image_url %>" />
-  <% end %>
+      <meta property="og:url" content="<%= 'http://alokitonarayanganj24.com/news/'+@post.id.to_s %>" />
+      <% if @post.photo %>
+          <% image_url='http://alokitonarayanganj24.com' + @post.photo.to_s %>
+          <meta property="og:image" content="<%=  image_url %>" />
+      <% end %>
+  <% elsif params[:controller]=='posts' && params[:action]=='show' %>
+      <meta property="og:title" content="<%= @post.title %>" />
+      <meta property="og:site_name" content="Alokitonarayanganj24.com"/>
+      <meta property="og:description" content="<%= @post.content.html_safe %>" />
 
+      <meta property="og:url" content="<%= 'http://alokitonarayanganj24.com/news/'+@post.id.to_s %>" />
+      <% if @post.photo %>
+          <% image_url='http://alokitonarayanganj24.com' + @post.photo.to_s %>
+          <meta property="og:image" content="<%=  image_url %>" />
+      <% end %>
   <% end %>
   <!-- Favicons -->
   <link rel="icon" href="/images/an-febicon.png">
