@@ -14,7 +14,6 @@
   <% if params[:controller]=='news' && params[:action]=='show'  %>
       <meta property="og:title" content="<%= @single_news.title %>" />
       <meta property="og:site_name" content="Alokitonarayanganj24.com"/>
-      <meta property="og:description" content="<%= @single_news.content.to_s.html_safe %>" />
 
       <meta property="og:url" content="<%= 'http://alokitonarayanganj24.com/news/'+@single_news.id.to_s %>" />
       <% if @single_news.photo %>
@@ -24,7 +23,6 @@
       <% elsif params[:controller]=='posts' && params[:action]=='show' %>
           <meta property="og:title" content="<%= @single_news.title %>" />
           <meta property="og:site_name" content="Alokitonarayanganj24.com"/>
-          <meta property="og:description" content="<%= @single_news.content.to_s.html_safe %>" />
 
           <meta property="og:url" content="<%= 'http://alokitonarayanganj24.com/news/'+@single_news.id.to_s %>" />
           <% if @single_news.photo %>
