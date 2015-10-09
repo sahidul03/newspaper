@@ -13,6 +13,7 @@ class NewsController < ApplicationController
     view_count=@single_news.view_count
     view_count=view_count+1
     @single_news.update(:view_count=>view_count)
+    @single_new_description=@single_news.content.html_safe
     render layout: 'user_layout'
   end
 
