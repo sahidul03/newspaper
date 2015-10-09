@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     if @post.nil?
       redirect_to posts_path
     end
-    @post_description=@post.content.html_safe
+    @post_description=@post.content.html_safe.to_s
     render layout: 'admin_layout'
   end
 
