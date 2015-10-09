@@ -14,7 +14,7 @@
   <% if params[:controller]=='news' && params[:action]=='show'  %>
       <meta property="og:title" content="<%= @single_news.title %>" />
       <meta property="og:site_name" content="Alokitonarayanganj24.com"/>
-      <!--<meta property="og:description" content="<%#= raw(@single_news.content) %>"/>-->
+      <meta property="og:description" content='<%= raw(@single_news.content) %>'/>
       <meta property="og:url" content="<%= 'http://alokitonarayanganj24.com/news/'+@single_news.id.to_s %>" />
       <% if @single_news.photo %>
           <% image_url='http://alokitonarayanganj24.com' + @single_news.photo.to_s %>

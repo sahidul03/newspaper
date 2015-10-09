@@ -12,7 +12,7 @@
   <% if params[:controller]=='posts' && params[:action]=='show' %>
       <meta property="og:title" content="<%= @post.title %>" />
       <meta property="og:site_name" content="Alokitonarayanganj24.com"/>
-      <!--<meta property="og:description" content="<%#= raw(@post.content) %>"/>-->
+      <meta property="og:description" content='<%= raw(@post.content) %>'/>
       <meta property="og:url" content="<%= 'http://alokitonarayanganj24.com/news/'+@post.id.to_s %>" />
       <% if @post.photo %>
           <% image_url='http://alokitonarayanganj24.com' + @post.photo.to_s %>
